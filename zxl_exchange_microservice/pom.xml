@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.whoiszxl</groupId>
+    <artifactId>zxl_exchange_parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>zxl_framework_base</module>
+        <module>zxl_framework_mybatisplus</module>
+        <module>zxl_service_common</module>
+        <module>zxl_service_user</module>
+    </modules>
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.1.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF- 8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF- 8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <tomcat.version>8.5.28</tomcat.version>
+        <spring-boot.version>2.0.1.RELEASE</spring-boot.version>
+        <springframework.version>5.0.5.RELEASE</springframework.version>
+        <mybatis-spring-boot.version>1.3.1</mybatis-spring-boot.version>
+        <mybatis.version>3.4.5</mybatis.version>
+        <druid.version>1.1.6</druid.version>
+        <mysql-connector-java.version>5.1.45</mysql-connector-java.version>
+
+
+        <commons-io.version>2.6</commons-io.version>
+        <org.apache.commons.io.version>1.3.2</org.apache.commons.io.version>
+        <commons-fileupload.version>1.3.3</commons-fileupload.version>
+        <commons-codec.version>1.10</commons-codec.version>
+        <commons-lang3.version>3.6</commons-lang3.version>
+        <okhttp.version>3.9.1</okhttp.version>
+        <feign-okhttp.version>8.18.0</feign-okhttp.version>
+        <lombok.version>1.16.16</lombok.version>
+        <springfox-swagger.version>2.7.0</springfox-swagger.version>
+        <fastjson.version>1.2.30</fastjson.version>
+        <fastdfs-client-java.version>1.27.0.0</fastdfs-client-java.version>
+        <mysql-connector-java.version>5.1.40</mysql-connector-java.version>
+        <elasticsearch.version>6.2.1</elasticsearch.version>
+        <guava.version>24.0-jre</guava.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+</project>

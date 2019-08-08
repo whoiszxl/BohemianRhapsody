@@ -1,0 +1,16 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: zxl_service_common
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://118.126.92.128:13303/zxl_exchange_user?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
+    username: root
+    password: root
+  redis:
+    host: 118.126.92.128
+  rabbitmq:
+    host: 118.126.92.128
+    username: guest
+    password: 123456
