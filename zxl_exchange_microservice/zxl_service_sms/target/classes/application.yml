@@ -1,0 +1,21 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: zxl_service_sms #指定服务名
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://118.126.92.128:13303/zxl_exchange_user?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
+    username: root
+    password: root
+  rabbitmq:
+    host: 118.126.92.128
+    username: guest
+    password: 123456
+
+aliyun:
+  sms:
+    accessKeyId: LTAIrzBRywDa4mLW
+    accessKeySecret: SxDMuyEI8GZihwzfipYQAExZPVUNif
+    template_code: SMS_99220057
+    sign_name: zxlvoid验证码

@@ -13,6 +13,7 @@
         <module>zxl_framework_mybatisplus</module>
         <module>zxl_service_common</module>
         <module>zxl_service_user</module>
+        <module>zxl_service_sms</module>
     </modules>
 
 

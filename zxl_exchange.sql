@@ -37,6 +37,5 @@ CREATE TABLE `zxl_user` (
   UNIQUE KEY `idx_phone` (`phone`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
 
-LTAIrzBRywDa4mLW
 
-SxDMuyEI8GZihwzfipYQAExZPVUNif
+docker run ‐di ‐‐name=tensquare_redis ‐p 6379:6379 redis
