@@ -35,62 +35,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdminServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/service/impl/AdminServiceImpl.java">
+      <file leaf-file-name="JwtInterceptor.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/filter/JwtInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="157">
+              <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/service/impl/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="84" column="19" lean-forward="true" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SqlHelper.class" pinned="false" current-in-tab="false">
-        <entry file="jar://E:/OpenSourceSoftware/apache-maven-3.5.3/repo/com/baomidou/mybatis-plus-core/3.0.5/mybatis-plus-core-3.0.5.jar!/com/baomidou/mybatisplus/core/toolkit/sql/SqlHelper.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Collection.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Collection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="143" column="17" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserRoleEnum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/enums/role/UserRoleEnum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -98,8 +50,8 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="87" column="54" selection-start-line="87" selection-start-column="54" selection-end-line="87" selection-end-column="54" />
+            <state relative-caret-position="1009">
+              <caret line="88" column="43" lean-forward="true" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,29 +59,53 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CglibAopProxy.java" pinned="false" current-in-tab="false">
-        <entry file="jar://E:/OpenSourceSoftware/apache-maven-3.5.3/repo/org/springframework/spring-aop/5.0.5.RELEASE/spring-aop-5.0.5.RELEASE-sources.jar!/org/springframework/aop/framework/CglibAopProxy.java">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://F:/学习教程/黑马最新java《十次方》社交项目/tensquare_parent84/tensquare_user/src/main/java/com/tensquare/user/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="664" selection-start-line="664" selection-end-line="664" />
+            <state relative-caret-position="340">
+              <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZxlUser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/pojo/ZxlUser.java">
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://F:/学习教程/黑马最新java《十次方》社交项目/tensquare_parent84/tensquare_user/src/main/java/com/tensquare/user/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="-1357">
+              <caret line="49" selection-start-line="49" selection-end-line="49" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StatusCode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/entity/StatusCode.java">
+      <file leaf-file-name="JwtUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/jwt/JwtUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+            <state relative-caret-position="106">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebSecurityConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/config/WebSecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JwtConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/config/JwtConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -169,8 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/common/exception/ExceptionCast.java" />
-        <option value="$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/common/entity/Result.java" />
         <option value="$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/common/exception/ExceptionCatch.java" />
         <option value="$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/base/controller/BannerController.java" />
         <option value="$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/base/BaseApp.java" />
@@ -220,6 +194,8 @@
         <option value="$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/controller/UserController.java" />
         <option value="$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/service/UserService.java" />
         <option value="$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/config/JwtConfig.java" />
+        <option value="$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/filter/JwtInterceptor.java" />
       </list>
     </option>
   </component>
@@ -270,100 +246,6 @@
             <path>
               <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="whoiszxl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="whoiszxl" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="whoiszxl" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="enums" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="whoiszxl" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="enums" type="462c0819:PsiDirectoryNode" />
-              <item name="role" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="whoiszxl" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="enums" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
@@ -455,20 +337,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="whoiszxl" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_service_user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="whoiszxl" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -650,19 +519,19 @@
       <updated>1565156151417</updated>
       <workItem from="1565156158601" duration="7424000" />
       <workItem from="1565174868650" duration="5603000" />
-      <workItem from="1565233260354" duration="40694000" />
+      <workItem from="1565233260354" duration="42624000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53721000" />
+    <option name="totallyTimeSpent" value="55651000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053304" side_tool="true" weight="0.3297062" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32995737" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Mongo Explorer" order="3" weight="0.32995737" />
@@ -681,7 +550,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3297062" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.3297062" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
@@ -711,8 +580,14 @@
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/filter/JwtInterceptor.java</url>
+          <line>38</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="15" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -720,30 +595,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/jwt/JwtUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/mapper/AdminMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/pojo/request/LoginRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/utils/CheckPasswordUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
@@ -937,16 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/config/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/UserApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -975,20 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://F:/学习教程/黑马最新java《十次方》社交项目/tensquare_parent84/tensquare_user/src/main/java/com/tensquare/user/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/学习教程/黑马最新java《十次方》社交项目/tensquare_parent84/tensquare_user/src/main/java/com/tensquare/user/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-115">
-          <caret line="104" column="39" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/common/pojo/ZxlBanner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-46">
@@ -1003,13 +830,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/entity/StatusCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1044,20 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Collection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="143" column="17" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/OpenSourceSoftware/apache-maven-3.5.3/repo/com/baomidou/mybatis-plus-core/3.0.5/mybatis-plus-core-3.0.5.jar!/com/baomidou/mybatisplus/core/toolkit/sql/SqlHelper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/OpenSourceSoftware/apache-maven-3.5.3/repo/com/baomidou/mybatis-plus-core/3.0.5/mybatis-plus-core-3.0.5.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1086,24 +892,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/pojo/ZxlUser.java">
+    <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/OpenSourceSoftware/apache-maven-3.5.3/repo/org/springframework/spring-aop/5.0.5.RELEASE/spring-aop-5.0.5.RELEASE-sources.jar!/org/springframework/aop/framework/CglibAopProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="664" selection-start-line="664" selection-end-line="664" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/enums/role/UserRoleEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        <state relative-caret-position="226">
+          <caret line="78" column="40" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1117,16 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="87" column="54" selection-start-line="87" selection-start-column="54" selection-end-line="87" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -1134,10 +919,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/service/impl/UserServiceImpl.java">
+    <entry file="jar://E:/OpenSourceSoftware/apache-maven-3.5.3/repo/com/baomidou/mybatis-plus-core/3.0.5/mybatis-plus-core-3.0.5.jar!/com/baomidou/mybatisplus/core/toolkit/sql/SqlHelper.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="84" column="19" lean-forward="true" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+        <state relative-caret-position="196">
+          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Collection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="143" column="17" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/OpenSourceSoftware/apache-maven-3.5.3/repo/org/springframework/spring-aop/5.0.5.RELEASE/spring-aop-5.0.5.RELEASE-sources.jar!/org/springframework/aop/framework/CglibAopProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="664" selection-start-line="664" selection-end-line="664" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/pojo/ZxlUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/entity/StatusCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/config/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/config/JwtConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/jwt/JwtUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/enums/role/UserRoleEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/学习教程/黑马最新java《十次方》社交项目/tensquare_parent84/tensquare_user/src/main/java/com/tensquare/user/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1357">
+          <caret line="49" selection-start-line="49" selection-end-line="49" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/学习教程/黑马最新java《十次方》社交项目/tensquare_parent84/tensquare_user/src/main/java/com/tensquare/user/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1009">
+          <caret line="88" column="43" lean-forward="true" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/filter/JwtInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
