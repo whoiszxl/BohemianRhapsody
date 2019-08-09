@@ -31,9 +31,29 @@ public class Result<T> {
         return result.setFlag(false).setCode(StatusCode.ERROR).setMessage("error");
     }
 
+    public static Result buildError(String message) {
+        Result result = new Result();
+        return result.setFlag(false).setCode(StatusCode.ERROR).setMessage(message);
+    }
+
+    public static Result buildError(int errorCode, String message) {
+        Result result = new Result();
+        return result.setFlag(false).setCode(StatusCode.ERROR).setMessage(message);
+    }
+
+    public static Result buildSuccess(String message) {
+        Result result = new Result();
+        return result.setFlag(true).setCode(StatusCode.OK).setMessage(message);
+    }
+
     public static Result buildSuccess(Object data) {
         Result result = new Result();
         return result.setFlag(true).setCode(StatusCode.OK).setMessage("success").setData(data);
+    }
+
+    public static Result buildSuccess(String message, Object data) {
+        Result result = new Result();
+        return result.setFlag(true).setCode(StatusCode.OK).setMessage(message).setData(data);
     }
 
     public static Result buildSuccess() {

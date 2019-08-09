@@ -7,4 +7,9 @@ public class ExceptionCast {
     public static void cast(Result result){
         throw new CustomException(result);
     }
+
+    public static void castValidateEx(Result result){
+        throw new ValidateException(result);
+    }
+
 }

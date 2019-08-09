@@ -14,3 +14,11 @@ spring:
     host: 118.126.92.128
     username: guest
     password: 123456
+
+jwt:
+  config:
+    key: whoiszxl
+    ttl: 360000
+
+msg:
+  mock: true

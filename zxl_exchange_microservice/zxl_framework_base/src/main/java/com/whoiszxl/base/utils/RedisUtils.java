@@ -81,22 +81,6 @@ public class RedisUtils {
 
 
     /**
-     * 设置ASCII码, 字符串'a'的ASCII码是97, 转为二进制是'01100001', 此方法是将二进制第offset位值变为value
-     *
-     * @param key
-     * @param postion
-     *            位置
-     * @param value
-     *            值,true为1, false为0
-     * @return
-     */
-    public boolean setBit(String key, long offset, boolean value) {
-        return redisTemplate.opsForValue().setBit(key, offset, value);
-    }
-
-
-
-    /**
      * 删除key
      *
      * @param key
@@ -242,7 +226,7 @@ public class RedisUtils {
      * 增加(自增长), 负数则为自减
      *
      * @param key
-     * @param value
+     * @param increment
      * @return
      */
     public Long incrBy(String key, long increment) {
@@ -252,7 +236,7 @@ public class RedisUtils {
     /**
      *
      * @param key
-     * @param value
+     * @param increment
      * @return
      */
     public Double incrByFloat(String key, double increment) {

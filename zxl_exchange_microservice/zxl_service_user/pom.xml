@@ -12,6 +12,12 @@
     <artifactId>zxl_service_user</artifactId>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.whoiszxl</groupId>
             <artifactId>zxl_service_common</artifactId>
@@ -22,6 +28,8 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
+
+
 
 
 

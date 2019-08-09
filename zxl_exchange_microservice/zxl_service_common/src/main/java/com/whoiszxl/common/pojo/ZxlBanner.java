@@ -15,6 +15,11 @@ public class ZxlBanner extends BasePojo {
     private static final long serialVersionUID = 1L;
 
     /**
+     * 主键Id
+     */
+    private String id;
+
+    /**
      * 轮播图名称
      */
     private String name;

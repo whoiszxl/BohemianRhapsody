@@ -1,10 +1,12 @@
 package com.whoiszxl.user;
 
+import com.whoiszxl.base.jwt.JwtUtils;
 import com.whoiszxl.base.utils.IdWorker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
  * @description: 用户模块启动类
@@ -20,9 +22,21 @@ public class UserApp {
         SpringApplication.run(UserApp.class, args);
     }
 
+
+
+    @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
     @Bean
     public IdWorker idWorker() {
         return new IdWorker(1, 1);
+    }
+
+    @Bean
+    public JwtUtils jwtUtils() {
+        return new JwtUtils();
     }
 }
 

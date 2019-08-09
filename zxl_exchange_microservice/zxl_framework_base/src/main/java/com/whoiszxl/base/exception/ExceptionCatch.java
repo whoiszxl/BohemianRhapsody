@@ -34,6 +34,17 @@ public class ExceptionCatch {
         Result resultCode = customException.getResultCode();
         return resultCode;
     }
+
+    //捕获CustomException此类异常
+    @ExceptionHandler(ValidateException.class)
+    @ResponseBody
+    public Result validateException(ValidateException validateException){
+        Result resultCode = validateException.getResultCode();
+        return resultCode;
+    }
+
+
+
     //捕获Exception此类异常
     @ExceptionHandler(Exception.class)
     @ResponseBody

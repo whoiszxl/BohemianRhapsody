@@ -1,0 +1,23 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.whoiszxl.base.jwt.JwtUtils",
+      "name": "jwt.config",
+      "type": "com.whoiszxl.base.jwt.JwtUtils"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.whoiszxl.base.jwt.JwtUtils",
+      "name": "jwt.config.key",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.whoiszxl.base.jwt.JwtUtils",
+      "defaultValue": 0,
+      "name": "jwt.config.ttl",
+      "type": "java.lang.Long"
+    }
+  ]
+}

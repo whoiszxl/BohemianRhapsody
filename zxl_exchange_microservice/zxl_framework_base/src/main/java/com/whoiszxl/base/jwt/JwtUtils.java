@@ -1,53 +1,44 @@
-package com.whoiszxl.base.utils;
+package com.whoiszxl.base.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
 import java.util.Date;
 
 /**
- * Created by Administrator on 2018/4/11.
- */
-//@ConfigurationProperties("jwt.config")
-public class JwtUtil {
+ * @description: jwt工具
+ * @author: whoiszxl
+ * @create: 2019-08-09
+ **/
+@Data
+@ConfigurationProperties("jwt.config")
+public class JwtUtils {
 
-    private String key ;
+    private String key;
 
-    private long ttl ;//一个小时
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public long getTtl() {
-        return ttl;
-    }
-
-    public void setTtl(long ttl) {
-        this.ttl = ttl;
-    }
+    private long ttl;
 
     /**
-     * 生成JWT
-     *
+     * 创建jwt
      * @param id
      * @param subject
+     * @param roles
      * @return
      */
     public String createJWT(String id, String subject, String roles) {
         long nowMillis = System.currentTimeMillis();
         Date now = new Date(nowMillis);
         JwtBuilder builder = Jwts.builder().setId(id)
-                .setSubject(subject)
-                .setIssuedAt(now)
-                .signWith(SignatureAlgorithm.HS256, key).claim("roles", roles);
-        if (ttl > 0) {
-            builder.setExpiration( new Date( nowMillis + ttl));
+                .setSubject(subject) //jwt面向的用户
+                .setIssuedAt(now) //设置签发时间
+                .signWith(SignatureAlgorithm.HS256, key) //设置签名方式
+                .claim("roles", roles); //设置角色
+        if(ttl > 0) {
+            builder.setExpiration(new Date(nowMillis + ttl));
         }
         return builder.compact();
     }
@@ -63,5 +54,4 @@ public class JwtUtil {
                 .parseClaimsJws(jwtStr)
                 .getBody();
     }
-
 }
