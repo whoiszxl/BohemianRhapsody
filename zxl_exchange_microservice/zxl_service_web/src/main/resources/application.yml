@@ -1,0 +1,19 @@
+server:
+  port: 19091
+spring:
+  application:
+    name: zxl-service-web
+eureka:
+  client:
+    server-url:
+      default-zone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes:
+    zxl-service-user:
+      path: /user/**
+      serverId: zxl-service-user
+    zxl-service-common:
+      path: /common/**
+      serverId: zxl-service-common
