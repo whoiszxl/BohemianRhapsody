@@ -1,10 +1,11 @@
 package com.whoiszxl.user.controller;
 
+import com.netflix.discovery.converters.Auto;
 import com.whoiszxl.base.entity.Result;
 import com.whoiszxl.base.entity.StatusCode;
 import com.whoiszxl.base.enums.role.UserRoleEnum;
-import com.whoiszxl.base.pojo.BasePojo;
 import com.whoiszxl.base.utils.ValidateUtils;
+import com.whoiszxl.user.client.CommonClient;
 import com.whoiszxl.user.pojo.ZxlUser;
 import com.whoiszxl.user.pojo.request.RegisterRequest;
 import com.whoiszxl.user.pojo.request.SmsRequest;
@@ -13,7 +14,6 @@ import com.whoiszxl.user.sms.AliyunSmsSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -32,6 +32,15 @@ public class UserController {
 
     @Autowired
     private AliyunSmsSender aliyunSmsSender;
+
+    @Autowired
+    private CommonClient commonClient;
+
+    @GetMapping("/testFeign")
+    public Result<Object> testFeign() {
+        return Result.buildSuccess(commonClient.findAll());
+    }
+
 
     @GetMapping
     public Result<List<ZxlUser>> findAll() {

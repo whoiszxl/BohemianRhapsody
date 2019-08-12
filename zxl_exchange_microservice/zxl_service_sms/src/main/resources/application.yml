@@ -2,7 +2,7 @@ server:
   port: 9003
 spring:
   application:
-    name: zxl_service_sms #指定服务名
+    name: zxl-service-sms #指定服务名
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://118.126.92.128:13303/zxl_exchange_user?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
@@ -12,6 +12,13 @@ spring:
     host: 118.126.92.128
     username: guest
     password: 123456
+
+eureka:
+  client:
+    server-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
 
 aliyun:
   sms:

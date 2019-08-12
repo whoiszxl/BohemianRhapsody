@@ -9,6 +9,7 @@
         <module name="zxl_framework_base" />
         <module name="zxl_framework_mybatisplus" />
         <module name="zxl_service_common" />
+        <module name="zxl_service_eureka" />
         <module name="zxl_service_sms" />
         <module name="zxl_service_user" />
       </profile>

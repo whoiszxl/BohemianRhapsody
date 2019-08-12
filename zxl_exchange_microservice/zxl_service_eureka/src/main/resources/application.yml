@@ -1,0 +1,8 @@
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false #自身不注册到eureka
+    fetch-registry: false #不从eureka获取注册信息
+    server-url:
+      default-zone: http://127.0.0.1:${server.port}/eureka/
