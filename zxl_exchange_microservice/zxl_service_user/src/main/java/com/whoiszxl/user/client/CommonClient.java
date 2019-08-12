@@ -1,6 +1,7 @@
 package com.whoiszxl.user.client;
 
 import com.whoiszxl.base.entity.Result;
+import com.whoiszxl.user.client.impl.CommonClientImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,9 +14,9 @@ import java.util.List;
  * @create: 2019-08-12
  **/
 @Component
-@FeignClient("zxl-service-common")
+@FeignClient(value = "zxl-service-common", fallback = CommonClientImpl.class)
 public interface CommonClient {
 
     @GetMapping("/banner")
-    public Result<List<Object>> findAll();
+    Result<List<Object>> findAll();
 }
