@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: zxl-service-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/whoiszxl/zxl_service_config.git
+          username:
+          password:
+server:
+  port: 19092

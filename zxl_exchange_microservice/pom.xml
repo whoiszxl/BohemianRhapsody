@@ -17,6 +17,7 @@
         <module>zxl_service_eureka</module>
         <module>zxl_service_manager</module>
         <module>zxl_service_web</module>
+        <module>zxl_service_config</module>
     </modules>
 
 

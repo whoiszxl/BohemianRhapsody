@@ -23,3 +23,6 @@
 hs_err_pid*
 
 node_modules
+
+target
+zxl_exchange_microservice/zxl_service_config/src/main/resources/application.yml
