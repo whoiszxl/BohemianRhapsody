@@ -22,6 +22,10 @@ eureka:
   instance:
     prefer-ip-address: true
 
+feign:
+  hystrix:
+    enabled: true
+
 jwt:
   config:
     key: whoiszxl

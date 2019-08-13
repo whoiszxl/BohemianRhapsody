@@ -11,10 +11,10 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages={"com.whoiszxl.base"})//扫描base包下的类
 @ComponentScan(basePackages={"com.whoiszxl.common"})//扫描本项目下的所有类
-public class BaseApp {
+public class CommonApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(BaseApp.class, args);
+        SpringApplication.run(CommonApp.class, args);
     }
 
     @Bean

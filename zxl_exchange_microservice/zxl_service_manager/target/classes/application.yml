@@ -3,11 +3,6 @@ server:
 spring:
   application:
     name: zxl-service-manager
-
-jwt:
-  config:
-    key: whoiszxl
-
 eureka:
   client:
     server-url:
