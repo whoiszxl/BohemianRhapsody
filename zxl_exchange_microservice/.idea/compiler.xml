@@ -12,6 +12,7 @@
         <module name="zxl_service_config" />
         <module name="zxl_service_eureka" />
         <module name="zxl_service_manager" />
+        <module name="zxl_service_market" />
         <module name="zxl_service_sms" />
         <module name="zxl_service_user" />
         <module name="zxl_service_web" />

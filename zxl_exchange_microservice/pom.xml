@@ -18,6 +18,7 @@
         <module>zxl_service_manager</module>
         <module>zxl_service_web</module>
         <module>zxl_service_config</module>
+        <module>zxl_service_market</module>
     </modules>
 
 
