@@ -19,6 +19,7 @@
         <module>zxl_service_web</module>
         <module>zxl_service_config</module>
         <module>zxl_service_market</module>
+        <module>zxl_service_wallet</module>
     </modules>
 
 

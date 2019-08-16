@@ -15,6 +15,7 @@
         <module name="zxl_service_market" />
         <module name="zxl_service_sms" />
         <module name="zxl_service_user" />
+        <module name="zxl_service_wallet" />
         <module name="zxl_service_web" />
       </profile>
     </annotationProcessing>

@@ -23,7 +23,7 @@ public class BannerController {
 
     @GetMapping
     public Result<List<ZxlBanner>> findAll() {
-        return new Result<>(true, StatusCode.OK, "OK", bannerService.findAll());
+        return new Result<>(true, StatusCode.OK, "OK", bannerService.bannerList());
     }
 
 }

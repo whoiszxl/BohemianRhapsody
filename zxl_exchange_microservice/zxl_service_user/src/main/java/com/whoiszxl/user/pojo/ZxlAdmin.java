@@ -4,6 +4,9 @@ import com.whoiszxl.base.pojo.BasePojo;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 /**
@@ -12,6 +15,8 @@ import java.time.LocalDateTime;
  **/
 @Data
 @Accessors(chain = true)
+@Entity
+@Table(name="zxl_admin")
 public class ZxlAdmin extends BasePojo {
 
     private static final long serialVersionUID = 1L;
@@ -19,6 +24,7 @@ public class ZxlAdmin extends BasePojo {
     /**
      * 主键Id
      */
+    @Id
     private String id;
 
 

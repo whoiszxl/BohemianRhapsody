@@ -1,7 +1,8 @@
 package com.whoiszxl.common.service;
 
-import com.whoiszxl.base.service.BaseService;
 import com.whoiszxl.common.pojo.ZxlBanner;
+
+import java.util.List;
 
 /**
  * <p>
@@ -11,5 +12,7 @@ import com.whoiszxl.common.pojo.ZxlBanner;
  * @author whoiszxl
  * @since 2019-08-08
  */
-public interface BannerService extends BaseService<ZxlBanner> {
+public interface BannerService {
+
+    List<ZxlBanner> bannerList();
 }

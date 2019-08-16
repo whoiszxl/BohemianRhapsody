@@ -1,17 +1,18 @@
 package com.whoiszxl.base.pojo;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
 @Data
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@MappedSuperclass
 public abstract class BasePojo {
 
     /**

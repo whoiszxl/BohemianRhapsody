@@ -1,14 +1,18 @@
 package com.whoiszxl.common.pojo;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.whoiszxl.base.pojo.BasePojo;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 @Data
 @Accessors(chain = true)
-@TableName("zxl_banner")
+@Entity
+@Table(name = "zxl_banner")
 public class ZxlBanner extends BasePojo {
 
 
@@ -17,6 +21,7 @@ public class ZxlBanner extends BasePojo {
     /**
      * 主键Id
      */
+    @Id
     private String id;
 
     /**

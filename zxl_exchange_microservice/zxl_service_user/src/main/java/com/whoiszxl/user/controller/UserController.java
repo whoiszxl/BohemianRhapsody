@@ -41,13 +41,6 @@ public class UserController {
         return Result.buildSuccess(commonClient.findAll());
     }
 
-
-    @GetMapping
-    public Result<List<ZxlUser>> findAll() {
-        return Result.buildSuccess(userService.findAll());
-    }
-
-
     /**
      * 发送短信接口
      * @param smsRequest mobile 手机号
@@ -77,10 +70,7 @@ public class UserController {
         }
 
         //入库
-        isSuccess = userService.registerToDb(registerRequest);
-        if(!isSuccess) {
-            return Result.buildError("注册失败");
-        }
+        userService.registerToDb(registerRequest);
         return Result.buildSuccess("注册成功");
     }
 

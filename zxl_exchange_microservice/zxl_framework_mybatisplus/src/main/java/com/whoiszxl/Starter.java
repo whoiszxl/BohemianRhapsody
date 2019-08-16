@@ -47,7 +47,7 @@ public class Starter {
         mpg.setGlobalConfig(gc);
 // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://118.126.92.128:13303/zxl_exchange_user?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true");
+        dsc.setUrl("jdbc:mysql://118.126.92.128:13305/zxl_exchange_wallet?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true");
 // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");

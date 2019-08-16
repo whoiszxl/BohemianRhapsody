@@ -1,8 +1,5 @@
 package com.whoiszxl.user.service.impl;
 
-import com.whoiszxl.base.service.BaseServiceImpl;
-import com.whoiszxl.user.mapper.AdminMapper;
-import com.whoiszxl.user.pojo.ZxlAdmin;
 import com.whoiszxl.user.service.AdminService;
 import org.springframework.stereotype.Service;
 
@@ -12,5 +9,5 @@ import org.springframework.stereotype.Service;
  * @create: 2019-08-08
  **/
 @Service
-public class AdminServiceImpl extends BaseServiceImpl<AdminMapper, ZxlAdmin> implements AdminService {
+public class AdminServiceImpl implements AdminService {
 }

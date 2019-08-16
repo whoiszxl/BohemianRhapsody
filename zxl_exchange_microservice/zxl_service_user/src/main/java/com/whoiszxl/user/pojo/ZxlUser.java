@@ -7,6 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 /**
@@ -18,6 +21,8 @@ import java.time.LocalDateTime;
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name="zxl_user")
 public class ZxlUser extends BasePojo {
 
     private static final long serialVersionUID = 1L;
@@ -26,6 +31,7 @@ public class ZxlUser extends BasePojo {
     /**
      * 主键Id
      */
+    @Id
     private String id;
 
     /**

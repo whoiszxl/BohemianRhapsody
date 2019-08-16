@@ -56,6 +56,48 @@ CREATE TABLE `zxl_admin` (
   UNIQUE KEY `idx_phone` (`phone`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='管理员表';
 
+DROP TABLE IF EXISTS `zxl_currency`;
+CREATE TABLE `zxl_currency` (
+  `id` int(10) NOT NULL COMMENT '主键ID',
+  `currency_name` varchar(32) NOT NULL COMMENT '货币名称',
+  `currency_mark` varchar(32) NOT NULL COMMENT '英文标识',
+  `currency_logo` varchar(255) NOT NULL COMMENT '货币logo',
+  `currency_type` varchar(10) NOT NULL DEFAULT 'mainnet' COMMENT '货币类型： mainnet：主网币 token：代币',
+  `currency_content` text NOT NULL COMMENT '币种描述',
+  `currency_total_num` decimal(40,4) DEFAULT '0.0000' COMMENT '币总数量',
+  `currency_decimals_num` int(3) DEFAULT 18 COMMENT '币种小数位',
+  `currency_buy_fee` float(64,4) NOT NULL DEFAULT '0' COMMENT '买入手续费',
+  `currency_sell_fee` float(64,4) NOT NULL DEFAULT '0' COMMENT '卖出手续费',
+  `currency_url` varchar(128) NOT NULL COMMENT '该币种的链接地址',
+  `contract_abi` longtext COMMENT '智能合约abi接口',
+  `contract_address` varchar(128) NOT NULL DEFAULT '' COMMENT '智能合约地址',
+  `rpc_url` varchar(255) NOT NULL DEFAULT '' COMMENT 'rpc路径',
+  `rpc_username` varchar(255) NOT NULL DEFAULT '' COMMENT 'rpc用户名',
+  `rpc_password` varchar(255) NOT NULL DEFAULT '' COMMENT 'rpc密码',
+  `max_withdraw` int(10) NOT NULL DEFAULT '0' COMMENT '最大提币额',
+  `min_withdraw` int(10) NOT NULL DEFAULT '0' COMMENT '最小提币额',
+  `wallet_url` varchar(64) NOT NULL DEFAULT '' COMMENT '钱包储存路径',
+  `wallet_key` varchar(64) NOT NULL DEFAULT '' COMMENT '钱包密钥',
+  `sort` int(10) NOT NULL DEFAULT '0' COMMENT '展示顺序',
+  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '币种状态，0：关闭 1：开启',
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='币种表';
 
-docker run ‐di ‐‐name=tensquare_redis ‐p 6379:6379 redis
 
+
+DROP TABLE IF EXISTS `zxl_user_address`;
+CREATE TABLE `zxl_user_address` (
+  `id` varchar(20) NOT NULL COMMENT '主键ID',
+  `user_id` varchar(20) NOT NULL COMMENT '用户ID',
+  `currency_id` int(10) NOT NULL COMMENT '币种ID',
+  `recharge_address` varchar(255) NOT NULL COMMENT '充值地址',
+  `private_key` varchar(255) NOT NULL DEFAULT '' COMMENT '私钥',
+  `password` varchar(255) NOT NULL DEFAULT '' COMMENT '密码',
+  `keystore` LONGTEXT COMMENT 'keystore',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '钱包状态，0：关闭 1：开启',
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='币种表';
