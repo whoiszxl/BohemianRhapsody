@@ -1,5 +1,5 @@
 server:
-  port: 9005
+  port: 19019
 spring:
   application:
     name: zxl-service-wallet
@@ -10,10 +10,6 @@ spring:
     password: root
   redis:
     host: 118.126.92.128
-  rabbitmq:
-    host: 118.126.92.128
-    username: guest
-    password: 123456
 
 eureka:
   client:
@@ -25,3 +21,10 @@ eureka:
 feign:
   hystrix:
     enabled: true
+
+feign:
+  client:
+    rpc:
+      username: admin1
+      password: 123
+      url: http://47.106.236.32:19001

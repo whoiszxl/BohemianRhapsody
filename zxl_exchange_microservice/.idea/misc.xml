@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/xxl-job-master/xxl-job-executor-samples/xxl-job-executor-sample-jfinal" />
+    <file type="web" url="file://$PROJECT_DIR$/xxl-job-master/xxl-job-executor-samples/xxl-job-executor-sample-nutz" />
+    <file type="web" url="file://$PROJECT_DIR$/xxl-job-master/xxl-job-executor-samples/xxl-job-executor-sample-spring" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -8,6 +13,9 @@
         <option value="$PROJECT_DIR$/zxl_framework_common/pom.xml" />
         <option value="$PROJECT_DIR$/zxl_framework_base/pom.xml" />
         <option value="$PROJECT_DIR$/zxl_service_common/pom.xml" />
+        <option value="$PROJECT_DIR$/xxl-job-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/xxl-job-core/pom.xml" />
+        <option value="$PROJECT_DIR$/xxl-job-master/pom.xml" />
       </list>
     </option>
   </component>

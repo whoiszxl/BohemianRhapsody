@@ -17,9 +17,20 @@
         <module name="zxl_service_user" />
         <module name="zxl_service_wallet" />
         <module name="zxl_service_web" />
+        <module name="zxl_wallet_btc" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="xxl-job" target="1.7" />
+      <module name="xxl-job-admin" target="1.7" />
+      <module name="xxl-job-core" target="1.7" />
+      <module name="xxl-job-executor-sample-frameless" target="1.7" />
+      <module name="xxl-job-executor-sample-jboot" target="1.8" />
+      <module name="xxl-job-executor-sample-jfinal" target="1.7" />
+      <module name="xxl-job-executor-sample-nutz" target="1.7" />
+      <module name="xxl-job-executor-sample-spring" target="1.7" />
+      <module name="xxl-job-executor-sample-springboot" target="1.7" />
+      <module name="xxl-job-executor-samples" target="1.7" />
       <module name="zxl_framework_common" target="1.8" />
       <module name="zxl_service_base" target="1.8" />
     </bytecodeTargetLevel>

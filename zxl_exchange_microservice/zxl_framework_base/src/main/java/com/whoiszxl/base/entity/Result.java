@@ -10,9 +10,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @Accessors(chain = true)
 public class Result<T> {
-
-    /** 是否成功 */
-    private boolean flag;
+    
     /** 返回码 */
     private Integer code;
     /** 返回信息 */
@@ -20,44 +18,38 @@ public class Result<T> {
     /** 返回数据 */
     private T data;
 
-    public Result(boolean flag, Integer code, String message) {
-        this.flag = flag;
+    public Result(Integer code, String message) {
         this.code = code;
         this.message = message;
     }
 
-    public static Result buildError() {
-        Result result = new Result();
-        return result.setFlag(false).setCode(StatusCode.ERROR).setMessage("error");
+    public static <T> Result<T> buildError() {
+        Result<T> result = new Result<T>();
+        return result.setCode(StatusCode.ERROR).setMessage("error");
     }
 
-    public static Result buildError(String message) {
-        Result result = new Result();
-        return result.setFlag(false).setCode(StatusCode.ERROR).setMessage(message);
+    public static <T> Result<T> buildError(String message) {
+        Result<T> result = new Result<T>();
+        return result.setCode(StatusCode.ERROR).setMessage(message);
     }
 
-    public static Result buildError(int errorCode, String message) {
-        Result result = new Result();
-        return result.setFlag(false).setCode(StatusCode.ERROR).setMessage(message);
+    public static <T> Result<T> buildError(int errorCode, String message) {
+        Result<T> result = new Result<T>();
+        return result.setCode(StatusCode.ERROR).setMessage(message);
     }
 
-    public static Result buildSuccess(String message) {
-        Result result = new Result();
-        return result.setFlag(true).setCode(StatusCode.OK).setMessage(message);
+    public static <T> Result<T> buildSuccess(T data) {
+        return buildSuccess("success", data);
     }
 
-    public static Result buildSuccess(Object data) {
-        Result result = new Result();
-        return result.setFlag(true).setCode(StatusCode.OK).setMessage("success").setData(data);
+    public static <T> Result<T> buildSuccess(String message, T data) {
+        Result<T> result = new Result<T>();
+        result.setCode(StatusCode.OK).setMessage(message).setData(data);
+        return result;
     }
 
-    public static Result buildSuccess(String message, Object data) {
-        Result result = new Result();
-        return result.setFlag(true).setCode(StatusCode.OK).setMessage(message).setData(data);
-    }
-
-    public static Result buildSuccess() {
-        Result result = new Result();
-        return result.setFlag(true).setCode(StatusCode.OK).setMessage("success");
+    public static <T> Result<T> buildSuccess() {
+        Result<T> result = new Result<T>();
+        return result.setCode(StatusCode.OK).setMessage("success");
     }
 }
