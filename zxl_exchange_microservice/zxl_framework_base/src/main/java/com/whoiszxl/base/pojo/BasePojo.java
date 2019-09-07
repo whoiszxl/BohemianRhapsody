@@ -1,14 +1,13 @@
 package com.whoiszxl.base.pojo;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 
-@Data
+@Setter
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,4 +23,12 @@ public abstract class BasePojo {
      * 更新时间
      */
     private LocalDateTime updatedAt;
+
+    public Long getCreatedAt() {
+        return createdAt.toInstant(ZoneOffset.of("+8")).toEpochMilli();
+    }
+
+    public Long getUpdatedAt() {
+        return updatedAt.toInstant(ZoneOffset.of("+8")).toEpochMilli();
+    }
 }

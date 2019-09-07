@@ -1,6 +1,6 @@
-package com.whoiszxl.wallet.dao;
+package com.whoiszxl.wallet.base.dao;
 
-import com.whoiszxl.wallet.pojo.ZxlUserAddress;
+import com.whoiszxl.wallet.base.pojo.ZxlUserAddress;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 

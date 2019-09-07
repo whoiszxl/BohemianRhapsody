@@ -1,6 +1,7 @@
 package com.whoiszxl.btc.controller;
 
 import com.whoiszxl.base.entity.Result;
+import com.whoiszxl.btc.pojo.TransactionInfoResponse;
 import com.whoiszxl.btc.service.BitcoinService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,16 @@ public class WalletController {
         String balance = bitcoinService.getBalance();
         if(StringUtils.isNotBlank(balance)) {
             return Result.buildSuccess(balance);
+        }
+        return Result.buildError();
+    }
+
+    @PostMapping("/getTransaction")
+    public Result<TransactionInfoResponse> getTransaction(@RequestBody Map params) {
+        String txHash = (String) params.get("txHash");
+        TransactionInfoResponse transaction = bitcoinService.getTransaction(txHash);
+        if(transaction != null) {
+            return Result.buildSuccess(transaction);
         }
         return Result.buildError();
     }

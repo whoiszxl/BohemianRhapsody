@@ -9,24 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zxl_service_wallet</artifactId>
+    <artifactId>zxl_framework_wallet_base</artifactId>
 
 
     <dependencies>
         <dependency>
             <groupId>com.whoiszxl</groupId>
-            <artifactId>zxl_framework_wallet_base</artifactId>
+            <artifactId>zxl_framework_base</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
-
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        
     </dependencies>
-
 
 </project>

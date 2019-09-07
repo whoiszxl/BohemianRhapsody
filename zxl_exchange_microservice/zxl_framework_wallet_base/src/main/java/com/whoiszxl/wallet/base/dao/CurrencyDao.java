@@ -1,10 +1,11 @@
-package com.whoiszxl.wallet.dao;
+package com.whoiszxl.wallet.base.dao;
 
-import com.whoiszxl.wallet.pojo.ZxlCurrency;
+import com.whoiszxl.wallet.base.pojo.ZxlCurrency;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
 
 /**
  * @description: currency dao层
@@ -13,5 +14,8 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  **/
 public interface CurrencyDao extends JpaRepository<ZxlCurrency, Integer>,JpaSpecificationExecutor<ZxlCurrency> {
 
-    Page<ZxlCurrency> queryByStatusOrderByCreatedAtDesc(Integer status, Pageable pageable);
+    @Query(value = "select * from zxl_currency where status = ?1",
+    countQuery = "select count(*) from zxl_currency where status = ?1",
+    nativeQuery = true)
+    Page<ZxlCurrency> findByStatusOrderByCreatedAtDesc(String status, Pageable pageable);
 }

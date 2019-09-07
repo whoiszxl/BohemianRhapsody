@@ -1,7 +1,7 @@
 package com.whoiszxl.wallet.service;
 
-import com.whoiszxl.wallet.pojo.ZxlCurrency;
-import com.whoiszxl.wallet.pojo.request.PageRequest;
+import com.whoiszxl.base.entity.ZxlPageRequest;
+import com.whoiszxl.wallet.base.pojo.ZxlCurrency;
 
 import java.util.List;
 
@@ -20,6 +20,6 @@ public interface ZxlCurrencyService {
      * @param pageRequest
      * @return
      */
-    List<ZxlCurrency> queryPageByStatus(PageRequest pageRequest);
+    List<ZxlCurrency> queryPageByStatus(ZxlPageRequest pageRequest);
 
 }

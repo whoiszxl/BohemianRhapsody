@@ -1,35 +1,21 @@
-package com.whoiszxl.wallet.pojo;
+package com.whoiszxl.wallet.pojo.vo;
 
-import com.whoiszxl.base.pojo.BasePojo;
 import lombok.Data;
-import lombok.experimental.Accessors;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 /**
- * <p>
- * 币种表
- * </p>
- *
- * @author whoiszxl
- * @since 2019-08-15
- */
+ * @description: currency vo类
+ * @author: whoiszxl
+ * @create: 2019-09-07
+ **/
 @Data
-@Accessors(chain = true)
-@Entity
-@Table(name = "zxl_currency")
-public class ZxlCurrency extends BasePojo {
+public class ZxlCurrencyVo {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 货币名称
      */
-    @Id
     private String currencyName;
 
     /**
@@ -65,12 +51,12 @@ public class ZxlCurrency extends BasePojo {
     /**
      * 买入手续费
      */
-    private Float currencyBuyFee;
+    private BigDecimal currencyBuyFee;
 
     /**
      * 卖出手续费
      */
-    private Float currencySellFee;
+    private BigDecimal currencySellFee;
 
     /**
      * 该币种的链接地址
@@ -78,49 +64,19 @@ public class ZxlCurrency extends BasePojo {
     private String currencyUrl;
 
     /**
-     * 智能合约abi接口
-     */
-    private String contractAbi;
-
-    /**
-     * 智能合约地址
-     */
-    private String contractAddress;
-
-    /**
-     * rpc路径
-     */
-    private String rpcUrl;
-
-    /**
-     * rpc用户名
-     */
-    private String rpcUsername;
-
-    /**
-     * rpc密码
-     */
-    private String rpcPassword;
-
-    /**
      * 最大提币额
      */
-    private Integer maxWithdraw;
+    private BigDecimal maxWithdraw;
 
     /**
      * 最小提币额
      */
-    private Integer minWithdraw;
+    private BigDecimal minWithdraw;
 
     /**
-     * 钱包储存路径
+     * 提币手续费
      */
-    private String walletUrl;
-
-    /**
-     * 钱包密钥
-     */
-    private String walletKey;
+    private BigDecimal feeWithdraw;
 
     /**
      * 展示顺序
@@ -132,5 +88,14 @@ public class ZxlCurrency extends BasePojo {
      */
     private Integer status;
 
+    /**
+     * 创建时间
+     */
+    private Long createdAt;
+
+    /**
+     * 更新时间
+     */
+    private Long updatedAt;
 
 }

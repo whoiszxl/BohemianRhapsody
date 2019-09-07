@@ -1,8 +1,10 @@
 package com.whoiszxl.wallet.controller;
 
 import com.whoiszxl.base.entity.Result;
-import com.whoiszxl.wallet.pojo.ZxlCurrency;
-import com.whoiszxl.wallet.pojo.request.PageRequest;
+import com.whoiszxl.base.entity.ZxlPageRequest;
+import com.whoiszxl.base.utils.VoPoConverter;
+import com.whoiszxl.wallet.base.pojo.ZxlCurrency;
+import com.whoiszxl.wallet.pojo.vo.ZxlCurrencyVo;
 import com.whoiszxl.wallet.service.ZxlCurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,9 +26,10 @@ public class WalletController {
 
 
     @PostMapping("/currencyList")
-    public Result currencyList(@RequestBody PageRequest pageRequest){
+    public Result<List<ZxlCurrencyVo>> currencyList(@RequestBody ZxlPageRequest pageRequest){
         //获取币种列表
         List<ZxlCurrency> zxlCurrencies = zxlCurrencyService.queryPageByStatus(pageRequest);
-        return Result.buildSuccess(zxlCurrencies);
+        List<ZxlCurrencyVo> zxlCurrencyVos = VoPoConverter.copyList(zxlCurrencies, ZxlCurrencyVo.class);
+        return Result.buildSuccess(zxlCurrencyVos);
     }
 }
