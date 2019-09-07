@@ -21,6 +21,7 @@
         <module>zxl_service_market</module>
         <module>zxl_service_wallet</module>
         <module>zxl_wallet_btc</module>
+        <module>zxl_framework_wallet_base</module>
     </modules>
 
 
