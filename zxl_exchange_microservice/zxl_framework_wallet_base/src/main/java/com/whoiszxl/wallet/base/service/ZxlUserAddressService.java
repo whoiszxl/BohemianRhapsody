@@ -1,4 +1,4 @@
-package com.whoiszxl.wallet.service;
+package com.whoiszxl.wallet.base.service;
 
 /**
  * <p>

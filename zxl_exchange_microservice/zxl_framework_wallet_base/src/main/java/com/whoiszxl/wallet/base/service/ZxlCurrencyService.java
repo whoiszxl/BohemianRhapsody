@@ -1,4 +1,4 @@
-package com.whoiszxl.wallet.service;
+package com.whoiszxl.wallet.base.service;
 
 import com.whoiszxl.base.entity.ZxlPageRequest;
 import com.whoiszxl.wallet.base.pojo.ZxlCurrency;

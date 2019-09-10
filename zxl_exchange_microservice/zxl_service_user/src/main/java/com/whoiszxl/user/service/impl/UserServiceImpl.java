@@ -80,4 +80,9 @@ public class UserServiceImpl implements UserService {
         return map;
     }
 
+    @Override
+    public void removeVerifyInRedis(String mobile) {
+        redisUtils.delete(UserRedisPrefixEnum.USER_REGISTER_PHONE_CODE.getKey() + mobile);
+    }
+
 }

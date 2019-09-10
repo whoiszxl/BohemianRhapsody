@@ -69,8 +69,10 @@ public class UserController {
             return Result.buildError("验证码输入错误");
         }
 
-        //入库
+        //入库并清除验证码
         userService.registerToDb(registerRequest);
+        userService.removeVerifyInRedis(registerRequest.getMobile());
+
         return Result.buildSuccess("注册成功");
     }
 

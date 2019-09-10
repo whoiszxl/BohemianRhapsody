@@ -1,6 +1,6 @@
-package com.whoiszxl.wallet.service.impl;
+package com.whoiszxl.wallet.base.service.impl;
 
-import com.whoiszxl.wallet.service.ZxlUserAddressService;
+import com.whoiszxl.wallet.base.service.ZxlUserAddressService;
 import org.springframework.stereotype.Service;
 
 /**

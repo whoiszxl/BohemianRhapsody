@@ -25,4 +25,6 @@ public interface UserService {
     ZxlUser login(String phone, String password);
 
     Map<String,Object> issueSign(ZxlUser zxlUser, String roleName);
+
+    void removeVerifyInRedis(String mobile);
 }

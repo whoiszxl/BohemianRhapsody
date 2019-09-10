@@ -1,9 +1,9 @@
-package com.whoiszxl.wallet.service.impl;
+package com.whoiszxl.wallet.base.service.impl;
 
 import com.whoiszxl.base.entity.ZxlPageRequest;
 import com.whoiszxl.wallet.base.dao.CurrencyDao;
 import com.whoiszxl.wallet.base.pojo.ZxlCurrency;
-import com.whoiszxl.wallet.service.ZxlCurrencyService;
+import com.whoiszxl.wallet.base.service.ZxlCurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

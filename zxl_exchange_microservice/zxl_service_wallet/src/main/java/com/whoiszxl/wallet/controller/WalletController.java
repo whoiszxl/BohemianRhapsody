@@ -4,8 +4,8 @@ import com.whoiszxl.base.entity.Result;
 import com.whoiszxl.base.entity.ZxlPageRequest;
 import com.whoiszxl.base.utils.VoPoConverter;
 import com.whoiszxl.wallet.base.pojo.ZxlCurrency;
+import com.whoiszxl.wallet.base.service.ZxlCurrencyService;
 import com.whoiszxl.wallet.pojo.vo.ZxlCurrencyVo;
-import com.whoiszxl.wallet.service.ZxlCurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
