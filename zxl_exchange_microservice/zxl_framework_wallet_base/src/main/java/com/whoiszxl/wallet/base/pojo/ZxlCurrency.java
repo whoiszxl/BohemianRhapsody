@@ -26,10 +26,16 @@ public class ZxlCurrency extends BasePojo {
 
     private static final long serialVersionUID = 1L;
 
+
+    /**
+     * 货币ID
+     */
+    @Id
+    private Integer id;
+
     /**
      * 货币名称
      */
-    @Id
     private String currencyName;
 
     /**

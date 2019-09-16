@@ -1,6 +1,8 @@
-package com.whoiszxl.user.filter;
+package com.whoiszxl.wallet.filter;
 
+import com.whoiszxl.base.entity.Result;
 import com.whoiszxl.base.enums.role.UserRoleEnum;
+import com.whoiszxl.base.exception.ExceptionCast;
 import com.whoiszxl.base.jwt.JwtUtils;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
@@ -45,13 +47,13 @@ public class JwtInterceptor implements HandlerInterceptor {
                 Claims claims = jwtUtils.parseJWT(token);
                 String roles = (String) claims.get("roles");
                 if(StringUtils.equals(roles, UserRoleEnum.ROLE_ADMIN.getRoleName())){
-                    request.setAttribute(UserRoleEnum.ROLE_ADMIN.getRoleAttrKey(), token);
+                    request.setAttribute(UserRoleEnum.ROLE_ADMIN.getRoleAttrKey(), claims);
                 }
                 if(StringUtils.equals(roles, UserRoleEnum.ROLE_USER.getRoleName())){
-                    request.setAttribute(UserRoleEnum.ROLE_USER.getRoleAttrKey(), token);
+                    request.setAttribute(UserRoleEnum.ROLE_USER.getRoleAttrKey(), claims);
                 }
             }catch (Exception e){
-                throw new RuntimeException("令牌不正确！");
+                ExceptionCast.cast(Result.buildError("令牌不正确！"));
             }
         }
 

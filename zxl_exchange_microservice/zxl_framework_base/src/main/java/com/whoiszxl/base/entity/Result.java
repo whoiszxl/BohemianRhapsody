@@ -5,6 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+/**
+ * 返回实体类
+ * @see StatusCode 返回值状态对应关系
+ * @param <T>
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,6 +26,10 @@ public class Result<T> {
     public Result(Integer code, String message) {
         this.code = code;
         this.message = message;
+    }
+
+    public boolean isOk() {
+        return this.code.equals(StatusCode.OK);
     }
 
     public static <T> Result<T> buildError() {

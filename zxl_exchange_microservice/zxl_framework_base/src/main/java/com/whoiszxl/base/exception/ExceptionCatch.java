@@ -28,7 +28,6 @@ public class ExceptionCatch {
     @ExceptionHandler(CustomException.class)
     @ResponseBody
     public Result customException(CustomException customException){
-        customException.printStackTrace();
         //记录日志
         LOGGER.error("catch exception:{}",customException.getMessage());
         Result resultCode = customException.getResultCode();
@@ -40,6 +39,14 @@ public class ExceptionCatch {
     @ResponseBody
     public Result validateException(ValidateException validateException){
         Result resultCode = validateException.getResultCode();
+        return resultCode;
+    }
+
+    //捕获常用Exception此类异常
+    @ExceptionHandler(NormalException.class)
+    @ResponseBody
+    public Result normalException(NormalException normalException){
+        Result resultCode = normalException.getResultCode();
         return resultCode;
     }
 

@@ -1,8 +1,7 @@
 package com.whoiszxl.wallet.base.pojo;
 
 import com.whoiszxl.base.pojo.BasePojo;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
@@ -21,15 +20,23 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @Accessors(chain = true)
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "zxl_user_address")
-public class ZxlUserAddress extends BasePojo {
+public class ZxlUserAddress {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * 用户ID
+     * 主键ID
      */
     @Id
+    private String id;
+
+    /**
+     * 用户ID
+     */
     private String userId;
 
     /**
@@ -60,7 +67,17 @@ public class ZxlUserAddress extends BasePojo {
     /**
      * 钱包状态，0：关闭 1：开启
      */
-    private Boolean status;
+    private Integer status;
+
+    /**
+     * 创建时间
+     */
+    private LocalDateTime createdAt;
+
+    /**
+     * 更新时间
+     */
+    private LocalDateTime updatedAt;
 
 
 }

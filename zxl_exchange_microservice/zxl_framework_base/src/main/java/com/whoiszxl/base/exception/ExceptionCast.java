@@ -12,4 +12,8 @@ public class ExceptionCast {
         throw new ValidateException(result);
     }
 
+    public static void castNormalEx(Result result) {
+        throw new NormalException(result);
+    }
+
 }

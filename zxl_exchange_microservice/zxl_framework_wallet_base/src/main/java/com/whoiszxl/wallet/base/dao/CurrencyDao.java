@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
+
 /**
  * @description: currency dao层
  * @author: whoiszxl
@@ -18,4 +20,9 @@ public interface CurrencyDao extends JpaRepository<ZxlCurrency, Integer>,JpaSpec
     countQuery = "select count(*) from zxl_currency where status = ?1",
     nativeQuery = true)
     Page<ZxlCurrency> findByStatusOrderByCreatedAtDesc(String status, Pageable pageable);
+
+    @Query(value = "select * from zxl_currency where status = ?1 order by sort desc",
+    countQuery = "select count(*) from zxl_currency where status = ?1",
+    nativeQuery = true)
+    List<ZxlCurrency> findAvailCurrencyList(Integer status);
 }

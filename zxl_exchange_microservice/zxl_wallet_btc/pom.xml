@@ -17,7 +17,7 @@
 
         <dependency>
             <groupId>com.whoiszxl</groupId>
-            <artifactId>zxl_framework_base</artifactId>
+            <artifactId>zxl_framework_wallet_base</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

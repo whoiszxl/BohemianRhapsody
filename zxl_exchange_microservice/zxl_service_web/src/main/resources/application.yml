@@ -19,3 +19,7 @@ zuul:
       path: /common/**
       serverId: zxl-service-common
       stripPrefix: false
+    zxl-service-wallet:
+      path: /address/**
+      serverId: zxl-service-wallet
+      stripPrefix: false

@@ -12,8 +12,9 @@ import java.util.concurrent.TimeUnit;
 @Getter
 @AllArgsConstructor
 public enum UserRoleEnum {
-    ROLE_ADMIN("admin"),
-    ROLE_USER("user")
+    ROLE_ADMIN("claims_admin", "admin"),
+    ROLE_USER("claims_user", "user")
     ;
+    private String roleAttrKey;
     private String roleName;
 }

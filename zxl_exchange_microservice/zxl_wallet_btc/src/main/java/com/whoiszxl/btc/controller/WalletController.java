@@ -3,6 +3,7 @@ package com.whoiszxl.btc.controller;
 import com.whoiszxl.base.entity.Result;
 import com.whoiszxl.btc.pojo.TransactionInfoResponse;
 import com.whoiszxl.btc.service.BitcoinService;
+import com.whoiszxl.wallet.base.pojo.walletvo.BtcRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,32 +27,18 @@ public class WalletController {
 
 
     @PostMapping("/getNewAddress")
-    public Result<String> getNewAddress(@RequestBody Map params) {
-        String userId = (String) params.get("userId");
-        String newAddress = bitcoinService.getNewAddress(userId);
-        if(StringUtils.isNotBlank(newAddress)) {
-            return Result.buildSuccess(newAddress);
-        }
-        return Result.buildError();
+    public String getNewAddress(@RequestBody BtcRequest btcRequest) {
+        return bitcoinService.getNewAddress(btcRequest.getUserId());
     }
 
 
     @PostMapping("/getBalance")
-    public Result<String> getBalance() {
-        String balance = bitcoinService.getBalance();
-        if(StringUtils.isNotBlank(balance)) {
-            return Result.buildSuccess(balance);
-        }
-        return Result.buildError();
+    public String getBalance() {
+        return bitcoinService.getBalance();
     }
 
     @PostMapping("/getTransaction")
-    public Result<TransactionInfoResponse> getTransaction(@RequestBody Map params) {
-        String txHash = (String) params.get("txHash");
-        TransactionInfoResponse transaction = bitcoinService.getTransaction(txHash);
-        if(transaction != null) {
-            return Result.buildSuccess(transaction);
-        }
-        return Result.buildError();
+    public TransactionInfoResponse getTransaction(@RequestBody BtcRequest btcRequest) {
+        return bitcoinService.getTransaction(btcRequest.getTxHash());
     }
 }

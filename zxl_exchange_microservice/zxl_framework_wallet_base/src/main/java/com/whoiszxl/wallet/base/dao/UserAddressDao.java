@@ -10,4 +10,8 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  * @create: 2019-08-16
  **/
 public interface UserAddressDao extends JpaRepository<ZxlUserAddress, String>,JpaSpecificationExecutor<ZxlUserAddress> {
+
+
+    ZxlUserAddress findByUserIdAndCurrencyIdAndStatus(String userId, Integer currencyId, Integer status);
+
 }

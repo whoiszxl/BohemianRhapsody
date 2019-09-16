@@ -32,4 +32,9 @@ public class WalletController {
         List<ZxlCurrencyVo> zxlCurrencyVos = VoPoConverter.copyList(zxlCurrencies, ZxlCurrencyVo.class);
         return Result.buildSuccess(zxlCurrencyVos);
     }
+
+
+    public Result<String> createAddressByCurrencyId() {
+        return null;
+    }
 }

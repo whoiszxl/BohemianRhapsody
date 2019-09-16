@@ -22,4 +22,6 @@ public interface ZxlCurrencyService {
      */
     List<ZxlCurrency> queryPageByStatus(ZxlPageRequest pageRequest);
 
+    List<ZxlCurrency> getAllCurrencyList();
+
 }

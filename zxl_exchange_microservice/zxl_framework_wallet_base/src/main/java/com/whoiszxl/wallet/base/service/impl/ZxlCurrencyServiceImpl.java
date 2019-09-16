@@ -1,6 +1,7 @@
 package com.whoiszxl.wallet.base.service.impl;
 
 import com.whoiszxl.base.entity.ZxlPageRequest;
+import com.whoiszxl.base.enums.normal.SwitchStatusEnum;
 import com.whoiszxl.wallet.base.dao.CurrencyDao;
 import com.whoiszxl.wallet.base.pojo.ZxlCurrency;
 import com.whoiszxl.wallet.base.service.ZxlCurrencyService;
@@ -31,5 +32,11 @@ public class ZxlCurrencyServiceImpl implements ZxlCurrencyService {
         Pageable pageable = PageRequest.of(zxlPageRequest.getPageNumber(), zxlPageRequest.getPageSize());
         Page<ZxlCurrency> zxlCurrencies = currencyDao.findByStatusOrderByCreatedAtDesc(zxlPageRequest.getStatus(), pageable);
         return zxlCurrencies.getContent();
+    }
+
+    @Override
+    public List<ZxlCurrency> getAllCurrencyList() {
+        List<ZxlCurrency> availCurrencyList = currencyDao.findAvailCurrencyList(SwitchStatusEnum.STATUS_OPEN.getStatusCode());
+        return availCurrencyList;
     }
 }
