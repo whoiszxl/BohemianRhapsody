@@ -1,8 +1,7 @@
 package com.whoiszxl.wallet.base.pojo;
 
 import com.whoiszxl.base.pojo.BasePojo;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
@@ -21,16 +20,24 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Accessors(chain = true)
 @Table(name = "zxl_user_recharge")
-public class ZxlUserRecharge extends BasePojo {
+public class ZxlUserRecharge {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * 用户ID
+     * 主键Id
      */
     @Id
+    private String id;
+
+    /**
+     * 用户ID
+     */
     private String userId;
 
     /**
@@ -71,12 +78,22 @@ public class ZxlUserRecharge extends BasePojo {
     /**
      * 上链状态，0：失败 1：成功 2：上链后等待确认中
      */
-    private Boolean upchainStatus;
+    private Integer upchainStatus;
 
     /**
      * 当前交易所处区块的高度
      */
     private Integer height;
+
+    /**
+     * 创建时间
+     */
+    private LocalDateTime createdAt;
+
+    /**
+     * 更新时间
+     */
+    private LocalDateTime updatedAt;
 
 
 }

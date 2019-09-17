@@ -1,7 +1,9 @@
 package com.whoiszxl.wallet.base.pojo;
 
 import com.whoiszxl.base.pojo.BasePojo;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Column;
@@ -9,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -20,9 +23,11 @@ import java.math.BigDecimal;
  */
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Accessors(chain = true)
 @Table(name = "zxl_currency")
-public class ZxlCurrency extends BasePojo {
+public class ZxlCurrency {
 
     private static final long serialVersionUID = 1L;
 
@@ -143,5 +148,15 @@ public class ZxlCurrency extends BasePojo {
      */
     @Column(name = "status", columnDefinition = "tinyint(1)")
     private Integer status;
+
+    /**
+     * 创建时间
+     */
+    private LocalDateTime createdAt;
+
+    /**
+     * 更新时间
+     */
+    private LocalDateTime updatedAt;
 
 }

@@ -51,6 +51,14 @@ public class FastJsonUtils {
         return JSON.toJSONString(list);
     }
 
+
+    /**
+     * 序列化为JSON
+     */
+    public static <V> List<V> toList(String json, Class<V> v) {
+        return JSON.parseArray(json, v);
+    }
+
     /**
      * 序列化为JSON
      */

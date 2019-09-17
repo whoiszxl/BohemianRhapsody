@@ -32,3 +32,5 @@ zxl_exchange_microservice/zxl_service_config/src/main/resources/application.yml
 .project
 
 .idea
+
+workspace.xml

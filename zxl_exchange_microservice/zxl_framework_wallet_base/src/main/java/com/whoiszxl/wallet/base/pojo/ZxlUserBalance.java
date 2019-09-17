@@ -1,8 +1,10 @@
 package com.whoiszxl.wallet.base.pojo;
 
 import com.whoiszxl.base.pojo.BasePojo;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
@@ -20,6 +22,8 @@ import java.math.BigDecimal;
  */
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Accessors(chain = true)
 @Table(name = "zxl_user_balance")
 public class ZxlUserBalance extends BasePojo {

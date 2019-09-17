@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -64,7 +65,7 @@ public class BitcoinService {
      * @param skip 要跳过的交易数量，默认值：0
      * @return
      */
-    public ListTransactionResponse listTransactions(String account, int count, int skip) {
+    public List<ListTransactionResponse> listTransactions(String account, int count, int skip) {
         Map params = RpcParams.builder().method("listtransactions").params(new Object[]{account, count, skip}).build().get();
         String transactionsStr = bitcoinClient.getRequest(params);
         RpcBaseResponse rpcBaseResponse = FastJsonUtils.from(transactionsStr, RpcBaseResponse.class);
@@ -72,15 +73,14 @@ public class BitcoinService {
             log.warn("获取钱包交易列表失败，节点报错信息为：{}", rpcBaseResponse.getError());
             return null;
         }
-        ListTransactionResponse transactionResponse = FastJsonUtils.from(rpcBaseResponse.getResult(), ListTransactionResponse.class);
-        return transactionResponse;
+        return FastJsonUtils.toList(rpcBaseResponse.getResult(), ListTransactionResponse.class);
     }
 
     /**
      * 查询最近发生的钱包交易,默认查询所有账户，查询1000条，跳过0条
      * @return
      */
-    public ListTransactionResponse listTransactions() {
+    public List<ListTransactionResponse> listTransactions() {
         return listTransactions("*", 1000, 0);
     }
 

@@ -14,4 +14,6 @@ public interface UserAddressDao extends JpaRepository<ZxlUserAddress, String>,Jp
 
     ZxlUserAddress findByUserIdAndCurrencyIdAndStatus(String userId, Integer currencyId, Integer status);
 
+    ZxlUserAddress findByCurrencyIdAndRechargeAddressAndStatus(Integer currencyId, String rechargeAddress, Integer status);
+
 }

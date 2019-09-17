@@ -12,4 +12,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  **/
 public interface UserRechargeDao extends JpaRepository<ZxlUserRecharge, String>,JpaSpecificationExecutor<ZxlUserRecharge> {
 
+    ZxlUserRecharge findByCurrencyIdAndTxHashAndToAddress(Integer currencyId, String txid, String address);
 }

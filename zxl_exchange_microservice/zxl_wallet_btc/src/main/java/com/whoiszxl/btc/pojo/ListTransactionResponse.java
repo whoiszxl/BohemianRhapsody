@@ -2,6 +2,8 @@ package com.whoiszxl.btc.pojo;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 /**
  * @description: 交易返回值
  * @author: whoiszxl
@@ -17,7 +19,7 @@ public class ListTransactionResponse {
     private String category;
 
     /** 金额 */
-    private int amount;
+    private BigDecimal amount;
 
     /** 输出序号 */
     private int vout;
