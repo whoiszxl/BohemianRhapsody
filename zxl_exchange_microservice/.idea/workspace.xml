@@ -66,8 +66,8 @@
       <file leaf-file-name="RechargeJob.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zxl_wallet_btc/src/main/java/com/whoiszxl/btc/job/RechargeJob.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="304">
+              <caret line="89" selection-start-line="89" selection-end-line="89" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,7 +84,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZxlUserWithdraw.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ZxlUserWithdraw.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zxl_framework_wallet_base/src/main/java/com/whoiszxl/wallet/base/pojo/ZxlUserWithdraw.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
@@ -123,9 +123,16 @@
       <file leaf-file-name="ScheduledMethodRunnable.class" pinned="false" current-in-tab="false">
         <entry file="jar://E:/OpenSourceSoftware/apache-maven-3.5.3/repo/org/springframework/spring-context/5.0.5.RELEASE/spring-context-5.0.5.RELEASE.jar!/org/springframework/scheduling/support/ScheduledMethodRunnable.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="273">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zxl_wallet_btc/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-276" />
           </provider>
         </entry>
       </file>
@@ -134,24 +141,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="244">
               <caret line="31" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WalletApp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zxl_service_wallet/src/main/java/com/whoiszxl/wallet/WalletApp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BitcoinApp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zxl_wallet_btc/src/main/java/com/whoiszxl/btc/BitcoinApp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -281,7 +270,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1400" />
@@ -334,6 +323,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
+              <item name="zxl_framework_base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
@@ -648,12 +647,12 @@
       <workItem from="1568515122347" duration="21486000" />
       <workItem from="1568544558514" duration="3217000" />
       <workItem from="1568602065968" duration="14449000" />
-      <workItem from="1568705356354" duration="7563000" />
+      <workItem from="1568705356354" duration="10931000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231222000" />
+    <option name="totallyTimeSpent" value="234590000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -665,7 +664,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -742,27 +741,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zxl_service_wallet/src/main/java/com/whoiszxl/wallet/filter/JwtInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_framework_wallet_base/src/main/java/com/whoiszxl/wallet/base/service/ZxlCurrencyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/OpenSourceSoftware/apache-maven-3.5.3/repo/org/springframework/spring-context/5.0.5.RELEASE/spring-context-5.0.5.RELEASE.jar!/org/springframework/context/support/GenericApplicationContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/OpenSourceSoftware/apache-maven-3.5.3/repo/org/springframework/spring-beans/5.0.5.RELEASE/spring-beans-5.0.5.RELEASE.jar!/org/springframework/beans/factory/support/AbstractBeanFactory.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -1064,30 +1042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://E:/OpenSourceSoftware/apache-maven-3.5.3/repo/org/springframework/spring-context/5.0.5.RELEASE/spring-context-5.0.5.RELEASE.jar!/org/springframework/scheduling/support/ScheduledMethodRunnable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/OpenSourceSoftware/apache-maven-3.5.3/repo/org/springframework/spring-context/5.0.5.RELEASE/spring-context-5.0.5.RELEASE.jar!/org/springframework/scheduling/support/DelegatingErrorHandlingRunnable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_wallet_btc/src/main/java/com/whoiszxl/btc/job/RechargeJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zxl_framework_wallet_base/src/main/java/com/whoiszxl/wallet/base/pojo/ZxlCurrency.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -1121,6 +1075,49 @@
         <state relative-caret-position="345">
           <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
         </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/OpenSourceSoftware/apache-maven-3.5.3/repo/org/springframework/spring-context/5.0.5.RELEASE/spring-context-5.0.5.RELEASE.jar!/org/springframework/scheduling/support/DelegatingErrorHandlingRunnable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_wallet_btc/src/main/java/com/whoiszxl/btc/job/RechargeJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/utils/CheckPasswordUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="88" column="65" lean-forward="true" selection-start-line="88" selection-start-column="65" selection-end-line="88" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/OpenSourceSoftware/apache-maven-3.5.3/repo/org/springframework/spring-context/5.0.5.RELEASE/spring-context-5.0.5.RELEASE.jar!/org/springframework/scheduling/support/ScheduledMethodRunnable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_framework_base/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="92" column="46" lean-forward="true" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_wallet_btc/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276" />
       </provider>
     </entry>
   </component>
