@@ -129,11 +129,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zxl_wallet_btc/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="299">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zxl_framework_base/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="470">
+              <caret line="102" column="21" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -173,6 +182,7 @@
       <find>boolean</find>
       <find>log</find>
       <find>toLis</find>
+      <find>jjwt</find>
     </findStrings>
     <replaceStrings>
       <replace>whoiszxl</replace>
@@ -208,7 +218,6 @@
         <option value="$PROJECT_DIR$/zxl_service_wallet/src/main/java/com/whoiszxl/wallet/service/AddressDispenseService.java" />
         <option value="$PROJECT_DIR$/zxl_wallet_btc/src/main/java/com/whoiszxl/btc/controller/WalletController.java" />
         <option value="$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/pojo/BasePojo.java" />
-        <option value="$PROJECT_DIR$/zxl_framework_base/pom.xml" />
         <option value="$PROJECT_DIR$/zxl_service_eureka/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/zxl_service_user/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/zxl_wallet_btc/src/main/resources/application.yml" />
@@ -240,6 +249,7 @@
         <option value="$PROJECT_DIR$/zxl_framework_wallet_base/src/main/java/com/whoiszxl/wallet/base/pojo/ZxlCurrency.java" />
         <option value="$PROJECT_DIR$/zxl_framework_wallet_base/src/main/java/com/whoiszxl/wallet/base/pojo/ZxlUserBalance.java" />
         <option value="$PROJECT_DIR$/zxl_framework_wallet_base/src/main/java/com/whoiszxl/wallet/base/pojo/ZxlUserWithdraw.java" />
+        <option value="$PROJECT_DIR$/zxl_framework_base/pom.xml" />
       </list>
     </option>
   </component>
@@ -265,7 +275,23 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="zxl_framework_base" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="zxl_framework_base" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="zxl_framework_base" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="install" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
@@ -296,126 +322,13 @@
               <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
               <item name="zxl_framework_base" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_wallet_base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_wallet_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_wallet_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_wallet_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_wallet_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_wallet_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_framework_wallet_base" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_wallet_btc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_wallet_btc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_wallet_btc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_wallet_btc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_wallet_btc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="btc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_wallet_btc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="btc" type="462c0819:PsiDirectoryNode" />
-              <item name="job" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -624,11 +537,12 @@
       <workItem from="1568602065968" duration="14449000" />
       <workItem from="1568705356354" duration="10931000" />
       <workItem from="1568862957041" duration="2750000" />
+      <workItem from="1568892798931" duration="792000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237340000" />
+    <option name="totallyTimeSpent" value="238132000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -641,10 +555,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053304" side_tool="true" weight="0.3297062" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.2585288" />
+      <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.2585288" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Mongo Explorer" order="3" weight="0.32995737" />
       <window_info id="Capture Tool" order="2" />
@@ -661,10 +576,10 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Run Dashboard" order="8" weight="0.3242655" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.3297062" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.3297062" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.3297062" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3297062" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4981884" visible="true" weight="0.12313433" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4981884" visible="true" weight="0.32622603" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.32995737" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -1065,17 +980,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_framework_base/pom.xml">
+    <entry file="file://$PROJECT_DIR$/zxl_wallet_btc/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="92" column="46" lean-forward="true" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
+        <state relative-caret-position="299">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_wallet_btc/pom.xml">
+    <entry file="file://$PROJECT_DIR$/zxl_framework_base/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="470">
+          <caret line="102" column="21" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
         </state>
       </provider>
     </entry>
