@@ -1,19 +1,19 @@
 package com.whoiszxl.common.pojo;
 
-import com.whoiszxl.base.pojo.BasePojo;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 
 
 @Data
 @Accessors(chain = true)
 @Entity
 @Table(name = "zxl_banner")
-public class ZxlBanner extends BasePojo {
+public class ZxlBanner {
 
 
     private static final long serialVersionUID = 1L;
@@ -64,5 +64,14 @@ public class ZxlBanner extends BasePojo {
      */
     private Integer sort;
 
+    /**
+     * 创建时间
+     */
+    private LocalDateTime createdAt;
+
+    /**
+     * 更新时间
+     */
+    private LocalDateTime updatedAt;
 
 }
