@@ -64,73 +64,23 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zxl_service_eureka/pom.xml">
+        <entry file="file://$PROJECT_DIR$/zxl_service_common/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+            <state relative-caret-position="874">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zxl_service_manager/pom.xml">
+      <file leaf-file-name="CommonApp.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/common/CommonApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zxl_service_market/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zxl_service_sms/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zxl_service_user/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zxl_service_wallet/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zxl_service_web/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/zxl_wallet_btc/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+            <state relative-caret-position="23">
+              <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+              <folding>
+                <element signature="e#1062#1063#0" expanded="true" />
+                <element signature="e#1103#1104#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -178,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/exception/UserException.java" />
         <option value="$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/exception/ExceptionCatch.java" />
         <option value="$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/exception/ExceptionCast.java" />
         <option value="$PROJECT_DIR$/zxl_service_wallet/src/main/java/com/whoiszxl/wallet/service/AddressDispenseService.java" />
@@ -215,7 +164,6 @@
         <option value="$PROJECT_DIR$/zxl_framework_wallet_base/src/main/java/com/whoiszxl/wallet/base/pojo/ZxlUserWithdraw.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/zxl_framework_base/pom.xml" />
-        <option value="$PROJECT_DIR$/zxl_service_common/pom.xml" />
         <option value="$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/pojo/BasePojo.java" />
         <option value="$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/common/pojo/ZxlBanner.java" />
         <option value="$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/common/controller/BannerController.java" />
@@ -229,6 +177,8 @@
         <option value="$PROJECT_DIR$/zxl_service_wallet/pom.xml" />
         <option value="$PROJECT_DIR$/zxl_service_web/pom.xml" />
         <option value="$PROJECT_DIR$/zxl_wallet_btc/pom.xml" />
+        <option value="$PROJECT_DIR$/zxl_service_common/pom.xml" />
+        <option value="$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/common/CommonApp.java" />
       </list>
     </option>
   </component>
@@ -257,18 +207,12 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="zxl_framework_base" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="zxl_service_common" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="zxl_framework_base" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="zxl_framework_base" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-          <item name="install" type="36feed69:MavenProjectsStructure$PluginNode" />
+          <item name="zxl_service_common" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
       </expand>
       <select />
@@ -277,7 +221,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1400" />
@@ -289,8 +233,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -298,21 +242,11 @@
               <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_service_eureka" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zxl_exchange_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zxl_exchange_microservice" type="462c0819:PsiDirectoryNode" />
-              <item name="zxl_wallet_btc" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,7 +304,7 @@
     </option>
     <option name="contentProportion" value="0.24715447" />
   </component>
-  <component name="RunManager" selected="Application.BitcoinApp">
+  <component name="RunManager" selected="Spring Boot.CommonApp">
     <configuration name="BitcoinApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.whoiszxl.btc.BitcoinApp" />
       <module name="zxl_wallet_btc" />
@@ -459,6 +393,38 @@
       <module name="zxl_service_common" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.whoiszxl.common.CommonApp" />
     </configuration>
+    <configuration name="ConfigServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zxl_service_config" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.whoiszxl.ConfigServerApp" />
+    </configuration>
+    <configuration name="EurekaServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zxl_service_eureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.whoiszxl.eureka.EurekaServer" />
+    </configuration>
+    <configuration name="ManagerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zxl_service_manager" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.whoiszxl.manager.ManagerApp" />
+    </configuration>
+    <configuration name="MarketApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zxl_service_market" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.whoiszxl.market.MarketApp" />
+    </configuration>
+    <configuration name="SmsApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zxl_service_sms" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.whoiszxl.sms.SmsApp" />
+    </configuration>
+    <configuration name="UserApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zxl_service_user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.whoiszxl.user.UserApp" />
+    </configuration>
+    <configuration name="WalletApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zxl_service_wallet" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.whoiszxl.wallet.WalletApp" />
+    </configuration>
+    <configuration name="WebApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zxl_service_web" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.whoiszxl.web.WebApp" />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -482,12 +448,20 @@
       <listeners />
     </configuration>
     <list>
+      <item itemvalue="Spring Boot.CommonApp" />
+      <item itemvalue="Spring Boot.ConfigServerApp" />
+      <item itemvalue="Spring Boot.EurekaServer" />
+      <item itemvalue="Spring Boot.ManagerApp" />
+      <item itemvalue="Spring Boot.MarketApp" />
+      <item itemvalue="Spring Boot.SmsApp" />
+      <item itemvalue="Spring Boot.UserApp" />
+      <item itemvalue="Spring Boot.WalletApp" />
+      <item itemvalue="Spring Boot.WebApp" />
       <item itemvalue="Application.UserApp" />
       <item itemvalue="Application.EurekaServer" />
       <item itemvalue="Application.BitcoinApp" />
       <item itemvalue="Application.WalletApp" />
       <item itemvalue="Application.WebApp" />
-      <item itemvalue="Spring Boot.CommonApp" />
     </list>
     <recent_temporary>
       <list>
@@ -527,12 +501,13 @@
       <workItem from="1568705356354" duration="10931000" />
       <workItem from="1568862957041" duration="2750000" />
       <workItem from="1568892798931" duration="1739000" />
-      <workItem from="1568943161447" duration="3178000" />
+      <workItem from="1568943161447" duration="11936000" />
+      <workItem from="1569031544033" duration="407000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="242257000" />
+    <option name="totallyTimeSpent" value="251422000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -549,7 +524,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053304" side_tool="true" weight="0.3297062" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.18443497" />
+      <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.18443497" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Mongo Explorer" order="3" weight="0.32995737" />
       <window_info id="Capture Tool" order="2" />
@@ -564,7 +539,7 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" weight="0.3297062" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Run Dashboard" order="8" weight="0.3242655" />
+      <window_info anchor="bottom" id="Run Dashboard" order="8" visible="true" weight="0.3242655" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.3297062" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.3297062" />
@@ -574,11 +549,11 @@
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" sideWeight="0.5018116" side_tool="true" weight="0.17270789" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3297062" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.32995737" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.32995737" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3297062" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -621,55 +596,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zxl_service_wallet/src/main/java/com/whoiszxl/wallet/pojo/vo/ZxlUserAddressVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_user/src/main/java/com/whoiszxl/user/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="35" selection-start-line="35" selection-end-line="36" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_wallet/src/main/java/com/whoiszxl/wallet/service/AddressDispenseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_wallet/src/main/java/com/whoiszxl/wallet/service/impl/AddressDispenseServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="62" column="51" lean-forward="true" selection-start-line="62" selection-start-column="51" selection-end-line="62" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_wallet/src/main/java/com/whoiszxl/wallet/controller/WalletController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="31" column="58" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_wallet/src/main/java/com/whoiszxl/wallet/controller/AddressDispenseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_wallet_btc/src/main/java/com/whoiszxl/btc/controller/WalletController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="25" column="42" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="25" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/utils/FastJsonUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
@@ -768,13 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_wallet_btc/src/main/java/com/whoiszxl/btc/BitcoinApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/utils/CheckPasswordUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -848,13 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_framework_base/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/pojo/BasePojo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -862,71 +774,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/common/pojo/ZxlBanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/common/controller/BannerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
-          <folding>
-            <element signature="e#703#704#0" expanded="true" />
-            <element signature="e#772#773#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/enums/normal/SwitchStatusEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/common/service/impl/BannerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/common/CommonApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" selection-start-line="12" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zxl_framework_wallet_base/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_config/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
           <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
         </state>
       </provider>
@@ -940,57 +790,149 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zxl_service_eureka/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_manager/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_market/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_sms/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_user/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zxl_service_wallet/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        <state relative-caret-position="386">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zxl_service_web/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        <state relative-caret-position="823">
+          <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_wallet/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="823">
+          <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_sms/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="823">
+          <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_market/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="823">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_eureka/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="7" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_config/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_manager/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="823">
+          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_framework_base/src/main/java/com/whoiszxl/base/enums/normal/SwitchStatusEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_wallet_btc/src/main/java/com/whoiszxl/btc/BitcoinApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="22" selection-start-line="22" selection-end-line="24" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/common/service/impl/BannerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_common/src/main/resources/application.yml.delete" />
     <entry file="file://$PROJECT_DIR$/zxl_wallet_btc/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        <state relative-caret-position="713">
+          <caret line="43" column="59" selection-start-line="43" selection-start-column="59" selection-end-line="43" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_user/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276">
+          <caret line="27" selection-start-line="27" selection-end-line="31" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_common/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/common/controller/BannerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="25" column="63" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/common/dao/BannerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/common/pojo/ZxlBanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-226">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_common/target/zxl_service_common-1.0-SNAPSHOT/META-INF/maven/com.whoiszxl/zxl_service_common/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/zxl_service_common/target/zxl_service_common-1.0-SNAPSHOT/BOOT-INF/classes/bootstrap.yml" />
+    <entry file="file://$PROJECT_DIR$/zxl_service_common/target/zxl_service_common-1.0-SNAPSHOT/BOOT-INF/lib/zxl_framework_base-1.0-SNAPSHOT/BOOT-INF/classes/com/whoiszxl/base/entity/Result.class" />
+    <entry file="file://$PROJECT_DIR$/zxl_framework_base/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-897">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_common/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zxl_service_common/src/main/java/com/whoiszxl/common/CommonApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+          <folding>
+            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1000,12 +942,11 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>xxl-job-executor-sample-jfinal:war</last-edited>
+          <last-edited>zxl_framework_base:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
-                <option value="0.5" />
+                <option value="0.3091954" />
               </list>
             </option>
           </splitter-proportions>
@@ -1017,7 +958,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3091954" />
               </list>
             </option>
           </splitter-proportions>
@@ -1048,7 +989,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>zxl_exchange_microservice</last-edited>
+          <last-edited>zxl_service_common</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

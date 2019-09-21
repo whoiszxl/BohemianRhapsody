@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <packaging>jar</packaging>
     <artifactId>zxl_framework_base</artifactId>
 
     <properties>
@@ -103,9 +103,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
+                        <phase>none</phase>
                     </execution>
                 </executions>
             </plugin>
