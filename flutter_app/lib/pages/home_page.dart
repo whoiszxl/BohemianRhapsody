@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
         title: Text('波西米亚狂想曲'),
       ),
       body:SingleChildScrollView(
-        child:  Text(homePageContent) ,
+        child: Text(homePageContent),
       )
       
     

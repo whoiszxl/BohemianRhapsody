@@ -1,0 +1,30 @@
+server:
+  port: 19019
+spring:
+  application:
+    name: zxl-btc-wallet
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://118.126.92.128:13301/zxl_exchange_wallet?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
+    username: root
+    password: root
+  redis:
+    host: 118.126.92.128
+
+eureka:
+  client:
+    server-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+feign:
+  hystrix:
+    enabled: true
+
+feign:
+  client:
+    rpc:
+      username: admin1
+      password: 123
+      url: http://47.106.236.32:19001
