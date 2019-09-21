@@ -34,3 +34,5 @@ zxl_exchange_microservice/zxl_service_config/src/main/resources/application.yml
 .idea
 
 workspace.xml
+
+.classpath
