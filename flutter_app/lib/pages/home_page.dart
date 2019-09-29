@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import '../service/service_method.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -54,7 +55,8 @@ class HomeSwiper extends StatelessWidget {
   Widget build(BuildContext context) {
     // 返回一个容器包裹swiper
     return Container(
-      height: 133.0,
+      height: ScreenUtil().setHeight(333),
+      width: ScreenUtil().setWidth(750),
       child: Swiper(
         itemBuilder: (BuildContext context, int index) {
           return Image.network("${swiperDataList[index]['pic']}", fit: BoxFit.fill,);
