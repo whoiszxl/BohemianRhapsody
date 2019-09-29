@@ -160,3 +160,20 @@ CREATE TABLE `zxl_user_recharge` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户充值记录表';
+
+
+
+
+
+DROP TABLE IF EXISTS `zxl_config`;
+CREATE TABLE `zxl_config` (
+  `id` int(10) NOT NULL COMMENT '主键ID',
+  `key` varchar(32) NOT NULL COMMENT '配置键',
+  `value` text NOT NULL COMMENT '配置值',
+  `remark` varchar(32) COMMENT '配置说明',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '配置状态，0：关闭 1：开启',
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+	UNIQUE KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='币种表';
