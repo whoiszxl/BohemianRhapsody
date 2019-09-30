@@ -118,7 +118,7 @@ class TopNavigator extends StatelessWidget {
     }
     
     return Container(
-      height: ScreenUtil().setHeight(330),
+      height: ScreenUtil().setHeight(360),
       padding: EdgeInsets.all(3.0),
       child: GridView.count(
         // 解决顶部导航区域（GridView）与全局（SingleChildScrollView）的滑动冲突问题
@@ -143,6 +143,7 @@ class AdBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: Image.network(adImage),
     );
   }
