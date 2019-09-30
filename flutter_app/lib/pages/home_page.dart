@@ -27,11 +27,15 @@ class _HomePageState extends State<HomePage> {
             
             var navigatorData = json.decode(snapshot.data['navigator'].toString());
             List<Map> navigatorList = (navigatorData['data'] as List).cast(); //导航栏数据
-            
+
+            var adImageData = json.decode(snapshot.data['adBanner'].toString());
+            String adImage = adImageData['data']; //广告图片
+
             return ListView(
               children: <Widget>[
                 HomeSwiper(swiperDataList: swiperDataList),
-                TopNavigator(navigatorList: navigatorList)
+                TopNavigator(navigatorList: navigatorList),
+                AdBanner(adImage: adImage),
               ],
             );
           }else {
@@ -125,6 +129,21 @@ class TopNavigator extends StatelessWidget {
           return _gridItemUI(context, item);
         }).toList(),
       ),
+    );
+  }
+}
+
+
+
+// 广告区域
+class AdBanner extends StatelessWidget {
+  final String adImage;
+
+  AdBanner({Key key, this.adImage}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Image.network(adImage),
     );
   }
 }

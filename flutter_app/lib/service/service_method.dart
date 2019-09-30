@@ -33,6 +33,7 @@ Future getHomePageContent() async {
     dio.options.responseType = ResponseType.plain;  
     Response bannerResponse = await dio.get(servicePath['commonBanner']);
     Response navigatorResponse = await dio.post(servicePath['commonNavigator']);
+    Response adBannerResponse = await dio.post(servicePath['getAdBanner']);
 
     Map result = new Map();
 
@@ -44,6 +45,12 @@ Future getHomePageContent() async {
 
     if (navigatorResponse.statusCode == 200) {
       result['navigator'] = navigatorResponse.data;
+    } else {
+      throw Exception('navigator后端接口出现异常。');
+    }
+
+    if (adBannerResponse.statusCode == 200) {
+      result['adBanner'] = adBannerResponse.data;
     } else {
       throw Exception('navigator后端接口出现异常。');
     }
