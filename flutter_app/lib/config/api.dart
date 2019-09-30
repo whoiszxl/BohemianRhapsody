@@ -1,5 +1,6 @@
 const serviceUrl = 'http://118.126.92.128:19091';
 
 const servicePath = {
-  'commonBanner': serviceUrl+'/common/banner', // 首页轮播图
+  'commonBanner': serviceUrl + '/common/banner', // 首页轮播图
+  'commonNavigator': serviceUrl + '/common/config/getNavigator', //首页导航8个icon
 };

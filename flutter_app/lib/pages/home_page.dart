@@ -1,10 +1,10 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import '../service/service_method.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -22,12 +22,18 @@ class _HomePageState extends State<HomePage> {
         future: getHomePageContent(),
         builder: (context, snapshot) {
           if(snapshot.hasData) {
-            var data = json.decode(snapshot.data.toString());
-            print(data);
-            List<Map> swiperDataList = (data['data'] as List).cast();
-            return Column(children: <Widget>[
-              HomeSwiper(swiperDataList: swiperDataList,)
-            ],);
+            var bannerData = json.decode(snapshot.data['banner'].toString());
+            List<Map> swiperDataList = (bannerData['data'] as List).cast(); //轮播图数据
+            
+            var navigatorData = json.decode(snapshot.data['navigator'].toString());
+            List<Map> navigatorList = (navigatorData['data'] as List).cast(); //导航栏数据
+            
+            return ListView(
+              children: <Widget>[
+                HomeSwiper(swiperDataList: swiperDataList),
+                TopNavigator(navigatorList: navigatorList)
+              ],
+            );
           }else {
             return Center(
               child: Text('加载中'),
@@ -64,6 +70,60 @@ class HomeSwiper extends StatelessWidget {
         itemCount: swiperDataList.length,
         pagination: new SwiperPagination(),
         autoplay: true,
+      ),
+    );
+  }
+}
+
+
+//顶部导航8个icon
+class TopNavigator extends StatelessWidget {
+
+  final List navigatorList;
+  const TopNavigator({Key key, this.navigatorList}) : super(key: key);
+
+  Widget _gridItemUI(BuildContext context, item) {
+    return InkWell(
+      
+      //导航选项点击事件
+      onTap: () {
+        Fluttertoast.showToast(
+          msg: '点击了',
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIos: 1
+        );
+      },
+
+      child: Column(
+        children: <Widget>[
+          Image.network(
+            item['imageUrl'],
+            width: ScreenUtil().setWidth(95),
+          ),
+          Text(item['navName'])
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if(this.navigatorList.length > 10) {
+      this.navigatorList.removeRange(10, this.navigatorList.length);
+    }
+    
+    return Container(
+      height: ScreenUtil().setHeight(330),
+      padding: EdgeInsets.all(3.0),
+      child: GridView.count(
+        // 解决顶部导航区域（GridView）与全局（SingleChildScrollView）的滑动冲突问题
+        physics: NeverScrollableScrollPhysics(),
+        crossAxisCount: 5,
+        padding: EdgeInsets.all(5.0),
+        children: navigatorList.map((item) {
+          return _gridItemUI(context, item);
+        }).toList(),
       ),
     );
   }
