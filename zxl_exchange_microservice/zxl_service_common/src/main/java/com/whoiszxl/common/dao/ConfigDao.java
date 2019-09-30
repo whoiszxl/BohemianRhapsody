@@ -13,8 +13,8 @@ import org.springframework.data.jpa.repository.Query;
  **/
 public interface ConfigDao extends JpaRepository<ZxlConfig, String>,JpaSpecificationExecutor<ZxlConfig> {
 
-    @Query(value = "select * from zxl_config where status = ?1 and `key` = ?2",
-            countQuery = "select count(*) from zxl_currency where status = ?1 and `key` = ?2",
+    @Query(value = "select * from zxl_config where `key` = ?1 and `status` = ?2",
+            countQuery = "select count(*) from zxl_currency where `key` = ?1 and `status` = ?2",
             nativeQuery = true)
-    ZxlConfig findConfigList(Integer status, String key);
+    ZxlConfig findConfig(String key, Integer status);
 }

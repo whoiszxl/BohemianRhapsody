@@ -13,7 +13,8 @@ import lombok.Getter;
 public enum ConfigEnum {
 
     //主页下的八个分类图标
-    INDEX_EIGHT_CATEGORY("INDEX_EIGHT_NAVIGATOR");
+    INDEX_TEN_NAVIGATOR("INDEX_TEN_NAVIGATOR"),
+    INDEX_AD_BANNER("INDEX_AD_BANNER");
 
     private String key;
 }

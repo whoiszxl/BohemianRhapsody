@@ -15,4 +15,6 @@ import java.util.List;
 public interface ConfigService {
 
     List<ZxlCommonNavigator> findConfigList();
+
+    String findAdBanner();
 }

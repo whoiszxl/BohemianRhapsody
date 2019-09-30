@@ -28,4 +28,9 @@ public class ConfigController {
         return Result.buildSuccess(configService.findConfigList());
     }
 
+    @PostMapping("/getAdBanner")
+    public Result<String> getAdBanner() {
+        return Result.buildSuccess(configService.findAdBanner());
+    }
+
 }

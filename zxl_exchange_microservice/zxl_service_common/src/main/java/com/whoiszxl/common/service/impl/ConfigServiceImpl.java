@@ -33,7 +33,13 @@ public class ConfigServiceImpl implements ConfigService {
 
     @Override
     public List<ZxlCommonNavigator> findConfigList() {
-        ZxlConfig zxlConfig = configDao.findConfigList(SwitchStatusEnum.STATUS_OPEN.getStatusCode(), ConfigEnum.INDEX_EIGHT_CATEGORY.getKey());
+        ZxlConfig zxlConfig = configDao.findConfig(ConfigEnum.INDEX_TEN_NAVIGATOR.getKey(), SwitchStatusEnum.STATUS_OPEN.getStatusCode());
         return FastJsonUtils.toList(zxlConfig.getValue(), ZxlCommonNavigator.class);
+    }
+
+    @Override
+    public String findAdBanner() {
+        ZxlConfig config = configDao.findConfig(ConfigEnum.INDEX_AD_BANNER.getKey(), SwitchStatusEnum.STATUS_OPEN.getStatusCode());
+        return config.getValue();
     }
 }
