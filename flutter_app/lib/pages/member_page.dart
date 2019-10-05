@@ -12,7 +12,8 @@ class MemberPage extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           _topHeader(),
-          _myAsset()
+          _myAsset(),
+          _personalMenu()
         ],
       ),
     );
@@ -64,6 +65,86 @@ class MemberPage extends StatelessWidget {
         subtitle: Text('0.1345775≈16778.54 CNY', style: TextStyle(fontSize: ScreenUtil().setSp(30), color: Colors.black87)),
         trailing: Icon(Icons.account_balance_wallet),
 
+      ),
+    );
+  }
+
+  
+  Widget _personalMenu() {
+
+    return Container(
+      margin: EdgeInsets.only(top: 5),
+      width: ScreenUtil().setWidth(750),
+      height: ScreenUtil().setHeight(180),
+      padding: EdgeInsets.only(top: 20),
+      color: Colors.white,
+      child: Row(
+        children: <Widget>[
+          Container(
+            width: ScreenUtil().setWidth(150),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.attach_money,
+                  size: 30,
+                ),
+                Text('充币')
+              ],
+            ),
+          ),
+
+          Container(
+            width: ScreenUtil().setWidth(150),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.query_builder,
+                  size: 30,
+                ),
+                Text('提币')
+              ],
+            ),
+          ),
+
+          Container(
+            width: ScreenUtil().setWidth(150),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.transfer_within_a_station,
+                  size: 30,
+                ),
+                Text('划转')
+              ],
+            ),
+          ),
+
+          Container(
+            width: ScreenUtil().setWidth(150),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.control_point_duplicate,
+                  size: 30,
+                ),
+                Text('合约')
+              ],
+            ),
+          ),
+
+          Container(
+            width: ScreenUtil().setWidth(150),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.content_paste,
+                  size: 30,
+                ),
+                Text('法币')
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
