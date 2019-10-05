@@ -7,6 +7,7 @@ import './asset_page.dart';
 import './market_page.dart';
 import './trade_page.dart';
 import './member_page.dart';
+import './login_page.dart';
 
 class IndexPage extends StatefulWidget {
   @override
@@ -34,7 +35,7 @@ class _IndexPageState extends State<IndexPage> {
     HomePage(),
     MarketPage(),
     TradePage(),
-    AssetPage(),
+    LoginPage(),
     MemberPage()
   ];
 
