@@ -15,6 +15,8 @@ class IndexPage extends StatefulWidget {
 
 class _IndexPageState extends State<IndexPage> {
 
+  PageController _pageController;
+
   final List<BottomNavigationBarItem> bottomTabs = [
     BottomNavigationBarItem(
       icon: Icon(CupertinoIcons.home), title: Text('首页')),
@@ -28,13 +30,31 @@ class _IndexPageState extends State<IndexPage> {
       icon: Icon(CupertinoIcons.profile_circled), title: Text('个人'))
   ];
 
-  final List tabBodies = [
+  final List<Widget> tabBodies = [
     HomePage(),
     MarketPage(),
     TradePage(),
     AssetPage(),
     MemberPage()
   ];
+
+  int currentIndex = 0;
+  var currentPage;
+
+  @override
+  void initState() {
+    // 进行初始化操作
+    currentPage = tabBodies[currentIndex];
+    _pageController = new PageController()
+      ..addListener(() {
+        if(currentPage != _pageController.page.round()) {
+          setState(() {
+           currentPage = _pageController.page.round(); 
+          });
+        }
+      });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,18 +72,13 @@ class _IndexPageState extends State<IndexPage> {
           });
         },
       ),
-      body: currentPage,
+      body: IndexedStack(
+        index: currentIndex,
+        children: tabBodies,
+      )
     );
   }
 
 
-  int currentIndex = 0;
-  var currentPage;
 
-  @override
-  void initState() {
-    // 进行初始化操作
-    currentPage = tabBodies[currentIndex];
-    super.initState();
-  }
 }
