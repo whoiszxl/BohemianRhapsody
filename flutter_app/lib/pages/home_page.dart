@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
                 HomeSwiper(swiperDataList: swiperDataList),
                 TopNavigator(navigatorList: navigatorList),
                 AdBanner(adImage: adImage),
+                RankingList(),
               ],
             );
           }else {
@@ -145,6 +146,46 @@ class AdBanner extends StatelessWidget {
     return Container(
       margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: Image.network(adImage),
+    );
+  }
+}
+
+
+//主页：涨幅榜 跌幅榜 新币榜
+class RankingList extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return new RankingListState();
+  }
+}
+
+class RankingListState extends State<RankingList> {
+  List<Tab> tabList = <Tab> [
+    Tab(text: "涨幅榜" ),
+    Tab(text: "跌幅榜" ),
+    Tab(text: "新币榜" ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: ScreenUtil().setHeight(1000),
+      width: ScreenUtil().setWidth(750),
+      alignment: Alignment.centerLeft,
+      child: DefaultTabController(
+          length: tabList.length,
+          child: new Scaffold(
+            appBar: new TabBar(tabs: tabList, labelColor: Colors.black54,isScrollable: false,),
+            body: new TabBarView(
+              children: tabList.map((Tab tab) {
+                return Center(
+                  child: new Text("content:" + tab.text),
+                );
+              }).toList(),
+            ),
+          ),
+        ),
+      
     );
   }
 }
