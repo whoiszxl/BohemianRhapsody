@@ -5,7 +5,7 @@ spring:
     name: zxl-service-web
 eureka:
   client:
-    server-url:
+    service-url:
       default-zone: http://localhost:8761/eureka/
   instance:
     prefer-ip-address: true

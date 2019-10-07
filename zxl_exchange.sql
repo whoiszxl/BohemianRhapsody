@@ -112,11 +112,13 @@ CREATE TABLE `zxl_user_balance` (
   `currency_id` int(10) NOT NULL COMMENT '币种ID',
   `all_balance` decimal(40,18) NOT NULL COMMENT '数量',
   `lock_balance` decimal(40,18) NOT NULL COMMENT '冻结数量',
-  `usable_balance` decimal(40,18) NOT NULL COMMENT '冻结数量',
+  `usable_balance` decimal(40,18) NOT NULL COMMENT '可用数量',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '充值地址状态，0：关闭 1：开启',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT ON UPDATE CURRENT_TIMESTAMP '更新时间',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `user_id_key` (`user_id`) USING BTREE,
+  KEY `currency_id_key` (`currency_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户余额表';
 
 
