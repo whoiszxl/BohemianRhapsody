@@ -65,6 +65,9 @@ public class UserServiceImpl implements UserService {
     public ZxlUser login(String phone, String password) {
         ZxlUser zxlUser = userDao.findByPhoneAndStatus(phone, UserStatusEnum.USER_VAILD.getStatus());
         if(zxlUser != null && encoder.matches(password, zxlUser.getPassword())) {
+            //更新最后登录时间
+            zxlUser.setLastLogin(LocalDateTime.now());
+            userDao.save(zxlUser);
             return zxlUser;
         }
         return null;

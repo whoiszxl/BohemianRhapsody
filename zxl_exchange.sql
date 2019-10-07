@@ -11,7 +11,7 @@ CREATE TABLE `zxl_banner` (
   `note` varchar(500) DEFAULT '' COMMENT '备注',
   `sort` int(3) DEFAULT '0' COMMENT '排序',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='首页轮播表';
 
@@ -31,7 +31,7 @@ CREATE TABLE `zxl_user` (
   `status` tinyint(2) DEFAULT 1 COMMENT '状态(0：无效 1：有效)',
   `last_login` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '最后登录',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_username` (`username`),
   UNIQUE KEY `idx_phone` (`phone`)
@@ -50,7 +50,7 @@ CREATE TABLE `zxl_admin` (
   `status` tinyint(2) DEFAULT 1 COMMENT '状态(0：无效 1：有效)',
   `last_login` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '最后登录',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_username` (`username`),
   UNIQUE KEY `idx_phone` (`phone`)
@@ -82,7 +82,7 @@ CREATE TABLE `zxl_currency` (
   `sort` int(10) NOT NULL DEFAULT '0' COMMENT '展示顺序',
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '币种状态，0：关闭 1：开启',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='币种表';
 
@@ -99,7 +99,7 @@ CREATE TABLE `zxl_user_address` (
   `keystore` LONGTEXT COMMENT 'keystore',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '钱包状态，0：关闭 1：开启',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT ON UPDATE CURRENT_TIMESTAMP '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户充值地址表';
 
@@ -115,7 +115,7 @@ CREATE TABLE `zxl_user_balance` (
   `usable_balance` decimal(40,18) NOT NULL COMMENT '冻结数量',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '充值地址状态，0：关闭 1：开启',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT ON UPDATE CURRENT_TIMESTAMP '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户余额表';
 
@@ -138,7 +138,7 @@ CREATE TABLE `zxl_user_withdraw` (
   `upchain_success_at` datetime COMMENT '上链成功时间',
   `upchain_status` tinyint(1) NOT NULL DEFAULT '2' COMMENT '上链状态，0：失败 1：成功 2：上链后等待确认中',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT ON UPDATE CURRENT_TIMESTAMP '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户提现记录表';
 
@@ -157,7 +157,7 @@ CREATE TABLE `zxl_user_recharge` (
   `upchain_status` tinyint(1) NOT NULL DEFAULT '2' COMMENT '上链状态，0：失败 1：成功 2：上链后等待确认中',
   `height` int(20) DEFAULT NULL COMMENT '当前交易所处区块的高度',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT ON UPDATE CURRENT_TIMESTAMP '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户充值记录表';
 
@@ -173,7 +173,7 @@ CREATE TABLE `zxl_config` (
   `remark` varchar(32) COMMENT '配置说明',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '配置状态，0：关闭 1：开启',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
 	UNIQUE KEY (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='币种表';
