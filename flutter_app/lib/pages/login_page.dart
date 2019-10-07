@@ -2,8 +2,13 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/pages/index_page.dart';
+import 'package:flutter_app/pages/member_page.dart';
 import 'package:flutter_app/service/service_method.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_app/utils/SpUtils.dart';
+import 'package:flutter_app/utils/ToastUtils.dart';
+
+import '../routers/application.dart';
 
 class LoginPage extends StatefulWidget {
   static String tag = 'login-page';
@@ -12,12 +17,16 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  TextEditingController usernameController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    final email = TextFormField(
+    final email = TextField(
+      controller: usernameController,
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
-      initialValue: '17688900411',
       decoration: InputDecoration(
           hintText: 'Email',
           contentPadding: EdgeInsets.fromLTRB(10.0, 2.0, 10.0, 10.0),
@@ -27,9 +36,9 @@ class _LoginPageState extends State<LoginPage> {
               borderSide: BorderSide(color: Colors.black))),
     );
 
-    final password = TextFormField(
+    final password = TextField(
+      controller: passwordController,
       autofocus: false,
-      initialValue: '',
       obscureText: true,
       decoration: InputDecoration(
           hintText: 'Password',
@@ -40,6 +49,8 @@ class _LoginPageState extends State<LoginPage> {
               borderSide: BorderSide(color: Colors.black))),
     );
 
+
+
     final loginButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: RaisedButton(
@@ -47,8 +58,21 @@ class _LoginPageState extends State<LoginPage> {
           borderRadius: BorderRadius.circular(18),
         ),
         onPressed: () {
-          request('userLogin', formData: '{"phone": "17688900411","password": "zxl123456"}').then((val) {
+          Map params = new Map();
+          params['phone'] = usernameController.text;
+          params['password'] = passwordController.text;
+          request('userLogin', formData: params).then((val) {
             var data = json.decode(val.toString());
+            if(data['code'] != 0) {
+              showMessage('用户名或密码错误');
+              return;
+            }
+
+            //shared_preferences在import的时候如果找不到，重启IDE能解决
+            //登录成功,保存token到本地，跳转个人中心
+            addString("userInfo", data['data'].toString());
+            Navigator.push(context, new MaterialPageRoute(builder: (context) => new IndexPage()));
+
           });
         },
         padding: EdgeInsets.all(12),
