@@ -39,4 +39,9 @@ public class ZxlCurrencyServiceImpl implements ZxlCurrencyService {
         List<ZxlCurrency> availCurrencyList = currencyDao.findAvailCurrencyList(SwitchStatusEnum.STATUS_OPEN.getStatusCode());
         return availCurrencyList;
     }
+
+    @Override
+    public List getAssetList(String userId) {
+        return currencyDao.getAssetList(userId);
+    }
 }

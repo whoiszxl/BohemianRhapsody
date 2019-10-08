@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
  **/
 @RestController
 @CrossOrigin
-@RequestMapping("/address")
+@RequestMapping("/wallet/address")
 public class AddressDispenseController {
 
     @Autowired

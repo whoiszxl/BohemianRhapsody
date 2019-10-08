@@ -24,4 +24,5 @@ public interface ZxlCurrencyService {
 
     List<ZxlCurrency> getAllCurrencyList();
 
+    List getAssetList(String userId);
 }

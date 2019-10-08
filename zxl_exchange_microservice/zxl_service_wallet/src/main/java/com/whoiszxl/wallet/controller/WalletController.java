@@ -2,13 +2,16 @@ package com.whoiszxl.wallet.controller;
 
 import com.whoiszxl.base.entity.Result;
 import com.whoiszxl.base.entity.ZxlPageRequest;
+import com.whoiszxl.base.jwt.JwtUtils;
 import com.whoiszxl.base.utils.VoPoConverter;
 import com.whoiszxl.wallet.base.pojo.ZxlCurrency;
 import com.whoiszxl.wallet.base.service.ZxlCurrencyService;
 import com.whoiszxl.wallet.pojo.vo.ZxlCurrencyVo;
+import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -18,8 +21,11 @@ import java.util.List;
  **/
 @RestController
 @CrossOrigin
-@RequestMapping("/wallet")
+@RequestMapping("/wallet/asset")
 public class WalletController {
+
+    @Autowired
+    private HttpServletRequest request;
 
     @Autowired
     private ZxlCurrencyService zxlCurrencyService;
@@ -37,4 +43,14 @@ public class WalletController {
     public Result<String> createAddressByCurrencyId() {
         return null;
     }
+
+
+    @PostMapping("/assetList")
+    public Result assetList() {
+        Claims userClaims = JwtUtils.getUserClaims(request);
+        String userId = userClaims.getId();
+        List assetList = zxlCurrencyService.getAssetList(userId);
+        return Result.buildSuccess(assetList);
+    }
+
 }
