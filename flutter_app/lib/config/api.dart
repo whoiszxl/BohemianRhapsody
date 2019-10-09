@@ -6,4 +6,6 @@ const servicePath = {
   'getAdBanner': serviceUrl + '/common/config/getAdBanner', //首页广告图片
 
   'userLogin': serviceUrl + '/user/login', //用户登录
+
+  'assetList': serviceUrl + '/wallet/asset/assetList', //用户资产列表
 };

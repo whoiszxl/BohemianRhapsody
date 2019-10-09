@@ -16,18 +16,20 @@ class _MemberPageState extends State<MemberPage> {
 
   @override
   void initState() {
-    //getAssetData();
+    _getAssetData();
     super.initState();
   }
 
-  List getAssetData() {
-    request('assetList').then((val) {
-
+  List _getAssetData() {
+    authRequest('assetList').then((val) {
+      print("最终结果："+val);
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    _getAssetData();
+
     return Scaffold(
       appBar: AppBar(
         title: Text("个人中心"),
@@ -187,7 +189,9 @@ class _MemberPageState extends State<MemberPage> {
 
   Widget _assetListWight(int index) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        _getAssetData();
+      },
       child: Container(
         width: ScreenUtil().setWidth(750),
         padding: EdgeInsets.only(top: 5.0,bottom: 5.0),
