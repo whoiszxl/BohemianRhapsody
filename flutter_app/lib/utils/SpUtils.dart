@@ -2,17 +2,23 @@
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-void addString(String key, String value) async {
-  SharedPreferences sp = await SharedPreferences.getInstance();
-  sp.setString(key, value);
+class SpUtils {
+  static SharedPreferences preferences;
+  static Future<bool> getInstance() async{
+     preferences = await SharedPreferences.getInstance();
+     return true;
+  }
+
+  static void addString(String key, String value) {
+    preferences.setString(key, value);
+  }
+
+  static String getString(String key) {
+    return preferences.getString(key);
+  }
+
+  static void clearString(String key) {
+    preferences.remove(key);
+  }
 }
 
-Future getString(String key) async {
-  SharedPreferences sp = await SharedPreferences.getInstance();
-  return sp.getString(key);
-}
-
-void clearString(String key) async {
-  SharedPreferences sp = await SharedPreferences.getInstance();
-  sp.remove(key);
-}

@@ -1,5 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/utils/SpUtils.dart';
 import './pages/index_page.dart';
 import './routers/routers.dart';
 import './routers/application.dart';
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
     Routes.configureRoutes(router);
     Application.router=router;
     //-------------------主要代码end
+
+    //初始化spUtils
+    SpUtils.getInstance();
 
     return Container(
       child: MaterialApp(

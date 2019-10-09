@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
 
             //shared_preferences在import的时候如果找不到，重启IDE能解决
             //登录成功,保存token到本地，跳转个人中心
-            addString("userInfo", data['data'].toString());
+            SpUtils.addString("userInfo", data['data'].toString());
             Navigator.push(context, new MaterialPageRoute(builder: (context) => new IndexPage()));
 
           });
