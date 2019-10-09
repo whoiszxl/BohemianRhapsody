@@ -16,7 +16,7 @@ import java.util.List;
  * @create: 2019-09-29
  **/
 @RestController
-@RequestMapping("/config")
+@RequestMapping("/common/config")
 public class ConfigController {
 
     @Autowired

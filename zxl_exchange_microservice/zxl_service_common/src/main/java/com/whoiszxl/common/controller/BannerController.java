@@ -15,7 +15,7 @@ import java.util.List;
  * 轮播图控制器
  */
 @RestController
-@RequestMapping("/banner")
+@RequestMapping("/common/banner")
 public class BannerController {
 
     @Autowired
