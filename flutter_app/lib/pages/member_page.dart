@@ -1,8 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/service/service_method.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_app/utils/SpUtils.dart';
 
-class MemberPage extends StatelessWidget {
-  
+class MemberPage extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState() => _MemberPageState();
+}
+
+
+class _MemberPageState extends State<MemberPage> {
+
+  List list = [];
+
+  @override
+  void initState() {
+    //getAssetData();
+    super.initState();
+  }
+
+  List getAssetData() {
+    request('assetList').then((val) {
+
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +36,8 @@ class MemberPage extends StatelessWidget {
         children: <Widget>[
           _topHeader(),
           _myAsset(),
-          _personalMenu()
+          _personalMenu(),
+          _assetListWight(1)
         ],
       ),
     );
@@ -149,5 +173,37 @@ class MemberPage extends StatelessWidget {
     );
   }
 
+
+  Widget _assetListCurrencyName(index) {
+    return Container(
+      width: ScreenUtil().setWidth(750),
+      child: Column(
+        children: <Widget>[
+        Text('BTC', style: TextStyle(), textAlign: TextAlign.left,),
+      ],),
+    );
+  }
+
+
+  Widget _assetListWight(int index) {
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        width: ScreenUtil().setWidth(750),
+        padding: EdgeInsets.only(top: 5.0,bottom: 5.0),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border(
+            bottom: BorderSide(width: 1.0,color: Colors.black12)
+          )
+        ),
+        child: Row(
+          children: <Widget>[
+            _assetListCurrencyName(1)
+          ],
+        ),
+      ),
+    );
+  } 
 }
 
