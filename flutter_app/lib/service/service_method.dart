@@ -1,4 +1,10 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
+
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:flutter_app/utils/SpUtils.dart';
 import 'dart:async';
 import 'dart:io';
 import '../config/api.dart';
@@ -24,7 +30,37 @@ Future request(url, {formData}) async {
   }
 }
 
+Future authRequest(url, {formData}) async {
+  try {
+    print('开始获取数据..............');
+    Response response;
+    Dio dio = new Dio();
+    dio.options.responseType = ResponseType.plain;
 
+    //配置Bearer令牌
+    Map<String, String> headers = new Map();
+    String userInfo = SpUtils.getString("userInfo");
+    if(null != userInfo) {
+      var userInfoObj = json.decode(userInfo);
+      String token = userInfoObj['token'];
+      headers['Authorization'] = 'Bearer ' + token;
+    }
+    dio.options.headers = headers;
+
+    if (formData == null) {
+      response = await dio.post(servicePath[url]);
+    } else {
+      response = await dio.post(servicePath[url], data: formData);
+    }
+    if (response.statusCode == 200) {
+      return response.data;
+    } else {
+      throw Exception('后端接口出现异常。');
+    }
+  } catch (e) {
+    return print('ERROR:===========>$e');
+  }
+}
 
 Future requestJson(url, {formData}) async {
   try {
