@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_app/pages/login_page.dart';
 import 'package:flutter_app/service/service_method.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_app/utils/SpUtils.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MemberPage extends StatefulWidget {
 
@@ -13,35 +16,51 @@ class MemberPage extends StatefulWidget {
 class _MemberPageState extends State<MemberPage> {
 
   List list = [];
+  bool isLogin = false;
 
   @override
   void initState() {
-    _getAssetData();
     super.initState();
   }
 
   List _getAssetData() {
+    print("_getAssetData ++++++++++++++++++++++");
     authRequest('assetList').then((val) {
-      print("最终结果："+val);
+      var data = json.decode(val.toString());
+      if(data['code'] == 0) {
+        list = data['data'];
+      }
     });
+    print("_getAssetData ++++++++++++++++++++++");
   }
 
   @override
   Widget build(BuildContext context) {
     _getAssetData();
-
     return Scaffold(
       appBar: AppBar(
         title: Text("个人中心"),
       ),
-      body: ListView(
-        children: <Widget>[
-          _topHeader(),
-          _myAsset(),
-          _personalMenu(),
-          _assetListWight(1)
-        ],
-      ),
+      body: FutureBuilder(
+        future: getHomePageContent(),
+        builder: (context, snapshot) {
+          return ListView(
+            children: <Widget>[
+              _topHeader(),
+              _myAsset(),
+              _personalMenu(),
+              ListView.builder(
+                itemCount: list.length,
+                shrinkWrap: true, //解决无限高度问题
+                physics: NeverScrollableScrollPhysics(),//禁用滑动事件 双层ListView嵌套会有滑动冲突
+                itemBuilder: (context, index) {
+                  return _assetListWight(index);
+                },
+              )
+            ],
+          );
+        },
+      )
     );
   }
 
@@ -69,7 +88,14 @@ class _MemberPageState extends State<MemberPage> {
           ),
           Container(
             margin: EdgeInsets.only(top: 10),
-            child: Text("whoiszxl",style: TextStyle(fontSize: ScreenUtil().setSp(36), color: Colors.white)),
+            child: isLogin ? 
+            Text("whoiszxl",style: TextStyle(fontSize: ScreenUtil().setSp(36), color: Colors.white)):
+            new GestureDetector(
+              onTap: () {
+                Navigator.push(context, new MaterialPageRoute(builder: (context) => new LoginPage()));
+              },
+              child: Text("点击登录",style: TextStyle(fontSize: ScreenUtil().setSp(36), color: Colors.white)),
+            ),
           )
         ],
       ),
@@ -187,26 +213,25 @@ class _MemberPageState extends State<MemberPage> {
   }
 
 
+  //TODO 资产组件，先用listile代替
   Widget _assetListWight(int index) {
-    return InkWell(
-      onTap: () {
+    return ListTile(
+      title:  Text(list[index]['currency_name']), // item 标题
+      leading: Icon(Icons.attach_money), // item 前置图标
+      subtitle: Text(
+        "可用:" + list[index]['usable_balance'].toString() + "\n"
+        "冻结:" + list[index]['lock_balance'].toString()), // item 副标题
+      trailing: Icon(Icons.keyboard_arrow_right),// item 后置图标
+      isThreeLine:true,  // item 是否三行显示
+      dense:true,                // item 直观感受是整体大小
+      contentPadding: EdgeInsets.all(2.0),// item 内容内边距
+      enabled:true,
+      onTap:(){
         _getAssetData();
-      },
-      child: Container(
-        width: ScreenUtil().setWidth(750),
-        padding: EdgeInsets.only(top: 5.0,bottom: 5.0),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border(
-            bottom: BorderSide(width: 1.0,color: Colors.black12)
-          )
-        ),
-        child: Row(
-          children: <Widget>[
-            _assetListCurrencyName(1)
-          ],
-        ),
-      ),
+        print(list.length);
+      },// item onTap 点击事件
+      //onLongPress:(){print('长按:$index');},// item onLongPress 长按事件
+      selected:false,     // item 是否选中状态
     );
   } 
 }

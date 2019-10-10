@@ -39,7 +39,8 @@ Future authRequest(url, {formData}) async {
 
     //配置Bearer令牌
     Map<String, String> headers = new Map();
-    String userInfo = SpUtils.getString("userInfo");
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    String userInfo = sp.getString("userInfo");
     if(null != userInfo) {
       var userInfoObj = json.decode(userInfo);
       String token = userInfoObj['token'];
