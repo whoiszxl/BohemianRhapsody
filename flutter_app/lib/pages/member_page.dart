@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/login_page.dart';
+import 'package:flutter_app/pages/member/currency_detail_page.dart';
 import 'package:flutter_app/service/service_method.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -16,19 +17,25 @@ class MemberPage extends StatefulWidget {
 class _MemberPageState extends State<MemberPage> {
 
   List list = [];
-  bool isLogin = false;
-
+  
   @override
   void initState() {
+    
     super.initState();
+  }
+
+  _MemberPageState() {
+    _getAssetData();
   }
 
   List _getAssetData() {
     print("_getAssetData ++++++++++++++++++++++");
     authRequest('assetList').then((val) {
       var data = json.decode(val.toString());
-      if(data['code'] == 0) {
-        list = data['data'];
+      if(data['code'] == 0) {     
+        setState(() {
+          list = data['data'];
+        });
       }
     });
     print("_getAssetData ++++++++++++++++++++++");
@@ -36,17 +43,24 @@ class _MemberPageState extends State<MemberPage> {
 
   @override
   Widget build(BuildContext context) {
-    _getAssetData();
     return Scaffold(
       appBar: AppBar(
         title: Text("个人中心"),
       ),
       body: FutureBuilder(
-        future: getHomePageContent(),
+        future: getMemberData(),
         builder: (context, snapshot) {
+          var username = '点击登录';
+          bool isLogin = false;
+          if(snapshot.hasData) {
+            var userInfo = json.decode(snapshot.data['userInfo'].toString());
+            username = userInfo['username'];
+            isLogin = true;
+          }
+
           return ListView(
             children: <Widget>[
-              _topHeader(),
+              _topHeader(username, isLogin),
               _myAsset(),
               _personalMenu(),
               ListView.builder(
@@ -70,7 +84,7 @@ class _MemberPageState extends State<MemberPage> {
 
 
   //个人中心头部
-  Widget _topHeader() {
+  Widget _topHeader(String username, bool isLogin) {
 
     return Container(
       width: ScreenUtil().setWidth(750),
@@ -89,7 +103,7 @@ class _MemberPageState extends State<MemberPage> {
           Container(
             margin: EdgeInsets.only(top: 10),
             child: isLogin ? 
-            Text("whoiszxl",style: TextStyle(fontSize: ScreenUtil().setSp(36), color: Colors.white)):
+            Text(username,style: TextStyle(fontSize: ScreenUtil().setSp(36), color: Colors.white)):
             new GestureDetector(
               onTap: () {
                 Navigator.push(context, new MaterialPageRoute(builder: (context) => new LoginPage()));
@@ -227,11 +241,10 @@ class _MemberPageState extends State<MemberPage> {
       contentPadding: EdgeInsets.all(2.0),// item 内容内边距
       enabled:true,
       onTap:(){
-        _getAssetData();
-        print(list.length);
+        Navigator.push(context, new MaterialPageRoute(builder: (context) => new CurrencyDetailPage(list[index]['currency_name'])));
       },// item onTap 点击事件
       //onLongPress:(){print('长按:$index');},// item onLongPress 长按事件
-      selected:false,     // item 是否选中状态
+      selected:false,     // item 是否选中状态R
     );
   } 
 }

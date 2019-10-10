@@ -86,6 +86,17 @@ Future requestJson(url, {formData}) async {
 
 
 
+
+Future getMemberData() async {
+  SharedPreferences sp = await SharedPreferences.getInstance();
+  String userInfo = sp.getString("userInfo");
+  Map result = new Map();
+  if(userInfo != null) {
+    result['userInfo'] = userInfo;
+  }
+  return result;
+}
+
 // 获取首页主题内容
 Future getHomePageContent() async {
   try {

@@ -35,7 +35,7 @@ class _IndexPageState extends State<IndexPage> {
     HomePage(),
     MarketPage(),
     TradePage(),
-    LoginPage(),
+    AssetPage(),
     MemberPage()
   ];
 
