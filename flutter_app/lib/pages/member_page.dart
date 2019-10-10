@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/login_page.dart';
-import 'package:flutter_app/pages/member/currency_detail_page.dart';
+import 'package:flutter_app/pages/member/asset_detail_page.dart';
 import 'package:flutter_app/service/service_method.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -241,7 +241,7 @@ class _MemberPageState extends State<MemberPage> {
       contentPadding: EdgeInsets.all(2.0),// item 内容内边距
       enabled:true,
       onTap:(){
-        Navigator.push(context, new MaterialPageRoute(builder: (context) => new CurrencyDetailPage(list[index]['currency_name'])));
+        Navigator.push(context, new MaterialPageRoute(builder: (context) => new AssetDetailPage(list[index]['currency_name'])));
       },// item onTap 点击事件
       //onLongPress:(){print('长按:$index');},// item onLongPress 长按事件
       selected:false,     // item 是否选中状态R
