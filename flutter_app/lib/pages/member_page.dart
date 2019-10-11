@@ -29,7 +29,6 @@ class _MemberPageState extends State<MemberPage> {
   }
 
   List _getAssetData() {
-    print("_getAssetData ++++++++++++++++++++++");
     authRequest('assetList').then((val) {
       var data = json.decode(val.toString());
       if(data['code'] == 0) {     
@@ -38,7 +37,6 @@ class _MemberPageState extends State<MemberPage> {
         });
       }
     });
-    print("_getAssetData ++++++++++++++++++++++");
   }
 
   @override
@@ -241,7 +239,7 @@ class _MemberPageState extends State<MemberPage> {
       contentPadding: EdgeInsets.all(2.0),// item 内容内边距
       enabled:true,
       onTap:(){
-        Navigator.push(context, new MaterialPageRoute(builder: (context) => new AssetDetailPage(list[index]['currency_name'])));
+        Navigator.push(context, new MaterialPageRoute(builder: (context) => new AssetDetailPage(list[index]['id'].toString())));
       },// item onTap 点击事件
       //onLongPress:(){print('长按:$index');},// item onLongPress 长按事件
       selected:false,     // item 是否选中状态R
