@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_easyrefresh/bezier_circle_header.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_app/service/service_method.dart';
 
@@ -40,10 +42,19 @@ class _AssetDetailPageState extends State<AssetDetailPage> {
             var assetHeaderData;
             if (snapshot.hasData) {
               assetHeaderData = json.decode(snapshot.data.toString())['data'];
-              return ListView(
+              this.assetHeaderData = assetHeaderData;
+              return new EasyRefresh(
+                header: BezierCircleHeader(
+                  color: Theme.of(context).scaffoldBackgroundColor
+                ),
+                onRefresh: () async {
+                  setState(() {
+                  });
+                },
+                child: ListView(
                 children: <Widget>[
                   AssetHeader(
-                    assetHeaderData: assetHeaderData,
+                    assetHeaderData: this.assetHeaderData,
                   ),
                   Container(
                     height: ScreenUtil().setHeight(1200),
@@ -65,6 +76,7 @@ class _AssetDetailPageState extends State<AssetDetailPage> {
                     ),
                   )
                 ],
+              ),
               );
             } else {
               return Container(
