@@ -1,17 +1,16 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_app/utils/HttpUtils.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:flutter_app/utils/SpUtils.dart';
 import 'dart:async';
 import 'dart:io';
 import '../config/api.dart';
 
 Future request(url, {formData}) async {
   try {
-    print('开始获取数据..............');
     Response response;
     Dio dio = new Dio();
     dio.options.responseType = ResponseType.plain;
@@ -32,7 +31,6 @@ Future request(url, {formData}) async {
 
 Future authRequest(url, {formData}) async {
   try {
-    print('开始获取数据..............');
     Response response;
     Dio dio = new Dio();
     dio.options.responseType = ResponseType.plain;
@@ -84,8 +82,42 @@ Future requestJson(url, {formData}) async {
   }
 }
 
+//TODO 两个async嵌套调用不知道为什么FutureBuilder拿不到数据 ，GG
+Future getAssetDetailData(String currencyId) async {
+  //初始化资产详情头部的数据
+  // Map params = new Map();
+  // params['currencyId'] = currencyId;
+  // authRequest('getAssetByCurrencyId', formData: params).then((val) {
+  //   var data = json.decode(val.toString());
+  //   return data['data'];
+  // });
 
+  //print('开始获取首页数据..............' + servicePath['commonBanner']);
+  Dio dio = new Dio();
+  dio.options.contentType = ContentType.parse('application/json');
+  dio.options.responseType = ResponseType.plain; 
+  //配置Bearer令牌
+  Map<String, String> headers = new Map();
+  SharedPreferences sp = await SharedPreferences.getInstance();
+  String userInfo = sp.getString("userInfo");
+  if(null != userInfo) {
+    var userInfoObj = json.decode(userInfo);
+    String token = userInfoObj['token'];
+    headers['Authorization'] = 'Bearer ' + token;
+  }
+  dio.options.headers = headers; 
 
+  Map data = new Map();
+  data['currencyId'] = currencyId;
+  Response assetResponse = await dio.post(servicePath['getAssetByCurrencyId'], data: data);
+
+  if (assetResponse.statusCode == 200) {
+    return assetResponse.data;
+  } else {
+    throw Exception('banner后端接口出现异常。');
+  }
+
+}
 
 Future getMemberData() async {
   SharedPreferences sp = await SharedPreferences.getInstance();
@@ -129,7 +161,6 @@ Future getHomePageContent() async {
     }
 
     return result;
-
   } catch (e) {
     return print('ERROR:===========>$e');
   }

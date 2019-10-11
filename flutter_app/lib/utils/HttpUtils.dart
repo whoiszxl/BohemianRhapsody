@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'dart:async';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -43,11 +45,22 @@ class HttpUtils {
     });
 
     /// 打印请求相关信息：请求地址、请求方式、请求参数
-    print('请求地址：【' + method + '  ' + url + '】');
-    print('请求参数：' + data.toString());
+    // print('请求地址：【' + method + '  ' + url + '】');
+    // print('请求参数：' + data.toString());
 
     Dio dio = createInstance();
     var result;
+
+    //配置Bearer令牌
+    Map<String, String> headers = new Map();
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    String userInfo = sp.getString("userInfo");
+    if(null != userInfo) {
+      var userInfoObj = json.decode(userInfo);
+      String token = userInfoObj['token'];
+      headers['Authorization'] = 'Bearer ' + token;
+    }
+    dio.options.headers = headers;
 
     try {
       Response response = await dio.request(url,
