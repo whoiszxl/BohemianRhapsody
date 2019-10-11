@@ -6,13 +6,16 @@ import com.whoiszxl.base.jwt.JwtUtils;
 import com.whoiszxl.base.utils.VoPoConverter;
 import com.whoiszxl.wallet.base.pojo.ZxlCurrency;
 import com.whoiszxl.wallet.base.service.ZxlCurrencyService;
+import com.whoiszxl.wallet.pojo.request.WalletRequest;
 import com.whoiszxl.wallet.pojo.vo.ZxlCurrencyVo;
 import io.jsonwebtoken.Claims;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @description: 用户控制器
@@ -53,4 +56,18 @@ public class WalletController {
         return Result.buildSuccess(assetList);
     }
 
+
+    @PostMapping("/getAssetByCurrencyId")
+    public Result getAssetByCurrencyId(@RequestBody WalletRequest walletRequest) {
+        Claims userClaims = JwtUtils.getUserClaims(request);
+        String userId = userClaims.getId();
+        List assetList = zxlCurrencyService.getAssetList(userId);
+        for (Object o : assetList) {
+            Map map = (Map)o;
+            if(StringUtils.equals(map.get("id").toString(), walletRequest.getCurrencyId())) {
+                return Result.buildSuccess(map);
+            }
+        }
+        return Result.buildError();
+    }
 }
