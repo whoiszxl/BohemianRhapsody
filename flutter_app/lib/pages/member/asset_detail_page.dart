@@ -55,6 +55,7 @@ class _AssetDetailPageState extends State<AssetDetailPage> {
                     assetHeaderData: this.assetHeaderData,
                   ),
                   Container(
+                    padding: EdgeInsets.only(top: 10),
                     height: ScreenUtil().setHeight(1200),
                     child: ListView.separated(
                       shrinkWrap: true, //解决无限高度问题
@@ -97,15 +98,53 @@ class AssetHeader extends StatelessWidget {
       height: ScreenUtil().setHeight(300),
       width: ScreenUtil().setWidth(750),
       alignment: Alignment.topLeft,
-      child: Row(
+      child: Column(
         children: <Widget>[
           _titleWidget(assetHeaderData['currency_name']),
+          _assetWidget(assetHeaderData)
         ],
       )
     );
   }
 
   Widget _titleWidget(String currencyName) {
-    return Text(currencyName, style: TextStyle(color: Colors.blue, fontSize: ScreenUtil().setSp(70)),);
+    return Container(
+      padding: EdgeInsets.only(top: 5, left: 5),
+      alignment: Alignment.bottomLeft,
+      child: Text(
+        currencyName, 
+        style: TextStyle(
+          color: Colors.blue, 
+          fontSize: ScreenUtil().setSp(70),
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+
+  Widget _assetWidget(assetHeaderData) {
+    return Container(
+      padding: EdgeInsets.only(top: 5, left: 5),
+      child: Row(
+        children: <Widget>[
+          _assetDetail('可用', assetHeaderData['usable_balance'].toString(), 5),
+          _assetDetail('冻结', assetHeaderData['lock_balance'].toString(), 60),
+          _assetDetail('总金额', assetHeaderData['all_balance'].toString(),100)
+        ],
+      ),
+    );
+  }
+
+  Widget _assetDetail(String title, String value, double paddingLeft) {
+    return Container(
+      padding: EdgeInsets.only(left: paddingLeft),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(title), 
+          Text(value)
+        ],
+      ),
+    );
   }
 }
