@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_easyrefresh/bezier_circle_header.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
+import 'package:flutter_easyrefresh/phoenix_header.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_app/service/service_method.dart';
 
@@ -44,9 +44,7 @@ class _AssetDetailPageState extends State<AssetDetailPage> {
               assetHeaderData = json.decode(snapshot.data.toString())['data'];
               this.assetHeaderData = assetHeaderData;
               return new EasyRefresh(
-                header: BezierCircleHeader(
-                  color: Theme.of(context).scaffoldBackgroundColor
-                ),
+                header: PhoenixHeader(),
                 onRefresh: () async {
                   setState(() {
                   });
