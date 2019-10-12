@@ -96,9 +96,16 @@ class AssetHeader extends StatelessWidget {
     return Container(
       height: ScreenUtil().setHeight(300),
       width: ScreenUtil().setWidth(750),
-      alignment: Alignment.center,
-      color: Colors.yellow,
-      child: Text(assetHeaderData['currency_name']),
+      alignment: Alignment.topLeft,
+      child: Row(
+        children: <Widget>[
+          _titleWidget(assetHeaderData['currency_name']),
+        ],
+      )
     );
+  }
+
+  Widget _titleWidget(String currencyName) {
+    return Text(currencyName, style: TextStyle(color: Colors.blue, fontSize: ScreenUtil().setSp(70)),);
   }
 }

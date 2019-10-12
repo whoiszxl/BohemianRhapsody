@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         title: 'BohemianRhapsody',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primaryColor: Colors.pink
+          primaryColor: Colors.blue
         ),
         home: IndexPage(),
       ),

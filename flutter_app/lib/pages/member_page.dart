@@ -87,7 +87,7 @@ class _MemberPageState extends State<MemberPage> {
     return Container(
       width: ScreenUtil().setWidth(750),
       padding: EdgeInsets.all(20),
-      color: Colors.pinkAccent,
+      color: Colors.deepOrange[300],
       child: Column(
         children: <Widget>[
           Container(
