@@ -155,7 +155,7 @@ class _MemberPageState extends State<MemberPage> {
             
             margin: EdgeInsets.only(top: 30),
             child: ClipOval(
-              child: Image.network('https://tvax1.sinaimg.cn/crop.0.0.828.828.180/8d72bb9fly8g7hcftv97uj20n00n00u2.jpg'), //TODO 接口获取
+              child: Image.network('https://tvax1.sinaimg.cn/crop.0.0.512.512.180/a08698d0ly8g61dy1lk86j20e80e8mxm.jpg'), //TODO 接口获取
             ),
           ),
           Container(
