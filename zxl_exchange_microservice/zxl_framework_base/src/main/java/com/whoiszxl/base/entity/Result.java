@@ -1,5 +1,6 @@
 package com.whoiszxl.base.entity;
 
+import com.whoiszxl.base.exception.code.UserErrorCode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -42,9 +43,14 @@ public class Result<T> {
         return result.setCode(StatusCode.ERROR).setMessage(message);
     }
 
+    public static <T> Result<T> buildByUserEnum(UserErrorCode userErrorCode) {
+        Result<T> result = new Result<T>();
+        return result.setCode(userErrorCode.getCode()).setMessage(userErrorCode.getMsg());
+    }
+
     public static <T> Result<T> buildError(int errorCode, String message) {
         Result<T> result = new Result<T>();
-        return result.setCode(StatusCode.ERROR).setMessage(message);
+        return result.setCode(errorCode).setMessage(message);
     }
 
     public static <T> Result<T> buildSuccess(T data) {

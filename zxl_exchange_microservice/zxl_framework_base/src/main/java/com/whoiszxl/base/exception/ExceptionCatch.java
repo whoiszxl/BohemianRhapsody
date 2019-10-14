@@ -2,6 +2,7 @@ package com.whoiszxl.base.exception;
 
 import com.google.common.collect.ImmutableMap;
 import com.whoiszxl.base.entity.Result;
+import com.whoiszxl.base.exception.code.UserErrorCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -77,6 +78,7 @@ public class ExceptionCatch {
     static {
         //定义异常类型所对应的错误代码
         builder.put(HttpMessageNotReadableException.class, Result.buildError());
+        builder.put(JwtAuthException.class, Result.buildByUserEnum(UserErrorCode.JWT_TOKEN_AUTH_FAIL));
     }
 
 }

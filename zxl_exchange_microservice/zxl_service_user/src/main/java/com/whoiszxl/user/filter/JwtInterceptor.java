@@ -1,6 +1,7 @@
 package com.whoiszxl.user.filter;
 
 import com.whoiszxl.base.enums.role.UserRoleEnum;
+import com.whoiszxl.base.exception.JwtAuthException;
 import com.whoiszxl.base.jwt.JwtUtils;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
@@ -51,7 +52,7 @@ public class JwtInterceptor implements HandlerInterceptor {
                     request.setAttribute(UserRoleEnum.ROLE_USER.getRoleAttrKey(), claims);
                 }
             }catch (Exception e){
-                throw new RuntimeException("令牌不正确！");
+                throw new JwtAuthException();
             }
         }
 
