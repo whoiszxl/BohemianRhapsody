@@ -1,9 +1,12 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/config/error_code.dart';
 import 'package:flutter_app/pages/login_page.dart';
 import 'package:flutter_app/pages/member/asset_detail_page.dart';
 import 'package:flutter_app/service/service_method.dart';
+import 'package:flutter_app/utils/SpUtils.dart';
+import 'package:flutter_app/utils/ToastUtils.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -26,6 +29,22 @@ class _MemberPageState extends State<MemberPage> {
 
   _MemberPageState() {
     _getAssetData();
+
+    _getUserInfo();
+
+  }
+
+  void _getUserInfo() {
+    authRequest('userInfo').then((val) {
+      var userInfo = json.decode(val);
+      if(userInfo['code'] == userErrorCode['JWT_TOKEN_AUTH_FAIL']) {
+        ToastUtils.showMessage(userInfo['message']);
+        SpUtils.clearString('userInfo');
+      }
+      setState(() {
+        
+      });
+    });
   }
 
   List _getAssetData() {
@@ -52,8 +71,10 @@ class _MemberPageState extends State<MemberPage> {
           bool isLogin = false;
           if(snapshot.hasData) {
             var userInfo = json.decode(snapshot.data['userInfo'].toString());
-            username = userInfo['username'];
-            isLogin = true;
+            if(null != userInfo) {
+              username = userInfo['username'];
+              isLogin = true;
+            }
           }
 
           return ListView(

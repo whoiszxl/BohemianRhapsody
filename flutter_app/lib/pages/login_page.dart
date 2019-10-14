@@ -64,15 +64,16 @@ class _LoginPageState extends State<LoginPage> {
           request('userLogin', formData: params).then((val) {
             var data = json.decode(val.toString());
             if(data['code'] != 0) {
-              showMessage('用户名或密码错误');
+              ToastUtils.showMessage('用户名或密码错误');
               return;
             }
-
+            ToastUtils.showMessage('登录成功');
             //shared_preferences在import的时候如果找不到，重启IDE能解决
             //登录成功,保存token到本地，跳转个人中心
             SpUtils.addString("userInfo", json.encode(data['data']));
             //Navigator.push(context, new MaterialPageRoute(builder: (context) => new IndexPage()));
-            Navigator.pop(context);
+            Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new IndexPage()));
+            setState(() {});
           });
         },
         padding: EdgeInsets.all(12),
