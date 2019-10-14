@@ -129,6 +129,12 @@ Future getMemberData() async {
   return result;
 }
 
+Future logout() async {
+  SharedPreferences sp = await SharedPreferences.getInstance();
+  sp.remove('userInfo');
+}
+
+
 // 获取首页主题内容
 Future getHomePageContent() async {
   try {

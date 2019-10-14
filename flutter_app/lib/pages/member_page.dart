@@ -63,6 +63,45 @@ class _MemberPageState extends State<MemberPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("个人中心"),
+        actions: <Widget>[
+          Offstage(
+            offstage: false,
+            child: Container(
+              padding: EdgeInsets.only(right: 10),
+              child: GestureDetector(
+                onTap: () => {
+                  showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text('提示'),
+                        content: Text('是否退出登录'),
+                        actions: <Widget>[
+                          FlatButton(
+                            child: Text('取消'),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                          FlatButton(
+                            child: Text('退出'),
+                            onPressed: () {
+                              logout();
+                              Navigator.pop(context);
+                            },
+                          )
+
+                        ],
+                      );
+                    }
+                  )
+                },
+                child: Icon(Icons.exit_to_app),
+              ),
+            ),
+          )
+        ],
       ),
       body: FutureBuilder(
         future: getMemberData(),
