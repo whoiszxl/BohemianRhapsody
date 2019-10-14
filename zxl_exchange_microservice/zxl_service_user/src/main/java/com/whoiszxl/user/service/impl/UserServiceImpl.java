@@ -1,15 +1,18 @@
 package com.whoiszxl.user.service.impl;
 
 import com.google.common.collect.Maps;
+import com.whoiszxl.base.enums.normal.SwitchStatusEnum;
 import com.whoiszxl.base.enums.redis.UserRedisPrefixEnum;
 import com.whoiszxl.base.enums.role.UserRoleEnum;
 import com.whoiszxl.base.enums.user.UserStatusEnum;
 import com.whoiszxl.base.jwt.JwtUtils;
 import com.whoiszxl.base.utils.IdWorker;
 import com.whoiszxl.base.utils.RedisUtils;
+import com.whoiszxl.base.utils.VoPoConverter;
 import com.whoiszxl.user.dao.UserDao;
 import com.whoiszxl.user.pojo.ZxlUser;
 import com.whoiszxl.user.pojo.request.RegisterRequest;
+import com.whoiszxl.user.pojo.vo.ZxlUserVo;
 import com.whoiszxl.user.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,6 +89,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public void removeVerifyInRedis(String mobile) {
         redisUtils.delete(UserRedisPrefixEnum.USER_REGISTER_PHONE_CODE.getKey() + mobile);
+    }
+
+    @Override
+    public ZxlUserVo getUserInfoByUserId(String userId) {
+        ZxlUser zxlUser = userDao.findByIdAndStatus(userId, SwitchStatusEnum.STATUS_OPEN.getStatusCode());
+        if(zxlUser != null) {
+            return VoPoConverter.copyProperties(zxlUser, ZxlUserVo.class);
+        }
+        return null;
     }
 
 }

@@ -4,16 +4,20 @@ import com.netflix.discovery.converters.Auto;
 import com.whoiszxl.base.entity.Result;
 import com.whoiszxl.base.entity.StatusCode;
 import com.whoiszxl.base.enums.role.UserRoleEnum;
+import com.whoiszxl.base.jwt.JwtUtils;
 import com.whoiszxl.base.utils.ValidateUtils;
 import com.whoiszxl.user.client.CommonClient;
 import com.whoiszxl.user.pojo.ZxlUser;
 import com.whoiszxl.user.pojo.request.RegisterRequest;
 import com.whoiszxl.user.pojo.request.SmsRequest;
+import com.whoiszxl.user.pojo.vo.ZxlUserVo;
 import com.whoiszxl.user.service.UserService;
 import com.whoiszxl.user.sms.AliyunSmsSender;
+import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -36,6 +40,9 @@ public class UserController {
     @Autowired
     private CommonClient commonClient;
 
+    @Autowired
+    private HttpServletRequest request;
+
     @GetMapping("/testFeign")
     public Result<Object> testFeign() {
         return Result.buildSuccess(commonClient.findAll());
@@ -50,6 +57,12 @@ public class UserController {
     public Result sendSms(@RequestBody SmsRequest smsRequest) {
         Result result = aliyunSmsSender.sendSms(smsRequest.getMobile());
         return result;
+    }
+
+    @PostMapping("/info")
+    public Result<ZxlUserVo> info() {
+        String userId = JwtUtils.getUserClaims(request).getId();
+        return Result.buildSuccess(userService.getUserInfoByUserId(userId));
     }
 
     /**

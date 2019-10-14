@@ -2,6 +2,7 @@ package com.whoiszxl.user.service;
 
 import com.whoiszxl.user.pojo.ZxlUser;
 import com.whoiszxl.user.pojo.request.RegisterRequest;
+import com.whoiszxl.user.pojo.vo.ZxlUserVo;
 
 import java.util.Map;
 
@@ -27,4 +28,6 @@ public interface UserService {
     Map<String,Object> issueSign(ZxlUser zxlUser, String roleName);
 
     void removeVerifyInRedis(String mobile);
+
+    ZxlUserVo getUserInfoByUserId(String userId);
 }

@@ -11,4 +11,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  **/
 public interface UserDao extends JpaRepository<ZxlUser, String>,JpaSpecificationExecutor<ZxlUser> {
     ZxlUser findByPhoneAndStatus(String phone, Integer status);
+
+    ZxlUser findByIdAndStatus(String id, Integer status);
 }
