@@ -45,10 +45,10 @@ public class JwtInterceptor implements HandlerInterceptor {
                 Claims claims = jwtUtils.parseJWT(token);
                 String roles = (String) claims.get("roles");
                 if(StringUtils.equals(roles, UserRoleEnum.ROLE_ADMIN.getRoleName())){
-                    request.setAttribute(UserRoleEnum.ROLE_ADMIN.getRoleAttrKey(), token);
+                    request.setAttribute(UserRoleEnum.ROLE_ADMIN.getRoleAttrKey(), claims);
                 }
                 if(StringUtils.equals(roles, UserRoleEnum.ROLE_USER.getRoleName())){
-                    request.setAttribute(UserRoleEnum.ROLE_USER.getRoleAttrKey(), token);
+                    request.setAttribute(UserRoleEnum.ROLE_USER.getRoleAttrKey(), claims);
                 }
             }catch (Exception e){
                 throw new RuntimeException("令牌不正确！");
