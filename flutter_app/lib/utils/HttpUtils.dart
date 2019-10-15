@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_app/config/api.dart';
 import 'dart:async';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:io';
@@ -94,5 +95,53 @@ class HttpUtils {
   /// 清空 dio 对象
   static clear() {
     dio = null;
+  }
+
+    /// request method
+  static Object zxlRequest(String url, {data, method}) async {
+    data = data ?? {};
+    method = method ?? 'GET';
+
+    /// restful 请求处理
+    /// /gysw/search/hist/:user_id        user_id=27
+    /// 最终生成 url 为     /gysw/search/hist/27
+    data.forEach((key, value) {
+      if (url.indexOf(key) != -1) {
+        url = url.replaceAll(':$key', value.toString());
+      }
+    });
+
+    /// 打印请求相关信息：请求地址、请求方式、请求参数
+    // print('请求地址：【' + method + '  ' + url + '】');
+    // print('请求参数：' + data.toString());
+
+    Dio dio = createInstance();
+    var result;
+
+    //配置Bearer令牌
+    Map<String, String> headers = new Map();
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    String userInfo = sp.getString("userInfo");
+    if(null != userInfo) {
+      var userInfoObj = json.decode(userInfo);
+      String token = userInfoObj['token'];
+      headers['Authorization'] = 'Bearer ' + token;
+    }
+    dio.options.headers = headers;
+
+    try {
+      Response response = await dio.request(url,
+          data: data, options: new Options(method: method));
+
+      result = response.data;
+
+      /// 打印响应相关信息
+      print('响应数据：' + response.toString());
+    } on DioError catch (e) {
+      /// 打印请求失败相关信息
+      print('请求出错：' + e.toString());
+    }
+
+    return result;
   }
 }
