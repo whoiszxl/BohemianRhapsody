@@ -47,8 +47,8 @@ class _RechargeDetailPageState extends State<RechargeDetailPage> {
             String rechargeAddress = addressData['data']['rechargeAddress'];
             return Column(
               children: <Widget>[
-                addressHeader(currencyId: currencyId),
-                addressDetail(rechargeAddress: rechargeAddress)
+                AddressHeader(currencyId: currencyId),
+                AddressDetail(rechargeAddress: rechargeAddress)
               ],
             );
           }else {
@@ -66,11 +66,11 @@ class _RechargeDetailPageState extends State<RechargeDetailPage> {
 
 
 
-class addressHeader extends StatelessWidget {
+class AddressHeader extends StatelessWidget {
 
-  String currencyId;
+  final String currencyId;
 
-  addressHeader({Key key, this.currencyId}) : super(key: key);
+  AddressHeader({Key key, this.currencyId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -99,11 +99,11 @@ class addressHeader extends StatelessWidget {
 }
 
 
-class addressDetail extends StatelessWidget {
+class AddressDetail extends StatelessWidget {
 
-  String rechargeAddress;
+  final String rechargeAddress;
 
-  addressDetail({Key key, this.rechargeAddress}) : super(key: key);
+  AddressDetail({Key key, this.rechargeAddress}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
