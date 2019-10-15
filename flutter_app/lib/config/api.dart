@@ -10,5 +10,5 @@ const servicePath = {
 
   'assetList': serviceUrl + '/wallet/asset/assetList', //用户资产列表
   'getAssetByCurrencyId': serviceUrl + '/wallet/asset/getAssetByCurrencyId', //用户资产列表
-  'dispenseAddress': serviceUrl + '/wallet/address/dispense', //用户资产列表
+  'dispenseAddress': serviceUrl + '/wallet/address/dispense', //分配或获取地址
 };

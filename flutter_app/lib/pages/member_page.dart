@@ -8,7 +8,6 @@ import 'package:flutter_app/service/service_method.dart';
 import 'package:flutter_app/utils/SpUtils.dart';
 import 'package:flutter_app/utils/ToastUtils.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class MemberPage extends StatefulWidget {
 

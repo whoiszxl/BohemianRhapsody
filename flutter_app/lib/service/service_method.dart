@@ -9,6 +9,20 @@ import 'dart:async';
 import 'dart:io';
 import '../config/api.dart';
 
+class UserService {
+
+  /// 给用户分配或获取一个地址
+  /// @param currencyId 币种ID
+  static Future dispenseOrGetAddress(String currencyId) async {
+    return HttpUtils.zxlRequest(
+      servicePath['dispenseAddress'],
+      method: HttpUtils.POST,
+      data: {'currencyId': currencyId});
+  }
+
+
+}
+
 Future request(url, {formData}) async {
   try {
     Response response;
@@ -81,6 +95,9 @@ Future requestJson(url, {formData}) async {
     return print('ERROR:===========>$e');
   }
 }
+
+
+
 
 //TODO 两个async嵌套调用不知道为什么FutureBuilder拿不到数据 ，GG
 Future getAssetDetailData(String currencyId) async {

@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app/config/app_const.dart';
+import 'package:flutter_app/pages/member/recharge_detail_page.dart';
 import 'package:flutter_app/utils/ToastUtils.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_easyrefresh/phoenix_header.dart';
@@ -56,7 +57,7 @@ class _AssetDetailPageState extends State<AssetDetailPage> {
                     AssetHeader(
                       assetHeaderData: this.assetHeaderData,
                     ),
-                    ButtonGroup(),
+                    ButtonGroup(currencyId: currencyId),
                     Container(
                       padding: EdgeInsets.only(top: 10),
                       height: ScreenUtil().setHeight(1200),
@@ -150,15 +151,17 @@ class AssetHeader extends StatelessWidget {
 
 class ButtonGroup extends StatelessWidget {
 
-  ButtonGroup({Key key}) : super(key: key);
+  String currencyId;
+
+  ButtonGroup({Key key, this.currencyId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return _buttonGroupWidget();
+    return _buttonGroupWidget(context);
   }
 
 
-    Widget _buttonGroupWidget() {
+    Widget _buttonGroupWidget(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 15),
       child: Row(
@@ -169,7 +172,7 @@ class ButtonGroup extends StatelessWidget {
               child: Text('充币'),
               borderSide: BorderSide(color: AppConst.themeMainColor),
               onPressed: () {
-                ToastUtils.showMessage("充币");
+                Navigator.push(context, new MaterialPageRoute(builder: (context) => new RechargeDetailPage(currencyId)));
               },
             ),
           ),
