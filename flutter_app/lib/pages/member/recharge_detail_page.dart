@@ -120,7 +120,7 @@ class addressDetail extends StatelessWidget {
             
           },
         ),),
-        Text('充币地址', textAlign: TextAlign.center),
+        Container(margin: EdgeInsets.only(top: 6), child: Text('充币地址', textAlign: TextAlign.center)),
         Text(rechargeAddress, textAlign: TextAlign.center),
         Container(child: OutlineButton(
           borderSide: new BorderSide(color: AppConst.themeMainColor),
