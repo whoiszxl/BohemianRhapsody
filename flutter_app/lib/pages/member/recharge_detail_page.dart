@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_app/config/app_const.dart';
 import 'package:flutter_app/service/service_method.dart';
 import 'package:flutter_app/utils/ToastUtils.dart';
@@ -126,7 +127,9 @@ class addressDetail extends StatelessWidget {
           borderSide: new BorderSide(color: AppConst.themeMainColor),
           child: new Text('复制地址', style: TextStyle(color: AppConst.themeMainColor)),
           onPressed: () {
-            
+            ClipboardData data = new ClipboardData(text: rechargeAddress);
+            Clipboard.setData(data);
+            ToastUtils.showMessage('已经复制到粘贴板');
           },
         ),),
       ],),
