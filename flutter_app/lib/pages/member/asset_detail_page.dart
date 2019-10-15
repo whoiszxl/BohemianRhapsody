@@ -56,6 +56,7 @@ class _AssetDetailPageState extends State<AssetDetailPage> {
                     AssetHeader(
                       assetHeaderData: this.assetHeaderData,
                     ),
+                    ButtonGroup(),
                     Container(
                       padding: EdgeInsets.only(top: 10),
                       height: ScreenUtil().setHeight(1200),
@@ -98,14 +99,12 @@ class AssetHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: ScreenUtil().setHeight(350),
         width: ScreenUtil().setWidth(750),
         alignment: Alignment.topLeft,
         child: Column(
           children: <Widget>[
             _titleWidget(assetHeaderData['currency_name']),
-            _assetWidget(assetHeaderData),
-            _buttonGroupWidget()
+            _assetWidget(assetHeaderData)
           ],
         ));
   }
@@ -147,8 +146,19 @@ class AssetHeader extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buttonGroupWidget() {
+class ButtonGroup extends StatelessWidget {
+
+  ButtonGroup({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return _buttonGroupWidget();
+  }
+
+
+    Widget _buttonGroupWidget() {
     return Container(
       margin: EdgeInsets.only(top: 15),
       child: Row(
@@ -197,6 +207,4 @@ class AssetHeader extends StatelessWidget {
       ),
     );
   }
-
-  Widget _singleButton(String title) {}
 }
