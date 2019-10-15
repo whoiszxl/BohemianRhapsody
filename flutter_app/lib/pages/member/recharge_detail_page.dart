@@ -27,7 +27,6 @@ class _RechargeDetailPageState extends State<RechargeDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back_ios),
         actions: <Widget>[
           Container(
             margin: EdgeInsets.only(right: 10),

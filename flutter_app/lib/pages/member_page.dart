@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app/config/error_code.dart';
+import 'package:flutter_app/pages/index_page.dart';
 import 'package:flutter_app/pages/login_page.dart';
 import 'package:flutter_app/pages/member/asset_detail_page.dart';
 import 'package:flutter_app/service/service_method.dart';
@@ -87,7 +88,8 @@ class _MemberPageState extends State<MemberPage> {
                             child: Text('退出'),
                             onPressed: () {
                               logout();
-                              Navigator.pop(context);
+                              //Navigator.pop(context);
+                              Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new IndexPage()));
                             },
                           )
 
