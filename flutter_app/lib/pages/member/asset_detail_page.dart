@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/config/app_const.dart';
 import 'package:flutter_app/utils/ToastUtils.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_easyrefresh/phoenix_header.dart';
@@ -104,7 +105,7 @@ class AssetHeader extends StatelessWidget {
           children: <Widget>[
             _titleWidget(assetHeaderData['currency_name']),
             _assetWidget(assetHeaderData),
-            _buttonGroupWidget(context)
+            _buttonGroupWidget()
           ],
         ));
   }
@@ -147,7 +148,7 @@ class AssetHeader extends StatelessWidget {
     );
   }
 
-  Widget _buttonGroupWidget(BuildContext context) {
+  Widget _buttonGroupWidget() {
     return Container(
       margin: EdgeInsets.only(top: 15),
       child: Row(
@@ -156,7 +157,7 @@ class AssetHeader extends StatelessWidget {
             margin: EdgeInsets.only(left: 5),
             child: OutlineButton(
               child: Text('充币'),
-              borderSide: BorderSide(color: Theme.of(context).primaryColor),
+              borderSide: BorderSide(color: AppConst.themeMainColor),
               onPressed: () {
                 ToastUtils.showMessage("充币");
               },
@@ -166,7 +167,7 @@ class AssetHeader extends StatelessWidget {
             margin: EdgeInsets.only(left: 5),
             child: OutlineButton(
               child: Text('提币'),
-              borderSide: BorderSide(color: Theme.of(context).primaryColor),
+              borderSide: BorderSide(color: AppConst.themeMainColor),
               onPressed: () {
                 ToastUtils.showMessage("提币");
               },
@@ -176,7 +177,7 @@ class AssetHeader extends StatelessWidget {
             margin: EdgeInsets.only(left: 5),
             child: OutlineButton(
               child: Text('划转'),
-              borderSide: BorderSide(color: Theme.of(context).primaryColor),
+              borderSide: BorderSide(color: AppConst.themeMainColor),
               onPressed: () {
                 ToastUtils.showMessage("划转");
               },
@@ -186,7 +187,7 @@ class AssetHeader extends StatelessWidget {
             margin: EdgeInsets.only(left: 5),
             child: OutlineButton(
               child: Text('币币交易'),
-              borderSide: BorderSide(color: Theme.of(context).primaryColor),
+              borderSide: BorderSide(color: AppConst.themeMainColor),
               onPressed: () {
                 ToastUtils.showMessage("币币交易");
               },
