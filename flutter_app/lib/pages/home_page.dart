@@ -166,8 +166,22 @@ class RankingListState extends State<RankingList> {
     Tab(text: "新币榜" ),
   ];
 
+
+  //demo
+  List data = new List();
+  RankingListState() {
+    for (var i = 0; i < 10; i++) {
+      data.add({
+        "currencyName": "BTC$i",
+        "price": "\$1321$i",
+        "range": "+1.45%"
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    List<Container> content = getTabContentList(_rankingWidget(data), _rankingWidget(data), _rankingWidget(data));
     return Container(
       height: ScreenUtil().setHeight(1000),
       width: ScreenUtil().setWidth(750),
@@ -177,15 +191,64 @@ class RankingListState extends State<RankingList> {
           child: new Scaffold(
             appBar: new TabBar(tabs: tabList, labelColor: Colors.black54,isScrollable: false,),
             body: new TabBarView(
-              children: tabList.map((Tab tab) {
+              children: content.map((Container container) {
                 return Center(
-                  child: new Text("content:" + tab.text),
+                  child: container,
                 );
               }).toList(),
             ),
           ),
         ),
       
+    );
+  }
+
+  List<Container> getTabContentList(Widget widget1, Widget widget2, Widget widget3) {
+    List<Container> tabList = <Container> [
+      Container(child: widget1),
+      Container(child: widget2),
+      Container(child: widget3),
+    ];
+
+    return tabList;
+  }
+
+  Widget _rankingWidget(List data) {
+    return ListView.separated(
+      shrinkWrap: true, //解决无限高度问题
+      physics: NeverScrollableScrollPhysics(), //禁用滑动事件 双层ListView嵌套会有滑动冲突
+      itemCount: data.length,
+      itemBuilder: (context, index) {
+        var _data = data;
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(left: 5),
+              height: ScreenUtil().setHeight(50),
+              child: Text(data[index]['currencyName'], style: TextStyle(fontWeight: FontWeight.bold),),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 150),
+              height: ScreenUtil().setHeight(50),
+              child: Text(data[index]['price'], style:  TextStyle(color: Colors.red),),
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 5),
+              height: ScreenUtil().setHeight(50),
+              child: FlatButton(
+                child: Text(data[index]['range']),
+                color: Colors.red,
+                textColor: Colors.white,
+                onPressed: () {},
+              ),
+            ),
+          ],
+        );
+      },
+      separatorBuilder: (context, index) {
+        return Divider();
+      },
     );
   }
 }
