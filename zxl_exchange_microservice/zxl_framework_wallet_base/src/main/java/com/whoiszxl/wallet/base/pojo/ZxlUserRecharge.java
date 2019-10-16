@@ -1,5 +1,6 @@
 package com.whoiszxl.wallet.base.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.whoiszxl.base.pojo.BasePojo;
 import lombok.*;
 import lombok.experimental.Accessors;
@@ -46,6 +47,11 @@ public class ZxlUserRecharge {
     private Integer currencyId;
 
     /**
+     * 币种名称
+     */
+    private String currencyName;
+
+    /**
      * 充值的交易hash
      */
     private String txHash;
@@ -68,16 +74,19 @@ public class ZxlUserRecharge {
     /**
      * 上链时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private LocalDateTime upchainAt;
 
     /**
      * 上链成功时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private LocalDateTime upchainSuccessAt;
 
     /**
      * 上链状态，0：失败 1：成功 2：上链后等待确认中
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Integer upchainStatus;
 
     /**
@@ -88,11 +97,13 @@ public class ZxlUserRecharge {
     /**
      * 创建时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private LocalDateTime createdAt;
 
     /**
      * 更新时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private LocalDateTime updatedAt;
 
 

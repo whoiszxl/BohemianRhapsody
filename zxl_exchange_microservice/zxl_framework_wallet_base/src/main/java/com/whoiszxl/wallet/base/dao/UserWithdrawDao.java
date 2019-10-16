@@ -5,6 +5,8 @@ import com.whoiszxl.wallet.base.pojo.ZxlUserWithdraw;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
+import java.util.List;
+
 /**
  * @description: currency dao层
  * @author: whoiszxl
@@ -12,4 +14,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  **/
 public interface UserWithdrawDao extends JpaRepository<ZxlUserWithdraw, String>,JpaSpecificationExecutor<ZxlUserWithdraw> {
 
+    List<ZxlUserWithdraw> findByUserIdAndCurrencyId(String userId, Integer currencyId);
 }

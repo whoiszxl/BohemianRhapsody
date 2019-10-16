@@ -5,9 +5,12 @@ import com.whoiszxl.base.entity.ZxlPageRequest;
 import com.whoiszxl.base.jwt.JwtUtils;
 import com.whoiszxl.base.utils.VoPoConverter;
 import com.whoiszxl.wallet.base.pojo.ZxlCurrency;
+import com.whoiszxl.wallet.base.pojo.ZxlUserRecharge;
+import com.whoiszxl.wallet.base.pojo.ZxlUserWithdraw;
 import com.whoiszxl.wallet.base.service.ZxlCurrencyService;
 import com.whoiszxl.wallet.pojo.request.WalletRequest;
 import com.whoiszxl.wallet.pojo.vo.ZxlCurrencyVo;
+import com.whoiszxl.wallet.service.RechargeWithdrawService;
 import io.jsonwebtoken.Claims;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +36,9 @@ public class WalletController {
     @Autowired
     private ZxlCurrencyService zxlCurrencyService;
 
+    @Autowired
+    private RechargeWithdrawService rechargeWithdrawService;
+
 
     @PostMapping("/currencyList")
     public Result<List<ZxlCurrencyVo>> currencyList(@RequestBody ZxlPageRequest pageRequest){
@@ -42,9 +48,20 @@ public class WalletController {
         return Result.buildSuccess(zxlCurrencyVos);
     }
 
+    @PostMapping("/rechargeList")
+    public Result<List<ZxlUserRecharge>> rechargeList(@RequestBody WalletRequest walletRequest) {
+        String userId = JwtUtils.getUserClaims(request).getId();
+        Integer currencyId = Integer.parseInt(walletRequest.getCurrencyId());
+        List<ZxlUserRecharge> rechargeList = rechargeWithdrawService.getRechargeListByUserIdAndCurrencyId(userId, currencyId);
+        return Result.buildSuccess(rechargeList);
+    }
 
-    public Result<String> createAddressByCurrencyId() {
-        return null;
+    @PostMapping("/withdrawList")
+    public Result<List<ZxlUserWithdraw>> withdrawList(@RequestBody WalletRequest walletRequest) {
+        String userId = JwtUtils.getUserClaims(request).getId();
+        Integer currencyId = Integer.parseInt(walletRequest.getCurrencyId());
+        List<ZxlUserWithdraw> withdrawList = rechargeWithdrawService.getWithdrawListByUserIdAndCurrencyId(userId, currencyId);
+        return Result.buildSuccess(withdrawList);
     }
 
 

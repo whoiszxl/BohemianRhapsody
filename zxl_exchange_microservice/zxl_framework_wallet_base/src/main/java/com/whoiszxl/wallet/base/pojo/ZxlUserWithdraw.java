@@ -1,5 +1,6 @@
 package com.whoiszxl.wallet.base.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.whoiszxl.base.pojo.BasePojo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -41,6 +42,11 @@ public class ZxlUserWithdraw extends BasePojo {
      * 币种ID
      */
     private Integer currencyId;
+
+    /**
+     * 币种名称
+     */
+    private String currencyName;
 
     /**
      * 提现交易hash
@@ -90,16 +96,19 @@ public class ZxlUserWithdraw extends BasePojo {
     /**
      * 上链时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private LocalDateTime upchainAt;
 
     /**
      * 上链成功时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private LocalDateTime upchainSuccessAt;
 
     /**
      * 上链状态，0：失败 1：成功 2：上链后等待确认中
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Boolean upchainStatus;
 
 }

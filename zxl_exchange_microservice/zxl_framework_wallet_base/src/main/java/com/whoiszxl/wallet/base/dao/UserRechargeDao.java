@@ -17,4 +17,6 @@ public interface UserRechargeDao extends JpaRepository<ZxlUserRecharge, String>,
     ZxlUserRecharge findByCurrencyIdAndTxHashAndToAddress(Integer currencyId, String txHash, String address);
 
     List<ZxlUserRecharge> findByCurrencyIdAndUpchainStatus(Integer currencyId, Integer upchainStatus);
+
+    List<ZxlUserRecharge> findByUserIdAndCurrencyId(String userId, Integer currencyId);
 }
