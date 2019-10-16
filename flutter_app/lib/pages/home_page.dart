@@ -104,9 +104,9 @@ class TopNavigator extends StatelessWidget {
         children: <Widget>[
           Image.network(
             item['imageUrl'],
-            width: ScreenUtil().setWidth(95),
+            width: ScreenUtil().setWidth(65),
           ),
-          Text(item['navName'])
+          Text(item['navName'], style: TextStyle(fontSize: ScreenUtil().setSp(25)),)
         ],
       ),
     );
@@ -119,7 +119,7 @@ class TopNavigator extends StatelessWidget {
     }
     
     return Container(
-      height: ScreenUtil().setHeight(360),
+      height: ScreenUtil().setHeight(330),
       padding: EdgeInsets.all(3.0),
       child: GridView.count(
         // 解决顶部导航区域（GridView）与全局（SingleChildScrollView）的滑动冲突问题
@@ -219,7 +219,6 @@ class RankingListState extends State<RankingList> {
       physics: NeverScrollableScrollPhysics(), //禁用滑动事件 双层ListView嵌套会有滑动冲突
       itemCount: data.length,
       itemBuilder: (context, index) {
-        var _data = data;
         return Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
