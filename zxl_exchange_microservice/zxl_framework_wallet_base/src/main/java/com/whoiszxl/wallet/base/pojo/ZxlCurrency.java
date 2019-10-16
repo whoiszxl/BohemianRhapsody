@@ -139,6 +139,11 @@ public class ZxlCurrency {
     private String walletKey;
 
     /**
+     * 充值确认数
+     */
+    private Integer confirms;
+
+    /**
      * 展示顺序
      */
     private Integer sort;

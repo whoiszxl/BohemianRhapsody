@@ -79,6 +79,7 @@ CREATE TABLE `zxl_currency` (
   `fee_withdraw` decimal(36,18) NOT NULL DEFAULT '0' COMMENT '提币手续费',
   `wallet_url` varchar(64) NOT NULL DEFAULT '' COMMENT '钱包储存路径',
   `wallet_key` varchar(64) NOT NULL DEFAULT '' COMMENT '钱包密钥',
+  `confirms` tinyint(2) NOT NULL DEFAULT '1' COMMENT '充值确认数',
   `sort` int(10) NOT NULL DEFAULT '0' COMMENT '展示顺序',
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '币种状态，0：关闭 1：开启',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
