@@ -181,4 +181,57 @@ CREATE TABLE `zxl_config` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
 	UNIQUE KEY (`key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='币种表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='配置表';
+
+
+
+DROP TABLE IF EXISTS `zxl_contracts`;
+CREATE TABLE `zxl_contracts` (
+  `id` varchar(20) NOT NULL COMMENT '主键ID,交易对ID',
+  `contract_name` varchar(20) NOT NULL COMMENT '交易对名称',
+  `contract_type` tinyint(2) DEFAULT '1' COMMENT '交易对类型：1：主版   2：P版  3:创业版',
+  `currency_id` int(10) NOT NULL COMMENT '交易对第一个币种ID',
+  `replace_currency_id` int(10) NOT NULL COMMENT '交易对第二个币种ID',
+  `buyer_fee` decimal(40,18) NOT NULL DEFAULT '0.001' COMMENT '购买者所出费率',
+  `seller_fee` decimal(40,18) NOT NULL DEFAULT '0.001' COMMENT '出售者所出费率',
+  `max_orders` int(4) NOT NULL COMMENT '最大挂单笔数',
+  `sort` int(10) NOT NULL DEFAULT '0' COMMENT '展示顺序',
+  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '交易对状态，0：关闭 1：开启',
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='交易对表';
+
+
+DROP TABLE IF EXISTS `zxl_transactions`;
+CREATE TABLE `zxl_transactions` (
+  `id` varchar(20) NOT NULL COMMENT '挂单主键ID',
+  `user_id` varchar(20) NOT NULL COMMENT '用户ID',
+  `currency_id` int(10) NOT NULL COMMENT '交易对第一个币种ID',
+  `replace_currency_id` int(10) NOT NULL COMMENT '交易对第二个币种ID',
+  `price` decimal(40,18) NOT NULL DEFAULT '0.0000' COMMENT '委托价格',
+  `total_count` decimal(40,18) NOT NULL DEFAULT '0.0000' COMMENT '委托总数量',
+  `current_count` decimal(40,18) NOT NULL DEFAULT '0.0000' COMMENT '当前可交易数量（挂单的金额可能超过当前所有挂单的总和）',
+  `type` tinyint(2) NOT NULL DEFAULT '0' COMMENT '0：买入 1：卖出',
+  `status` tinyint(2) NOT NULL DEFAULT '0' COMMENT '0代表部分交易，可交易，1是所有已成交，交易结束， -1用户撤单',
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间,挂单时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='挂单表';
+
+
+
+DROP TABLE IF EXISTS `zxl_orders`;
+CREATE TABLE `zxl_orders` (
+  `id` varchar(20) NOT NULL COMMENT '订单主键ID',
+  `user_id` varchar(20) NOT NULL COMMENT '买家用户ID',
+  `transaction_id` varchar(20) NOT NULL COMMENT '挂单ID',
+  `currency_id` int(10) NOT NULL COMMENT '交易对第一个币种ID',
+  `replace_currency_id` int(10) NOT NULL COMMENT '交易对第二个币种ID',
+  `price` decimal(40,18) NOT NULL DEFAULT '0.0000' COMMENT '成交价格',
+  `success_count` decimal(40,18) NOT NULL DEFAULT '0.0000' COMMENT '委托总数量',
+  `type` tinyint(2) NOT NULL DEFAULT '0' COMMENT '0：买入 1：卖出',
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间,成交时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='订单成交表';
