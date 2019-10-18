@@ -3,11 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import './home_page.dart';
-import './asset_page.dart';
+import './money_page.dart';
 import './market_page.dart';
 import './trade_page.dart';
 import './member_page.dart';
-import './login_page.dart';
 
 class IndexPage extends StatefulWidget {
   @override
@@ -24,9 +23,9 @@ class _IndexPageState extends State<IndexPage> {
     BottomNavigationBarItem(
       icon: Icon(CupertinoIcons.search), title: Text('行情')),
     BottomNavigationBarItem(
-      icon: Icon(CupertinoIcons.shopping_cart), title: Text('交易')),
+      icon: Icon(CupertinoIcons.shopping_cart), title: Text('法币')),
     BottomNavigationBarItem(
-      icon: Icon(CupertinoIcons.book), title: Text('资产')),
+      icon: Icon(CupertinoIcons.book), title: Text('币币')),
     BottomNavigationBarItem(
       icon: Icon(CupertinoIcons.profile_circled), title: Text('个人'))
   ];
@@ -34,8 +33,8 @@ class _IndexPageState extends State<IndexPage> {
   final List<Widget> tabBodies = [
     HomePage(),
     MarketPage(),
+    MoneyPage(),
     TradePage(),
-    AssetPage(),
     MemberPage()
   ];
 
