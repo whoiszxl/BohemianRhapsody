@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/config/app_const.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
@@ -63,9 +62,22 @@ class HeaderTitle extends StatelessWidget {
 
 
 
-class TransactionPanel extends StatelessWidget {
-
+class TransactionPanel extends StatefulWidget {
   TransactionPanel({Key key}) : super(key: key);
+  @override
+  State<StatefulWidget> createState() => _TransactionPanelState();
+}
+
+  
+
+class _TransactionPanelState extends State<TransactionPanel> {
+
+  bool check = true;
+
+  Color buyColor = Colors.green;
+  Color sellColor = Colors.grey;
+  Color placeOrderColor = Colors.green;
+  Text placeOrderText = Text('买入');
 
   TextEditingController transactionCountController = new TextEditingController();
 
@@ -84,9 +96,16 @@ class TransactionPanel extends StatelessWidget {
                 width: ScreenUtil().setWidth(200),
                 child: FlatButton(
                   child: Text('买入'),
-                  color: Colors.green,
+                  color: buyColor,
                   textColor: Colors.white,
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      buyColor = Colors.green;
+                      sellColor = Colors.grey;
+                      placeOrderText = Text('买入');
+                      placeOrderColor = Colors.green;
+                    });
+                  },
                 ),
               ),
               Container(
@@ -94,9 +113,16 @@ class TransactionPanel extends StatelessWidget {
                 width: ScreenUtil().setWidth(200),
                 child: FlatButton(
                   child: Text('卖出'),
-                  color: Colors.grey,
+                  color: sellColor,
                   textColor: Colors.white,
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      buyColor = Colors.grey;
+                      sellColor = Colors.red;
+                      placeOrderText = Text('卖出');
+                      placeOrderColor = Colors.red;
+                    });
+                  },
                 ),
               ),
             ],
@@ -122,8 +148,8 @@ class TransactionPanel extends StatelessWidget {
     return Container(
       width: ScreenUtil().setWidth(430),
       child: FlatButton(
-        child: Text('买入'),
-        color: Colors.green,
+        child: placeOrderText,
+        color: placeOrderColor,
         textColor: Colors.white,
         onPressed: () {},
       ),
