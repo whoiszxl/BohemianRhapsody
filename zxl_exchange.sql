@@ -100,7 +100,7 @@ CREATE TABLE `zxl_user_address` (
   `keystore` LONGTEXT COMMENT 'keystore',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '钱包状态，0：关闭 1：开启',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT ON UPDATE CURRENT_TIMESTAMP '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户充值地址表';
 
