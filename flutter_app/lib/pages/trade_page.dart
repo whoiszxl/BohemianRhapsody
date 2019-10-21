@@ -93,7 +93,7 @@ class _TransactionPanelState extends State<TransactionPanel> {
           Row(
             children: <Widget>[
               Container(
-                width: ScreenUtil().setWidth(200),
+                width: ScreenUtil().setWidth(210),
                 child: FlatButton(
                   child: Text('买入'),
                   color: buyColor,
@@ -109,8 +109,8 @@ class _TransactionPanelState extends State<TransactionPanel> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 10),
-                width: ScreenUtil().setWidth(200),
+                margin: EdgeInsets.only(left: 5),
+                width: ScreenUtil().setWidth(210),
                 child: FlatButton(
                   child: Text('卖出'),
                   color: sellColor,
