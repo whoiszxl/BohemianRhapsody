@@ -35,6 +35,7 @@ zxl_exchange_microservice
 | 技术                 | 说明                | 官网                                                         |
 | -------------------- | ------------------- | ------------------------------------------------------------ |
 | Spring Boot          | 容器+MVC框架        | [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot) |
+| Spring Cloud         | 微服务框架          | [https://spring.io/projects/spring-cloud](https://spring.io/projects/spring-cloud) |
 | Spring Data JPA      | ORM框架             | [https://spring.io/projects/spring-data-jpa](https://spring.io/projects/spring-data-jpa) |
 | Swagger-UI           | 文档生产工具        | [https://github.com/swagger-api/swagger-ui](https://github.com/swagger-api/swagger-ui) |
 | RabbitMq             | 消息队列            | [https://www.rabbitmq.com/](https://www.rabbitmq.com/)       |
