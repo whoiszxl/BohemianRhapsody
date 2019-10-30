@@ -99,8 +99,11 @@ zxl_exchange_microservice
 
 
 
+## 许可证
 
+[Apache License 2.0](https://github.com/whoiszxl/BohemianRhapsody/blob/master/LICENSE)
 
+Copyright (c) 2018-2019 whoiszxl
 
 
 [yapi]: https://github.com/YMFE/yapi
