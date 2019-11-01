@@ -59,6 +59,6 @@ public class ZxlUserBalance extends BasePojo {
     /**
      * 充值地址状态，0：关闭 1：开启
      */
-    private Boolean status;
+    private Integer status;
 
 }

@@ -29,6 +29,10 @@ public class ZxlContracts {
     private static final long serialVersionUID = 1L;
 
     /**
+     * 交易对ID
+     */
+    private Integer id;
+    /**
      * 交易对名称
      */
     private String contractName;

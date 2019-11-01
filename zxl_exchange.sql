@@ -187,7 +187,7 @@ CREATE TABLE `zxl_config` (
 
 DROP TABLE IF EXISTS `zxl_contracts`;
 CREATE TABLE `zxl_contracts` (
-  `id` varchar(20) NOT NULL COMMENT '主键ID,交易对ID',
+  `id` int(4) NOT NULL COMMENT '主键ID,交易对ID',
   `contract_name` varchar(20) NOT NULL COMMENT '交易对名称',
   `contract_type` tinyint(2) DEFAULT '1' COMMENT '交易对类型：1：主版   2：P版  3:创业版',
   `currency_id` int(10) NOT NULL COMMENT '交易对第一个币种ID',
