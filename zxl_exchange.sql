@@ -1,7 +1,7 @@
 # 轮播图表
 DROP TABLE IF EXISTS `zxl_banner`;
 CREATE TABLE `zxl_banner` (
-  `id` varchar(20) NOT NULL COMMENT 'ID',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `name` varchar(100) DEFAULT '' COMMENT '轮播图名称',
   `type` tinyint(1) DEFAULT '0' COMMENT '轮播位置：0->PC首页轮播；1->app首页轮播',
   `pic` varchar(500) DEFAULT '' COMMENT '图片地址',
@@ -39,7 +39,7 @@ CREATE TABLE `zxl_user` (
 
 DROP TABLE IF EXISTS `zxl_admin`;
 CREATE TABLE `zxl_admin` (
-  `id` varchar(20) NOT NULL COMMENT 'ID',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `username` varchar(16) NOT NULL COMMENT '用户名',
   `password` varchar(100) NOT NULL COMMENT '密码',
   `realname` varchar(16) DEFAULT '' COMMENT '真实姓名',
@@ -58,7 +58,7 @@ CREATE TABLE `zxl_admin` (
 
 DROP TABLE IF EXISTS `zxl_currency`;
 CREATE TABLE `zxl_currency` (
-  `id` int(10) NOT NULL COMMENT '主键ID',
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '币种ID',
   `currency_name` varchar(32) NOT NULL COMMENT '货币名称',
   `currency_mark` varchar(32) NOT NULL COMMENT '英文标识',
   `currency_logo` varchar(255) NOT NULL COMMENT '货币logo',
@@ -91,7 +91,7 @@ CREATE TABLE `zxl_currency` (
 
 DROP TABLE IF EXISTS `zxl_user_address`;
 CREATE TABLE `zxl_user_address` (
-  `id` varchar(20) NOT NULL COMMENT '主键ID',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
   `user_id` varchar(20) NOT NULL COMMENT '用户ID',
   `currency_id` int(10) NOT NULL COMMENT '币种ID',
   `recharge_address` varchar(255) NOT NULL COMMENT '充值地址',
@@ -108,7 +108,7 @@ CREATE TABLE `zxl_user_address` (
 
 DROP TABLE IF EXISTS `zxl_user_balance`;
 CREATE TABLE `zxl_user_balance` (
-  `id` varchar(20) NOT NULL COMMENT '主键ID',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
   `user_id` varchar(20) NOT NULL COMMENT '用户ID',
   `currency_id` int(10) NOT NULL COMMENT '币种ID',
   `all_balance` decimal(40,18) NOT NULL COMMENT '数量',
@@ -125,7 +125,7 @@ CREATE TABLE `zxl_user_balance` (
 
 DROP TABLE IF EXISTS `zxl_user_withdraw`;
 CREATE TABLE `zxl_user_withdraw` (
-  `id` varchar(20) NOT NULL COMMENT '主键ID',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
   `user_id` varchar(20) NOT NULL COMMENT '用户ID',
   `currency_id` int(10) NOT NULL COMMENT '币种ID',
   `currency_name` varchar(32) NOT NULL COMMENT '货币名称',
@@ -149,7 +149,7 @@ CREATE TABLE `zxl_user_withdraw` (
 
 DROP TABLE IF EXISTS `zxl_user_recharge`;
 CREATE TABLE `zxl_user_recharge` (
-  `id` varchar(20) NOT NULL COMMENT '主键ID',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
   `user_id` varchar(20) NOT NULL COMMENT '用户ID',
   `currency_id` int(10) NOT NULL COMMENT '币种ID',
   `currency_name` varchar(32) NOT NULL COMMENT '货币名称',
@@ -205,7 +205,7 @@ CREATE TABLE `zxl_contracts` (
 
 DROP TABLE IF EXISTS `zxl_transactions`;
 CREATE TABLE `zxl_transactions` (
-  `id` varchar(20) NOT NULL COMMENT '挂单主键ID',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '挂单主键ID',
   `user_id` varchar(20) NOT NULL COMMENT '用户ID',
   `currency_id` int(10) NOT NULL COMMENT '交易对第一个币种ID',
   `replace_currency_id` int(10) NOT NULL COMMENT '交易对第二个币种ID',
@@ -223,7 +223,7 @@ CREATE TABLE `zxl_transactions` (
 
 DROP TABLE IF EXISTS `zxl_orders`;
 CREATE TABLE `zxl_orders` (
-  `id` varchar(20) NOT NULL COMMENT '订单主键ID',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '订单主键ID',
   `user_id` varchar(20) NOT NULL COMMENT '买家用户ID',
   `transaction_id` varchar(20) NOT NULL COMMENT '挂单ID',
   `currency_id` int(10) NOT NULL COMMENT '交易对第一个币种ID',
