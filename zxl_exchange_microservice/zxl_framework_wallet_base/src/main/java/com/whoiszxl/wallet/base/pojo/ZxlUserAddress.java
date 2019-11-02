@@ -3,8 +3,10 @@ package com.whoiszxl.wallet.base.pojo;
 import com.whoiszxl.base.pojo.BasePojo;
 import lombok.*;
 import lombok.experimental.Accessors;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
@@ -32,7 +34,9 @@ public class ZxlUserAddress {
      * 主键ID
      */
     @Id
-    private String id;
+    @GeneratedValue(generator = "id")
+    @GenericGenerator(name = "id",strategy = "increment")
+    private Integer id;
 
     /**
      * 用户ID

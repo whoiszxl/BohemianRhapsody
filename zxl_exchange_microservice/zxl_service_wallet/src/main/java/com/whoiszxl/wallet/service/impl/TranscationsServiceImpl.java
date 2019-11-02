@@ -10,6 +10,7 @@ import com.whoiszxl.wallet.base.enums.TransactionStatusEnum;
 import com.whoiszxl.wallet.base.pojo.ZxlTransactions;
 import com.whoiszxl.wallet.base.pojo.ZxlUserBalance;
 import com.whoiszxl.wallet.pojo.request.TransactionRequest;
+import com.whoiszxl.wallet.service.MatchService;
 import com.whoiszxl.wallet.service.TransactionsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,6 +32,9 @@ public class TranscationsServiceImpl implements TransactionsService {
 
     @Autowired
     private TransactionsDao transactionsDao;
+
+    @Autowired
+    private MatchService matchService;
 
 
     /**
@@ -67,10 +71,15 @@ public class TranscationsServiceImpl implements TransactionsService {
         zxlTransactions.setStatus(TransactionStatusEnum.TRADE_OPEN.getValue());
         zxlTransactions.setCreatedAt(LocalDateTime.now());
         zxlTransactions.setUpdatedAt(LocalDateTime.now());
-        transactionsDao.save(zxlTransactions);
+        ZxlTransactions save = transactionsDao.save(zxlTransactions);
 
-        return false;
+        //TODO 发送MQ过去匹配（撮合）交易,先异步调用，后改为MQ
+        matchService.matchOrder(zxlTransactions);
+
+        return true;
     }
+
+
 
     /**
      * 校验输入的金额是否合法

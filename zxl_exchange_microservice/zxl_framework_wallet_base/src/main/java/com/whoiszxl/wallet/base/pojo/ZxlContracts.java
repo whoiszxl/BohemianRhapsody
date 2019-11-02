@@ -4,8 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -23,7 +26,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@Table(name = "zxl_currency")
+@Table(name = "zxl_contracts")
 public class ZxlContracts {
 
     private static final long serialVersionUID = 1L;
@@ -31,6 +34,9 @@ public class ZxlContracts {
     /**
      * 交易对ID
      */
+    @Id
+    @GeneratedValue(generator = "id")
+    @GenericGenerator(name = "id",strategy = "increment")
     private Integer id;
     /**
      * 交易对名称

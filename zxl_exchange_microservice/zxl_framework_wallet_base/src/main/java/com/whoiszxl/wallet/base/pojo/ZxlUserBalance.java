@@ -6,8 +6,10 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.math.BigDecimal;
@@ -31,9 +33,16 @@ public class ZxlUserBalance extends BasePojo {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 用户ID
+     * 主键ID
      */
     @Id
+    @GeneratedValue(generator = "id")
+    @GenericGenerator(name = "id",strategy = "increment")
+    private Integer id;
+
+    /**
+     * 用户ID
+     */
     private String userId;
 
     /**

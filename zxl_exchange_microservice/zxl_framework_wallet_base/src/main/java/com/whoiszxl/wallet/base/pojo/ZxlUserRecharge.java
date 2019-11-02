@@ -4,8 +4,10 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.whoiszxl.base.pojo.BasePojo;
 import lombok.*;
 import lombok.experimental.Accessors;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.math.BigDecimal;
@@ -34,7 +36,9 @@ public class ZxlUserRecharge {
      * 主键Id
      */
     @Id
-    private String id;
+    @GeneratedValue(generator = "id")
+    @GenericGenerator(name = "id",strategy = "increment")
+    private Integer id;
 
     /**
      * 用户ID

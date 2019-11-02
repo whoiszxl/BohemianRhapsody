@@ -5,11 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -36,6 +34,8 @@ public class ZxlCurrency {
      * 货币ID
      */
     @Id
+    @GeneratedValue(generator = "id")
+    @GenericGenerator(name = "id",strategy = "increment")
     private Integer id;
 
     /**

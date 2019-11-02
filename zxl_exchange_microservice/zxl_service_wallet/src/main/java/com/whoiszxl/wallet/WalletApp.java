@@ -10,6 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
  * @description: 钱包启动类
@@ -20,6 +21,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableFeignClients
 @EnableEurekaClient
 @SpringBootApplication
+@EnableAsync //开启异步调用
 @ComponentScan(basePackages={"com.whoiszxl.base", "com.whoiszxl.wallet.base"})//扫描base包和wallet base下的类
 @ComponentScan(basePackages={"com.whoiszxl.wallet"})//扫描本项目下的所有类
 @EntityScan(basePackages = {"com.whoiszxl.wallet.base.pojo"})
