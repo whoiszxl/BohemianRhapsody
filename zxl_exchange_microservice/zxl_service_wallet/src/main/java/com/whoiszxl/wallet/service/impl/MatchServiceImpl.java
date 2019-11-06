@@ -52,18 +52,24 @@ public class MatchServiceImpl implements MatchService {
 
         //TODO 有挂单，就有成交，有成交就有最新成交价，设置一波这个 (使用redis队列储存)
 
+        //剩余的交易量如果再撮合了一笔价格不对等的交易，需要把差价转换为相应的剩余量
+        // surplusCount = surplusCount + 差价 * 交易的数量
         Integer index = 0;
         BigDecimal surplusCount = zxlTransactions.getCurrentCount();
         while (surplusCount.compareTo(BigDecimal.ZERO) > 0 && index < data.size()) {
             ZxlTransactions rowData = data.get(index);
-            BigDecimal transactionCount = BigDecimal.ZERO;
+            BigDecimal transactionCount;
+
+            BigDecimal priceMargin = zxlTransactions.getPrice().subtract(rowData.getPrice()).abs();
+
 
             if(rowData.getCurrentCount().compareTo(surplusCount) > 0) {
                 transactionCount = surplusCount;
-                surplusCount = BigDecimal.ZERO;
+                surplusCount = priceMargin.multiply(transactionCount);
             }else {
                 transactionCount = rowData.getCurrentCount();
                 surplusCount = surplusCount.subtract(rowData.getCurrentCount());
+                surplusCount = surplusCount.add(priceMargin.multiply(transactionCount));
             }
 
             //处理被交易方的数据
