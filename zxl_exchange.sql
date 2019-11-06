@@ -212,7 +212,7 @@ CREATE TABLE `zxl_transactions` (
   `price` decimal(40,18) NOT NULL DEFAULT '0.0000' COMMENT '委托价格',
   `total_count` decimal(40,18) NOT NULL DEFAULT '0.0000' COMMENT '委托总数量',
   `current_count` decimal(40,18) NOT NULL DEFAULT '0.0000' COMMENT '当前可交易数量（挂单的金额可能超过当前所有挂单的总和）',
-  `type` tinyint(2) NOT NULL DEFAULT '0' COMMENT '0：买入 1：卖出',
+  `type` tinyint(2) NOT NULL DEFAULT '1' COMMENT '1：买入 -1：卖出',
   `status` tinyint(2) NOT NULL DEFAULT '0' COMMENT '0代表部分交易，可交易，1是所有已成交，交易结束， -1用户撤单',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间,挂单时间',
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',

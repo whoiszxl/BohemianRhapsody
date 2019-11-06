@@ -71,11 +71,10 @@ public class TranscationsServiceImpl implements TransactionsService {
         zxlTransactions.setStatus(TransactionStatusEnum.TRADE_OPEN.getValue());
         zxlTransactions.setCreatedAt(LocalDateTime.now());
         zxlTransactions.setUpdatedAt(LocalDateTime.now());
-        ZxlTransactions save = transactionsDao.save(zxlTransactions);
+        ZxlTransactions saveResult = transactionsDao.save(zxlTransactions);
 
         //TODO 发送MQ过去匹配（撮合）交易,先异步调用，后改为MQ
-        matchService.matchOrder(zxlTransactions);
-
+        matchService.matchOrder(saveResult);
         return true;
     }
 
