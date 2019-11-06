@@ -43,9 +43,9 @@ public class MatchServiceImpl implements MatchService {
 
     @Async
     @Override
-    public void matchOrder(ZxlTransactions zxlTransactions) {
+    public void matchOrder(ZxlTransactions transactionData) {
         //查询到其他人的挂单，并且买入卖出是反方向的
-        List<ZxlTransactions> data = zxlTransactions.getType().equals(BuySellEnum.BUY.getValue()) ? transactionsDao.getBuyMatchTransactionList(zxlTransactions):transactionsDao.getSellMatchTransactionList(zxlTransactions);
+        List<ZxlTransactions> data = transactionData.getType().equals(BuySellEnum.BUY.getValue()) ? transactionsDao.getBuyMatchTransactionList(transactionData):transactionsDao.getSellMatchTransactionList(transactionData);
         if(data == null || data.isEmpty()) {
             return;
         }
@@ -55,12 +55,12 @@ public class MatchServiceImpl implements MatchService {
         //剩余的交易量如果再撮合了一笔价格不对等的交易，需要把差价转换为相应的剩余量
         // surplusCount = surplusCount + 差价 * 交易的数量
         Integer index = 0;
-        BigDecimal surplusCount = zxlTransactions.getCurrentCount();
+        BigDecimal surplusCount = transactionData.getCurrentCount();
         while (surplusCount.compareTo(BigDecimal.ZERO) > 0 && index < data.size()) {
             ZxlTransactions rowData = data.get(index);
             BigDecimal transactionCount;
 
-            BigDecimal priceMargin = zxlTransactions.getPrice().subtract(rowData.getPrice()).abs();
+            BigDecimal priceMargin = transactionData.getPrice().subtract(rowData.getPrice()).abs();
 
 
             if(rowData.getCurrentCount().compareTo(surplusCount) > 0) {
@@ -74,11 +74,10 @@ public class MatchServiceImpl implements MatchService {
 
             //处理被交易方的数据
             this.handleTransaction(rowData, transactionCount);
-
-
         }
 
-
+        //处理交易方的数据
+        this.handleTransaction(transactionData, transactionData.getCurrentCount().subtract(surplusCount));
     }
 
     @Transactional
