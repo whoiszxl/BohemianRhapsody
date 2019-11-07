@@ -60,7 +60,6 @@ public class AddressDispenseServiceImpl implements AddressDispenseService {
 
                 //保存到数据库
                 ZxlUserAddress dbParams = ZxlUserAddress.builder()
-                        .id(idWorker.nextId() + "")
                         .userId(userId)
                         .currencyId(currencyId)
                         .rechargeAddress(newAddress)

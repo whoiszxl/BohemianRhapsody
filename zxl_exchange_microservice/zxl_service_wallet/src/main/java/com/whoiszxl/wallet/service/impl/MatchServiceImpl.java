@@ -41,11 +41,12 @@ public class MatchServiceImpl implements MatchService {
     private UserBalanceDao userBalanceDao;
 
 
-    @Async
     @Override
     public void matchOrder(ZxlTransactions transactionData) {
         //查询到其他人的挂单，并且买入卖出是反方向的
-        List<ZxlTransactions> data = transactionData.getType().equals(BuySellEnum.BUY.getValue()) ? transactionsDao.getBuyMatchTransactionList(transactionData):transactionsDao.getSellMatchTransactionList(transactionData);
+        List<ZxlTransactions> data = transactionData.getType().equals(BuySellEnum.BUY.getValue()) ?
+                transactionsDao.getBuyMatchTransactionList(transactionData.getType(), transactionData.getUserId(), transactionData.getCurrencyId(), transactionData.getReplaceCurrencyId(), transactionData.getPrice()) :
+                transactionsDao.getSellMatchTransactionList(transactionData.getType(), transactionData.getUserId(), transactionData.getCurrencyId(), transactionData.getReplaceCurrencyId(), transactionData.getPrice());
         if(data == null || data.isEmpty()) {
             return;
         }
@@ -78,6 +79,9 @@ public class MatchServiceImpl implements MatchService {
 
         //处理交易方的数据
         this.handleTransaction(transactionData, transactionData.getCurrentCount().subtract(surplusCount));
+
+        //增加currency的交易量
+        index++;
     }
 
     @Transactional
@@ -93,6 +97,7 @@ public class MatchServiceImpl implements MatchService {
         zxlOrders.setCurrencyId(rowData.getCurrencyId());
         zxlOrders.setReplaceCurrencyId(rowData.getReplaceCurrencyId());
         zxlOrders.setPrice(rowData.getPrice());
+        zxlOrders.setType(rowData.getType());
         zxlOrders.setSuccessCount(transactionCount);
         zxlOrders.setCreatedAt(LocalDateTime.now());
         zxlOrders.setUpdatedAt(LocalDateTime.now());
