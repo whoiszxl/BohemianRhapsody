@@ -54,7 +54,8 @@ public class MatchServiceImpl implements MatchService {
         //TODO 有挂单，就有成交，有成交就有最新成交价，设置一波这个 (使用redis队列储存)
 
         //剩余的交易量如果再撮合了一笔价格不对等的交易，需要把差价转换为相应的剩余量
-        // surplusCount = surplusCount + 差价 * 交易的数量
+        //多出来的钱需要再进行匹配，留在transactions表中，价差如1元，数量则需要乘以数量（surplusCount = surplusCount + 差价 * 交易的数量）
+        //多出来的surplusCount还需要除以卖出的单价，最后公式如下（surplusCount = surplusCount + 差价 * 交易的数量 / price）
         Integer index = 0;
         BigDecimal surplusCount = transactionData.getCurrentCount();
         while (surplusCount.compareTo(BigDecimal.ZERO) > 0 && index < data.size()) {
@@ -72,16 +73,18 @@ public class MatchServiceImpl implements MatchService {
                 surplusCount = surplusCount.subtract(rowData.getCurrentCount());
                 surplusCount = surplusCount.add(priceMargin.multiply(transactionCount));
             }
-
+            //TODO 除法，涉及到精确度的，后续封装一个运算工具类将精度统一管理
+            surplusCount = surplusCount.divide(transactionData.getPrice(), 8, BigDecimal.ROUND_HALF_DOWN);
             //处理被交易方的数据
             this.handleTransaction(rowData, transactionCount);
+            index++;
         }
 
         //处理交易方的数据
         this.handleTransaction(transactionData, transactionData.getCurrentCount().subtract(surplusCount));
 
         //增加currency的交易量
-        index++;
+
     }
 
     @Transactional
