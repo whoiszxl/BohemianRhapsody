@@ -57,38 +57,40 @@ public class MatchServiceImpl implements MatchService {
         //多出来的钱需要再进行匹配，留在transactions表中，价差如1元，数量则需要乘以数量（surplusCount = surplusCount + 差价 * 交易的数量）
         //多出来的surplusCount还需要除以卖出的单价，最后公式如下（surplusCount = surplusCount + 差价 * 交易的数量 / price）
         Integer index = 0;
+        BigDecimal allTransactionBalance = BigDecimal.ZERO;
         BigDecimal surplusCount = transactionData.getCurrentCount();
         while (surplusCount.compareTo(BigDecimal.ZERO) > 0 && index < data.size()) {
             ZxlTransactions rowData = data.get(index);
             BigDecimal transactionCount;
 
-            BigDecimal priceMargin = transactionData.getPrice().subtract(rowData.getPrice()).abs();
-
-
             if(rowData.getCurrentCount().compareTo(surplusCount) > 0) {
                 transactionCount = surplusCount;
-                surplusCount = priceMargin.multiply(transactionCount);
+                surplusCount = BigDecimal.ZERO;
             }else {
                 transactionCount = rowData.getCurrentCount();
                 surplusCount = surplusCount.subtract(rowData.getCurrentCount());
-                surplusCount = surplusCount.add(priceMargin.multiply(transactionCount));
             }
-            //TODO 除法，涉及到精确度的，后续封装一个运算工具类将精度统一管理
-            surplusCount = surplusCount.divide(transactionData.getPrice(), 8, BigDecimal.ROUND_HALF_DOWN);
+            allTransactionBalance = allTransactionBalance.add(transactionCount.multiply(rowData.getPrice()));
             //处理被交易方的数据
-            this.handleTransaction(rowData, transactionCount);
+            this.handleTransaction(rowData, transactionCount, null);
             index++;
         }
 
         //处理交易方的数据
-        this.handleTransaction(transactionData, transactionData.getCurrentCount().subtract(surplusCount));
+        this.handleTransaction(transactionData, transactionData.getCurrentCount().subtract(surplusCount), allTransactionBalance);
 
-        //增加currency的交易量
+        //TODO 增加currency的交易量
 
     }
 
+    /**
+     * 处理挂单，1.更新挂单数据 2.增加已成交订单数据 3.增减余额
+     * @param rowData 需要处理的挂单对象
+     * @param transactionCount 需要处理的数量
+     * @param allTransactionBalance 是否是处理交易方数据   为null处理被交易方，有数据则处理交易方
+     */
     @Transactional
-    public void handleTransaction(ZxlTransactions rowData, BigDecimal transactionCount) {
+    public void handleTransaction(ZxlTransactions rowData, BigDecimal transactionCount, BigDecimal allTransactionBalance) {
         //1. 更新挂单列表的数据 （被交易方的记录）
         Integer status = rowData.getCurrentCount().compareTo(transactionCount) == 0 ? TransactionStatusEnum.TRADE_CLOSE.getValue() : TransactionStatusEnum.TRADE_OPEN.getValue();
         transactionsDao.changeCountAndStatus(transactionCount, status, rowData.getId());
@@ -115,6 +117,10 @@ public class MatchServiceImpl implements MatchService {
         }else {
             addCurrencyId = rowData.getReplaceCurrencyId();
             addCurrencyCount = transactionCount.multiply(rowData.getPrice());
+        }
+
+        if(allTransactionBalance != null) {
+            addCurrencyCount = allTransactionBalance;
         }
 
         // 查询balance表中记录是否存在，存在更新，不存在则新增
