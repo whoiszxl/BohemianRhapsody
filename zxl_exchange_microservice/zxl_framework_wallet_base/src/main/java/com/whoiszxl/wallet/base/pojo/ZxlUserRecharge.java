@@ -38,7 +38,7 @@ public class ZxlUserRecharge {
     @Id
     @GeneratedValue(generator = "id")
     @GenericGenerator(name = "id",strategy = "increment")
-    private Integer id;
+    private String id;
 
     /**
      * 用户ID
