@@ -1,5 +1,6 @@
-package com.whoiszxl.block;
+package com.whoiszxl.core.block;
 
+import com.whoiszxl.core.transaction.Transaction;
 import lombok.*;
 
 import java.util.LinkedList;
@@ -42,10 +43,10 @@ public class BlockChain {
 
     /**
      * 通过transaction添加区块
-     * @param data
+     * @param transactions 交易数组
      */
-    public void addBlock(String data) {
+    public void addBlock(List<Transaction> transactions) {
         Block previousBlock = blockList.get(blockList.size() - 1);
-        this.addBlock(Block.createNewBlock(previousBlock.getHash(), data,previousBlock.getHeight() + 1));
+        this.addBlock(Block.createNewBlock(previousBlock.getHash(), transactions,previousBlock.getHeight() + 1));
     }
 }
