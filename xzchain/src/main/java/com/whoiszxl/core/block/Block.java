@@ -18,13 +18,13 @@ import java.util.List;
  * @author: whoiszxl
  * @create: 2019-11-12
  **/
-@Builder
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
 public class Block implements Serializable {
 
+    private static final long serialVersionUID = -6579754894873029118L;
     /**
      * 区块版本，规定了区块遵守的验证规则
      * https://bitcoin.org/en/developer-reference#block-versions
@@ -73,7 +73,12 @@ public class Block implements Serializable {
      * @return 新区块
      */
     public static Block createNewBlock(String previousHash, List<Transaction> transactions, Integer height) {
-        Block block = Block.builder().version(Constants.XZ_VERSION).previousHash(previousHash).transactions(transactions).height(height).timestamp(System.currentTimeMillis()).build();
+        Block block = new Block();
+        block.setVersion(Constants.XZ_VERSION);
+        block.setPreviousHash(previousHash);
+        block.setTransactions(transactions);
+        block.setHeight(height);
+        block.setTimestamp(System.currentTimeMillis());
         ProofOfWork pow = ProofOfWork.newProofOfWork(block);
         PowResult powResult = pow.run();
         block.setHash(powResult.getHash());
@@ -86,8 +91,9 @@ public class Block implements Serializable {
      * 创建创世区块
      * @return
      */
-    public static Block createNewGenesisBlock() {
+    public static Block createNewGenesisBlock(Transaction coinbase) {
         List<Transaction> transactions = new ArrayList<>();
+        transactions.add(coinbase);
         return Block.createNewBlock(Constants.ZERO_HASH, transactions, 0);
     }
 
