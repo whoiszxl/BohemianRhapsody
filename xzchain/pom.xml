@@ -6,7 +6,11 @@
 
     <groupId>com.whoiszxl</groupId>
     <artifactId>xzchain</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>hadoop_demo</module>
+    </modules>
 
 
     <parent>
@@ -78,6 +82,13 @@
             <version>5.9.2</version>
         </dependency>
 
+
+        <!-- 加密算法 -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.59</version>
+        </dependency>
 
     </dependencies>
 
