@@ -13,19 +13,32 @@
 
 ### 项目架构
 ```
-zxl_exchange_microservice
-├── zxl_framework_base        -- 最基础的通用代码
-├── zxl_framework_wallet_base -- 钱包的基础代码
-├── zxl_service_common        -- 公用接口服务（banner等）
-├── zxl_service_config        -- Spring Cloud Config
-├── zxl_service_eureka        -- eureka注册中心
-├── zxl_service_manager       -- 管理后台网关
-├── zxl_service_market        -- 行情socket服务
-├── zxl_service_sms           -- 短信服务，通过RabbitMQ调用
-├── zxl_service_user          -- 用户服务
-├── zxl_service_wallet        -- 钱包服务
-├── zxl_service_web           -- 前台网关
-├── zxl_wallet_btc            -- BTC钱包
+xexchange
+├── xexchange-core            -- 基础核心代码
+├── xexchange-oauth           -- oauth2认证代码
+├── xexchange-eureka          -- eureka注册中心
+├── xexchange-gateway         -- 网关
+├── xexchange-manager         -- 管理后台代码
+├── xexchange-chat            -- 聊天模块
+├── xexchange-trade           -- 交易模块
+├── xexchange-market          -- 行情socket服务
+├── xexchange-usercenter      -- 用户中心服务
+├── xexchange-wallet          -- 钱包监控管理服务
+├── xexchange-openapi         -- 开放api服务
+├── xexchange-otc             -- OTC服务
+├── xexchange-fescar          -- 分布式事务服务
+
+xwallet
+├── xwallet-eth               -- eth钱包
+├── xwallet-erc20             -- erc20代币钱包
+├── xwallet-btc               -- btc钱包
+
+doc                           -- 相关文档
+xchain                        -- 一个简单的公链项目
+xexchange-flutter             -- xexchange Flutter App
+
+xexchange-front-admin         -- Vue Admin管理后台 
+xexchange-front-web           -- Vue 用户端
 ```
 
 
