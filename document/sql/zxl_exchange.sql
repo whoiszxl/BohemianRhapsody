@@ -16,7 +16,7 @@ CREATE TABLE `zxl_banner` (
 
 -- ---------------------------------------------------------
 -- 【用户】member用户相关表 start
-------------------------------------------------------------
+-- ---------------------------------------------------------
 
 DROP TABLE IF EXISTS `member`;
 CREATE TABLE `member` (
@@ -79,7 +79,7 @@ CREATE TABLE `member_kyc` (
   `audit_status` int(11) NOT NULL COMMENT '审核状态: 0审核中 1审核成功 -1审核失败',
   `video_random` varchar(6) DEFAULT NULL COMMENT '六位视频认证随机数',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT ON UPDATE CURRENT_TIMESTAMP '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
   KEY `key_member_id` (`member_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户KYC认证表';
@@ -95,7 +95,7 @@ CREATE TABLE `member_wallet` (
   `usable_balance` decimal(40,18) NOT NULL COMMENT '可用金额数量',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '钱包，0：关闭 1：开启',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT ON UPDATE CURRENT_TIMESTAMP '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
   KEY `member_id_key` (`member_id`) USING BTREE,
   KEY `coin_id_key` (`coin_id`) USING BTREE
@@ -110,19 +110,19 @@ CREATE TABLE `transaction_internal` (
   `from_member_id` bigint(20) NOT NULL COMMENT '转出方用户ID',
   `to_member_id` bigint(20) NOT NULL COMMENT '转入方用户ID',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT ON UPDATE CURRENT_TIMESTAMP '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='内部转账表';
 
 -- ---------------------------------------------------------
 -- 【用户】member用户相关表 end
-------------------------------------------------------------
+-- ---------------------------------------------------------
 
 
 
 -- ---------------------------------------------------------
 -- 【系统】管理员相关表 start
-------------------------------------------------------------
+-- ---------------------------------------------------------
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
@@ -192,12 +192,12 @@ CREATE TABLE `admin_role_permission` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   UNIQUE KEY `unique_role_per_id` (`role_id`,`per_id`),
   KEY `key_role_id` (`role_id`) USING BTREE,
-  KEY `key_per_id` (`per_id`) USING BTREE,
+  KEY `key_per_id` (`per_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色与权限关联表';
 
 -- ---------------------------------------------------------
 -- 【系统】管理员相关表 end
-------------------------------------------------------------
+-- ---------------------------------------------------------
 
 
 
@@ -210,7 +210,7 @@ CREATE TABLE `admin_role_permission` (
 
 -- ---------------------------------------------------------
 -- 【基础】基础的表 start
-------------------------------------------------------------
+-- ---------------------------------------------------------
 
 DROP TABLE IF EXISTS `app_version`;
 CREATE TABLE `app_version` (
@@ -254,12 +254,12 @@ CREATE TABLE `country` (
 
 -- ---------------------------------------------------------
 -- 【基础】基础的表 end
-------------------------------------------------------------
+-- ---------------------------------------------------------
 
 
 -- ---------------------------------------------------------
 -- 【币种】coin币种相关的表 start
-------------------------------------------------------------
+-- ---------------------------------------------------------
 DROP TABLE IF EXISTS `coin`;
 CREATE TABLE `coin` (
   `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '币种ID',
@@ -306,14 +306,14 @@ CREATE TABLE `recharge_record` (
   `upchain_status` tinyint(1) NOT NULL DEFAULT '2' COMMENT '上链状态，0：失败 1：成功 2：上链后等待确认中',
   `height` int(20) DEFAULT NULL COMMENT '当前交易所处区块的高度',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT ON UPDATE CURRENT_TIMESTAMP '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户充值记录表';
 
 
 -- ---------------------------------------------------------
 -- 【币种】coin币种相关的表 end
-------------------------------------------------------------
+-- ---------------------------------------------------------
 
 
 
@@ -340,7 +340,7 @@ CREATE TABLE `zxl_member_withdraw` (
   `upchain_success_at` datetime COMMENT '上链成功时间',
   `upchain_status` tinyint(1) NOT NULL DEFAULT '2' COMMENT '上链状态，0：失败 1：成功 2：上链后等待确认中',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT ON UPDATE CURRENT_TIMESTAMP '更新时间',
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户提现记录表';
 
