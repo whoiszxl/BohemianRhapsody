@@ -27,6 +27,8 @@ xexchange
 ├── xexchange-openapi         -- 开放api服务
 ├── xexchange-otc             -- OTC服务
 ├── xexchange-fescar          -- 分布式事务服务
+├── xexchange-sms             -- SMS短信发送服务
+
 
 xwallet
 ├── xwallet-eth               -- eth钱包
@@ -37,7 +39,7 @@ doc                           -- 相关文档
 xchain                        -- 一个简单的公链项目
 xexchange-flutter             -- xexchange Flutter App
 
-xexchange-front-admin         -- Vue Admin管理后台 
+xexchange-front-admin         -- Vue Admin管理后台
 xexchange-front-web           -- Vue 用户端
 ```
 
