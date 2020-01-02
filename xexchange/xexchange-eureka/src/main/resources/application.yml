@@ -1,0 +1,8 @@
+server:
+  port: 16868
+eureka:
+  client:
+    register-with-eureka: false #禁止将自身注册到eureka中
+    fetch-registry: false #禁止从eureka中获取信息
+    serverUrl:
+      defaultZone: http://127.0.0.1:${server.port}/eureka/
