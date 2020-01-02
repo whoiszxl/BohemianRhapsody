@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whoiszxl.core.entity.dao.AdminPermissionMapper">
+  <resultMap id="BaseResultMap" type="com.whoiszxl.core.entity.entity.AdminPermission">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="per_name" jdbcType="VARCHAR" property="per_name" />
+    <result column="per_value" jdbcType="VARCHAR" property="per_value" />
+    <result column="parent_id" jdbcType="BIGINT" property="parent_id" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="created_at" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updated_at" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, per_name, per_value, parent_id, sort, description, created_at, updated_at
+  </sql>
+  <select id="selectByExample" parameterType="com.whoiszxl.core.entity.entity.AdminPermissionExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from admin_permission
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from admin_permission
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from admin_permission
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whoiszxl.core.entity.entity.AdminPermissionExample">
+    delete from admin_permission
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whoiszxl.core.entity.entity.AdminPermission">
+    insert into admin_permission (id, per_name, per_value, 
+      parent_id, sort, description, 
+      created_at, updated_at)
+    values (#{id,jdbcType=BIGINT}, #{per_name,jdbcType=VARCHAR}, #{per_value,jdbcType=VARCHAR}, 
+      #{parent_id,jdbcType=BIGINT}, #{sort,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, 
+      #{created_at,jdbcType=TIMESTAMP}, #{updated_at,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whoiszxl.core.entity.entity.AdminPermission">
+    insert into admin_permission
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="per_name != null">
+        per_name,
+      </if>
+      <if test="per_value != null">
+        per_value,
+      </if>
+      <if test="parent_id != null">
+        parent_id,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="created_at != null">
+        created_at,
+      </if>
+      <if test="updated_at != null">
+        updated_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="per_name != null">
+        #{per_name,jdbcType=VARCHAR},
+      </if>
+      <if test="per_value != null">
+        #{per_value,jdbcType=VARCHAR},
+      </if>
+      <if test="parent_id != null">
+        #{parent_id,jdbcType=BIGINT},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="created_at != null">
+        #{created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated_at != null">
+        #{updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whoiszxl.core.entity.entity.AdminPermissionExample" resultType="java.lang.Long">
+    select count(*) from admin_permission
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update admin_permission
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.per_name != null">
+        per_name = #{record.per_name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.per_value != null">
+        per_value = #{record.per_value,jdbcType=VARCHAR},
+      </if>
+      <if test="record.parent_id != null">
+        parent_id = #{record.parent_id,jdbcType=BIGINT},
+      </if>
+      <if test="record.sort != null">
+        sort = #{record.sort,jdbcType=INTEGER},
+      </if>
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.created_at != null">
+        created_at = #{record.created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updated_at != null">
+        updated_at = #{record.updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update admin_permission
+    set id = #{record.id,jdbcType=BIGINT},
+      per_name = #{record.per_name,jdbcType=VARCHAR},
+      per_value = #{record.per_value,jdbcType=VARCHAR},
+      parent_id = #{record.parent_id,jdbcType=BIGINT},
+      sort = #{record.sort,jdbcType=INTEGER},
+      description = #{record.description,jdbcType=VARCHAR},
+      created_at = #{record.created_at,jdbcType=TIMESTAMP},
+      updated_at = #{record.updated_at,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whoiszxl.core.entity.entity.AdminPermission">
+    update admin_permission
+    <set>
+      <if test="per_name != null">
+        per_name = #{per_name,jdbcType=VARCHAR},
+      </if>
+      <if test="per_value != null">
+        per_value = #{per_value,jdbcType=VARCHAR},
+      </if>
+      <if test="parent_id != null">
+        parent_id = #{parent_id,jdbcType=BIGINT},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="created_at != null">
+        created_at = #{created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated_at != null">
+        updated_at = #{updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whoiszxl.core.entity.entity.AdminPermission">
+    update admin_permission
+    set per_name = #{per_name,jdbcType=VARCHAR},
+      per_value = #{per_value,jdbcType=VARCHAR},
+      parent_id = #{parent_id,jdbcType=BIGINT},
+      sort = #{sort,jdbcType=INTEGER},
+      description = #{description,jdbcType=VARCHAR},
+      created_at = #{created_at,jdbcType=TIMESTAMP},
+      updated_at = #{updated_at,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

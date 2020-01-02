@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whoiszxl.core.entity.dao.MemberKycMapper">
+  <resultMap id="BaseResultMap" type="com.whoiszxl.core.entity.entity.MemberKyc">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="member_id" jdbcType="BIGINT" property="member_id" />
+    <result column="id_card" jdbcType="VARCHAR" property="id_card" />
+    <result column="idcard_front_url" jdbcType="VARCHAR" property="idcard_front_url" />
+    <result column="idcard_reverse_url" jdbcType="VARCHAR" property="idcard_reverse_url" />
+    <result column="idcard_hold_url" jdbcType="VARCHAR" property="idcard_hold_url" />
+    <result column="video_url" jdbcType="VARCHAR" property="video_url" />
+    <result column="real_name" jdbcType="VARCHAR" property="real_name" />
+    <result column="reject_reason" jdbcType="VARCHAR" property="reject_reason" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="audit_status" jdbcType="INTEGER" property="audit_status" />
+    <result column="video_random" jdbcType="VARCHAR" property="video_random" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="created_at" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updated_at" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, member_id, id_card, idcard_front_url, idcard_reverse_url, idcard_hold_url, video_url, 
+    real_name, reject_reason, type, audit_status, video_random, created_at, updated_at
+  </sql>
+  <select id="selectByExample" parameterType="com.whoiszxl.core.entity.entity.MemberKycExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from member_kyc
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from member_kyc
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from member_kyc
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whoiszxl.core.entity.entity.MemberKycExample">
+    delete from member_kyc
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whoiszxl.core.entity.entity.MemberKyc">
+    insert into member_kyc (id, member_id, id_card, 
+      idcard_front_url, idcard_reverse_url, idcard_hold_url, 
+      video_url, real_name, reject_reason, 
+      type, audit_status, video_random, 
+      created_at, updated_at)
+    values (#{id,jdbcType=BIGINT}, #{member_id,jdbcType=BIGINT}, #{id_card,jdbcType=VARCHAR}, 
+      #{idcard_front_url,jdbcType=VARCHAR}, #{idcard_reverse_url,jdbcType=VARCHAR}, #{idcard_hold_url,jdbcType=VARCHAR}, 
+      #{video_url,jdbcType=VARCHAR}, #{real_name,jdbcType=VARCHAR}, #{reject_reason,jdbcType=VARCHAR}, 
+      #{type,jdbcType=INTEGER}, #{audit_status,jdbcType=INTEGER}, #{video_random,jdbcType=VARCHAR}, 
+      #{created_at,jdbcType=TIMESTAMP}, #{updated_at,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whoiszxl.core.entity.entity.MemberKyc">
+    insert into member_kyc
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="member_id != null">
+        member_id,
+      </if>
+      <if test="id_card != null">
+        id_card,
+      </if>
+      <if test="idcard_front_url != null">
+        idcard_front_url,
+      </if>
+      <if test="idcard_reverse_url != null">
+        idcard_reverse_url,
+      </if>
+      <if test="idcard_hold_url != null">
+        idcard_hold_url,
+      </if>
+      <if test="video_url != null">
+        video_url,
+      </if>
+      <if test="real_name != null">
+        real_name,
+      </if>
+      <if test="reject_reason != null">
+        reject_reason,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="audit_status != null">
+        audit_status,
+      </if>
+      <if test="video_random != null">
+        video_random,
+      </if>
+      <if test="created_at != null">
+        created_at,
+      </if>
+      <if test="updated_at != null">
+        updated_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="member_id != null">
+        #{member_id,jdbcType=BIGINT},
+      </if>
+      <if test="id_card != null">
+        #{id_card,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard_front_url != null">
+        #{idcard_front_url,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard_reverse_url != null">
+        #{idcard_reverse_url,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard_hold_url != null">
+        #{idcard_hold_url,jdbcType=VARCHAR},
+      </if>
+      <if test="video_url != null">
+        #{video_url,jdbcType=VARCHAR},
+      </if>
+      <if test="real_name != null">
+        #{real_name,jdbcType=VARCHAR},
+      </if>
+      <if test="reject_reason != null">
+        #{reject_reason,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="audit_status != null">
+        #{audit_status,jdbcType=INTEGER},
+      </if>
+      <if test="video_random != null">
+        #{video_random,jdbcType=VARCHAR},
+      </if>
+      <if test="created_at != null">
+        #{created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated_at != null">
+        #{updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whoiszxl.core.entity.entity.MemberKycExample" resultType="java.lang.Long">
+    select count(*) from member_kyc
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update member_kyc
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.member_id != null">
+        member_id = #{record.member_id,jdbcType=BIGINT},
+      </if>
+      <if test="record.id_card != null">
+        id_card = #{record.id_card,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idcard_front_url != null">
+        idcard_front_url = #{record.idcard_front_url,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idcard_reverse_url != null">
+        idcard_reverse_url = #{record.idcard_reverse_url,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idcard_hold_url != null">
+        idcard_hold_url = #{record.idcard_hold_url,jdbcType=VARCHAR},
+      </if>
+      <if test="record.video_url != null">
+        video_url = #{record.video_url,jdbcType=VARCHAR},
+      </if>
+      <if test="record.real_name != null">
+        real_name = #{record.real_name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reject_reason != null">
+        reject_reason = #{record.reject_reason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=INTEGER},
+      </if>
+      <if test="record.audit_status != null">
+        audit_status = #{record.audit_status,jdbcType=INTEGER},
+      </if>
+      <if test="record.video_random != null">
+        video_random = #{record.video_random,jdbcType=VARCHAR},
+      </if>
+      <if test="record.created_at != null">
+        created_at = #{record.created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updated_at != null">
+        updated_at = #{record.updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update member_kyc
+    set id = #{record.id,jdbcType=BIGINT},
+      member_id = #{record.member_id,jdbcType=BIGINT},
+      id_card = #{record.id_card,jdbcType=VARCHAR},
+      idcard_front_url = #{record.idcard_front_url,jdbcType=VARCHAR},
+      idcard_reverse_url = #{record.idcard_reverse_url,jdbcType=VARCHAR},
+      idcard_hold_url = #{record.idcard_hold_url,jdbcType=VARCHAR},
+      video_url = #{record.video_url,jdbcType=VARCHAR},
+      real_name = #{record.real_name,jdbcType=VARCHAR},
+      reject_reason = #{record.reject_reason,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=INTEGER},
+      audit_status = #{record.audit_status,jdbcType=INTEGER},
+      video_random = #{record.video_random,jdbcType=VARCHAR},
+      created_at = #{record.created_at,jdbcType=TIMESTAMP},
+      updated_at = #{record.updated_at,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whoiszxl.core.entity.entity.MemberKyc">
+    update member_kyc
+    <set>
+      <if test="member_id != null">
+        member_id = #{member_id,jdbcType=BIGINT},
+      </if>
+      <if test="id_card != null">
+        id_card = #{id_card,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard_front_url != null">
+        idcard_front_url = #{idcard_front_url,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard_reverse_url != null">
+        idcard_reverse_url = #{idcard_reverse_url,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard_hold_url != null">
+        idcard_hold_url = #{idcard_hold_url,jdbcType=VARCHAR},
+      </if>
+      <if test="video_url != null">
+        video_url = #{video_url,jdbcType=VARCHAR},
+      </if>
+      <if test="real_name != null">
+        real_name = #{real_name,jdbcType=VARCHAR},
+      </if>
+      <if test="reject_reason != null">
+        reject_reason = #{reject_reason,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="audit_status != null">
+        audit_status = #{audit_status,jdbcType=INTEGER},
+      </if>
+      <if test="video_random != null">
+        video_random = #{video_random,jdbcType=VARCHAR},
+      </if>
+      <if test="created_at != null">
+        created_at = #{created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated_at != null">
+        updated_at = #{updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whoiszxl.core.entity.entity.MemberKyc">
+    update member_kyc
+    set member_id = #{member_id,jdbcType=BIGINT},
+      id_card = #{id_card,jdbcType=VARCHAR},
+      idcard_front_url = #{idcard_front_url,jdbcType=VARCHAR},
+      idcard_reverse_url = #{idcard_reverse_url,jdbcType=VARCHAR},
+      idcard_hold_url = #{idcard_hold_url,jdbcType=VARCHAR},
+      video_url = #{video_url,jdbcType=VARCHAR},
+      real_name = #{real_name,jdbcType=VARCHAR},
+      reject_reason = #{reject_reason,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      audit_status = #{audit_status,jdbcType=INTEGER},
+      video_random = #{video_random,jdbcType=VARCHAR},
+      created_at = #{created_at,jdbcType=TIMESTAMP},
+      updated_at = #{updated_at,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whoiszxl.core.entity.dao.ZxlOrdersMapper">
+  <resultMap id="BaseResultMap" type="com.whoiszxl.core.entity.entity.ZxlOrders">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="member_id" jdbcType="VARCHAR" property="member_id" />
+    <result column="transaction_id" jdbcType="VARCHAR" property="transaction_id" />
+    <result column="coin_id" jdbcType="INTEGER" property="coin_id" />
+    <result column="replace_coin_id" jdbcType="INTEGER" property="replace_coin_id" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="success_count" jdbcType="DECIMAL" property="success_count" />
+    <result column="type" jdbcType="Integer" property="type" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="created_at" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updated_at" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, member_id, transaction_id, coin_id, replace_coin_id, price, success_count, type, 
+    created_at, updated_at
+  </sql>
+  <select id="selectByExample" parameterType="com.whoiszxl.core.entity.entity.ZxlOrdersExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from zxl_orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from zxl_orders
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from zxl_orders
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whoiszxl.core.entity.entity.ZxlOrdersExample">
+    delete from zxl_orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whoiszxl.core.entity.entity.ZxlOrders">
+    insert into zxl_orders (id, member_id, transaction_id, 
+      coin_id, replace_coin_id, price, 
+      success_count, type, created_at, 
+      updated_at)
+    values (#{id,jdbcType=BIGINT}, #{member_id,jdbcType=VARCHAR}, #{transaction_id,jdbcType=VARCHAR}, 
+      #{coin_id,jdbcType=INTEGER}, #{replace_coin_id,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, 
+      #{success_count,jdbcType=DECIMAL}, #{type,jdbcType=Integer}, #{created_at,jdbcType=TIMESTAMP}, 
+      #{updated_at,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whoiszxl.core.entity.entity.ZxlOrders">
+    insert into zxl_orders
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="member_id != null">
+        member_id,
+      </if>
+      <if test="transaction_id != null">
+        transaction_id,
+      </if>
+      <if test="coin_id != null">
+        coin_id,
+      </if>
+      <if test="replace_coin_id != null">
+        replace_coin_id,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="success_count != null">
+        success_count,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="created_at != null">
+        created_at,
+      </if>
+      <if test="updated_at != null">
+        updated_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="member_id != null">
+        #{member_id,jdbcType=VARCHAR},
+      </if>
+      <if test="transaction_id != null">
+        #{transaction_id,jdbcType=VARCHAR},
+      </if>
+      <if test="coin_id != null">
+        #{coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="replace_coin_id != null">
+        #{replace_coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="success_count != null">
+        #{success_count,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=Integer},
+      </if>
+      <if test="created_at != null">
+        #{created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated_at != null">
+        #{updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whoiszxl.core.entity.entity.ZxlOrdersExample" resultType="java.lang.Long">
+    select count(*) from zxl_orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update zxl_orders
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.member_id != null">
+        member_id = #{record.member_id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.transaction_id != null">
+        transaction_id = #{record.transaction_id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.coin_id != null">
+        coin_id = #{record.coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="record.replace_coin_id != null">
+        replace_coin_id = #{record.replace_coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.success_count != null">
+        success_count = #{record.success_count,jdbcType=DECIMAL},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=Integer},
+      </if>
+      <if test="record.created_at != null">
+        created_at = #{record.created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updated_at != null">
+        updated_at = #{record.updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update zxl_orders
+    set id = #{record.id,jdbcType=BIGINT},
+      member_id = #{record.member_id,jdbcType=VARCHAR},
+      transaction_id = #{record.transaction_id,jdbcType=VARCHAR},
+      coin_id = #{record.coin_id,jdbcType=INTEGER},
+      replace_coin_id = #{record.replace_coin_id,jdbcType=INTEGER},
+      price = #{record.price,jdbcType=DECIMAL},
+      success_count = #{record.success_count,jdbcType=DECIMAL},
+      type = #{record.type,jdbcType=Integer},
+      created_at = #{record.created_at,jdbcType=TIMESTAMP},
+      updated_at = #{record.updated_at,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whoiszxl.core.entity.entity.ZxlOrders">
+    update zxl_orders
+    <set>
+      <if test="member_id != null">
+        member_id = #{member_id,jdbcType=VARCHAR},
+      </if>
+      <if test="transaction_id != null">
+        transaction_id = #{transaction_id,jdbcType=VARCHAR},
+      </if>
+      <if test="coin_id != null">
+        coin_id = #{coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="replace_coin_id != null">
+        replace_coin_id = #{replace_coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="success_count != null">
+        success_count = #{success_count,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=Integer},
+      </if>
+      <if test="created_at != null">
+        created_at = #{created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated_at != null">
+        updated_at = #{updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whoiszxl.core.entity.entity.ZxlOrders">
+    update zxl_orders
+    set member_id = #{member_id,jdbcType=VARCHAR},
+      transaction_id = #{transaction_id,jdbcType=VARCHAR},
+      coin_id = #{coin_id,jdbcType=INTEGER},
+      replace_coin_id = #{replace_coin_id,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      success_count = #{success_count,jdbcType=DECIMAL},
+      type = #{type,jdbcType=Integer},
+      created_at = #{created_at,jdbcType=TIMESTAMP},
+      updated_at = #{updated_at,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.whoiszxl.core.entity.entity.ZxlOrders">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="member_id" jdbcType="VARCHAR" property="member_id" />
+    <result column="transaction_id" jdbcType="VARCHAR" property="transaction_id" />
+    <result column="coin_id" jdbcType="INTEGER" property="coin_id" />
+    <result column="replace_coin_id" jdbcType="INTEGER" property="replace_coin_id" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="success_count" jdbcType="DECIMAL" property="success_count" />
+    <result column="type" jdbcType="Integer" property="type" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="created_at" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updated_at" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, member_id, transaction_id, coin_id, replace_coin_id, price, success_count, type, 
+    created_at, updated_at
+  </sql>
+  <select id="selectByExample" parameterType="com.whoiszxl.core.entity.entity.ZxlOrdersExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from zxl_orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from zxl_orders
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from zxl_orders
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whoiszxl.core.entity.entity.ZxlOrdersExample">
+    delete from zxl_orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whoiszxl.core.entity.entity.ZxlOrders">
+    insert into zxl_orders (id, member_id, transaction_id, 
+      coin_id, replace_coin_id, price, 
+      success_count, type, created_at, 
+      updated_at)
+    values (#{id,jdbcType=BIGINT}, #{member_id,jdbcType=VARCHAR}, #{transaction_id,jdbcType=VARCHAR}, 
+      #{coin_id,jdbcType=INTEGER}, #{replace_coin_id,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, 
+      #{success_count,jdbcType=DECIMAL}, #{type,jdbcType=Integer}, #{created_at,jdbcType=TIMESTAMP}, 
+      #{updated_at,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whoiszxl.core.entity.entity.ZxlOrders">
+    insert into zxl_orders
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="member_id != null">
+        member_id,
+      </if>
+      <if test="transaction_id != null">
+        transaction_id,
+      </if>
+      <if test="coin_id != null">
+        coin_id,
+      </if>
+      <if test="replace_coin_id != null">
+        replace_coin_id,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="success_count != null">
+        success_count,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="created_at != null">
+        created_at,
+      </if>
+      <if test="updated_at != null">
+        updated_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="member_id != null">
+        #{member_id,jdbcType=VARCHAR},
+      </if>
+      <if test="transaction_id != null">
+        #{transaction_id,jdbcType=VARCHAR},
+      </if>
+      <if test="coin_id != null">
+        #{coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="replace_coin_id != null">
+        #{replace_coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="success_count != null">
+        #{success_count,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=Integer},
+      </if>
+      <if test="created_at != null">
+        #{created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated_at != null">
+        #{updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whoiszxl.core.entity.entity.ZxlOrdersExample" resultType="java.lang.Long">
+    select count(*) from zxl_orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update zxl_orders
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.member_id != null">
+        member_id = #{record.member_id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.transaction_id != null">
+        transaction_id = #{record.transaction_id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.coin_id != null">
+        coin_id = #{record.coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="record.replace_coin_id != null">
+        replace_coin_id = #{record.replace_coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.success_count != null">
+        success_count = #{record.success_count,jdbcType=DECIMAL},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=Integer},
+      </if>
+      <if test="record.created_at != null">
+        created_at = #{record.created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updated_at != null">
+        updated_at = #{record.updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update zxl_orders
+    set id = #{record.id,jdbcType=BIGINT},
+      member_id = #{record.member_id,jdbcType=VARCHAR},
+      transaction_id = #{record.transaction_id,jdbcType=VARCHAR},
+      coin_id = #{record.coin_id,jdbcType=INTEGER},
+      replace_coin_id = #{record.replace_coin_id,jdbcType=INTEGER},
+      price = #{record.price,jdbcType=DECIMAL},
+      success_count = #{record.success_count,jdbcType=DECIMAL},
+      type = #{record.type,jdbcType=Integer},
+      created_at = #{record.created_at,jdbcType=TIMESTAMP},
+      updated_at = #{record.updated_at,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whoiszxl.core.entity.entity.ZxlOrders">
+    update zxl_orders
+    <set>
+      <if test="member_id != null">
+        member_id = #{member_id,jdbcType=VARCHAR},
+      </if>
+      <if test="transaction_id != null">
+        transaction_id = #{transaction_id,jdbcType=VARCHAR},
+      </if>
+      <if test="coin_id != null">
+        coin_id = #{coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="replace_coin_id != null">
+        replace_coin_id = #{replace_coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="success_count != null">
+        success_count = #{success_count,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=Integer},
+      </if>
+      <if test="created_at != null">
+        created_at = #{created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated_at != null">
+        updated_at = #{updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whoiszxl.core.entity.entity.ZxlOrders">
+    update zxl_orders
+    set member_id = #{member_id,jdbcType=VARCHAR},
+      transaction_id = #{transaction_id,jdbcType=VARCHAR},
+      coin_id = #{coin_id,jdbcType=INTEGER},
+      replace_coin_id = #{replace_coin_id,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      success_count = #{success_count,jdbcType=DECIMAL},
+      type = #{type,jdbcType=Integer},
+      created_at = #{created_at,jdbcType=TIMESTAMP},
+      updated_at = #{updated_at,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.whoiszxl.core.entity.entity.ZxlOrders">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="member_id" jdbcType="VARCHAR" property="member_id" />
+    <result column="transaction_id" jdbcType="VARCHAR" property="transaction_id" />
+    <result column="coin_id" jdbcType="INTEGER" property="coin_id" />
+    <result column="replace_coin_id" jdbcType="INTEGER" property="replace_coin_id" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="success_count" jdbcType="DECIMAL" property="success_count" />
+    <result column="type" jdbcType="Integer" property="type" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="created_at" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updated_at" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, member_id, transaction_id, coin_id, replace_coin_id, price, success_count, type, 
+    created_at, updated_at
+  </sql>
+  <select id="selectByExample" parameterType="com.whoiszxl.core.entity.entity.ZxlOrdersExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from zxl_orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from zxl_orders
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from zxl_orders
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.whoiszxl.core.entity.entity.ZxlOrdersExample">
+    delete from zxl_orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.whoiszxl.core.entity.entity.ZxlOrders">
+    insert into zxl_orders (id, member_id, transaction_id, 
+      coin_id, replace_coin_id, price, 
+      success_count, type, created_at, 
+      updated_at)
+    values (#{id,jdbcType=BIGINT}, #{member_id,jdbcType=VARCHAR}, #{transaction_id,jdbcType=VARCHAR}, 
+      #{coin_id,jdbcType=INTEGER}, #{replace_coin_id,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, 
+      #{success_count,jdbcType=DECIMAL}, #{type,jdbcType=Integer}, #{created_at,jdbcType=TIMESTAMP}, 
+      #{updated_at,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.whoiszxl.core.entity.entity.ZxlOrders">
+    insert into zxl_orders
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="member_id != null">
+        member_id,
+      </if>
+      <if test="transaction_id != null">
+        transaction_id,
+      </if>
+      <if test="coin_id != null">
+        coin_id,
+      </if>
+      <if test="replace_coin_id != null">
+        replace_coin_id,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="success_count != null">
+        success_count,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="created_at != null">
+        created_at,
+      </if>
+      <if test="updated_at != null">
+        updated_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="member_id != null">
+        #{member_id,jdbcType=VARCHAR},
+      </if>
+      <if test="transaction_id != null">
+        #{transaction_id,jdbcType=VARCHAR},
+      </if>
+      <if test="coin_id != null">
+        #{coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="replace_coin_id != null">
+        #{replace_coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="success_count != null">
+        #{success_count,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=Integer},
+      </if>
+      <if test="created_at != null">
+        #{created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated_at != null">
+        #{updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.whoiszxl.core.entity.entity.ZxlOrdersExample" resultType="java.lang.Long">
+    select count(*) from zxl_orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update zxl_orders
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.member_id != null">
+        member_id = #{record.member_id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.transaction_id != null">
+        transaction_id = #{record.transaction_id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.coin_id != null">
+        coin_id = #{record.coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="record.replace_coin_id != null">
+        replace_coin_id = #{record.replace_coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.success_count != null">
+        success_count = #{record.success_count,jdbcType=DECIMAL},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=Integer},
+      </if>
+      <if test="record.created_at != null">
+        created_at = #{record.created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updated_at != null">
+        updated_at = #{record.updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update zxl_orders
+    set id = #{record.id,jdbcType=BIGINT},
+      member_id = #{record.member_id,jdbcType=VARCHAR},
+      transaction_id = #{record.transaction_id,jdbcType=VARCHAR},
+      coin_id = #{record.coin_id,jdbcType=INTEGER},
+      replace_coin_id = #{record.replace_coin_id,jdbcType=INTEGER},
+      price = #{record.price,jdbcType=DECIMAL},
+      success_count = #{record.success_count,jdbcType=DECIMAL},
+      type = #{record.type,jdbcType=Integer},
+      created_at = #{record.created_at,jdbcType=TIMESTAMP},
+      updated_at = #{record.updated_at,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.whoiszxl.core.entity.entity.ZxlOrders">
+    update zxl_orders
+    <set>
+      <if test="member_id != null">
+        member_id = #{member_id,jdbcType=VARCHAR},
+      </if>
+      <if test="transaction_id != null">
+        transaction_id = #{transaction_id,jdbcType=VARCHAR},
+      </if>
+      <if test="coin_id != null">
+        coin_id = #{coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="replace_coin_id != null">
+        replace_coin_id = #{replace_coin_id,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="success_count != null">
+        success_count = #{success_count,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=Integer},
+      </if>
+      <if test="created_at != null">
+        created_at = #{created_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated_at != null">
+        updated_at = #{updated_at,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.whoiszxl.core.entity.entity.ZxlOrders">
+    update zxl_orders
+    set member_id = #{member_id,jdbcType=VARCHAR},
+      transaction_id = #{transaction_id,jdbcType=VARCHAR},
+      coin_id = #{coin_id,jdbcType=INTEGER},
+      replace_coin_id = #{replace_coin_id,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      success_count = #{success_count,jdbcType=DECIMAL},
+      type = #{type,jdbcType=Integer},
+      created_at = #{created_at,jdbcType=TIMESTAMP},
+      updated_at = #{updated_at,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

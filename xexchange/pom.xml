@@ -11,6 +11,7 @@
     <modules>
         <module>xexchange-core</module>
         <module>xexchange-eureka</module>
+        <module>xexchange-generator</module>
     </modules>
 
     <parent>
