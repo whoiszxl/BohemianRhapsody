@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS `zxl_banner`;
-CREATE TABLE `zxl_banner` (
+DROP TABLE IF EXISTS `cms_banner`;
+CREATE TABLE `cms_banner` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `name` varchar(100) DEFAULT '' COMMENT '轮播图名称',
   `type` tinyint(1) DEFAULT '0' COMMENT '轮播位置：0->PC首页轮播；1->app首页轮播',
@@ -102,8 +102,8 @@ CREATE TABLE `member_wallet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户钱包余额表';
 
 
-DROP TABLE IF EXISTS `transaction_internal`;
-CREATE TABLE `transaction_internal` (
+DROP TABLE IF EXISTS `trade_transaction_internal`;
+CREATE TABLE `trade_transaction_internal` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `coin_id` bigint(20) NOT NULL COMMENT '币种ID',
   `amount` decimal(40,18) DEFAULT '0.00000000' COMMENT '转账金额',
@@ -212,8 +212,8 @@ CREATE TABLE `admin_role_permission` (
 -- 【基础】基础的表 start
 -- ---------------------------------------------------------
 
-DROP TABLE IF EXISTS `app_version`;
-CREATE TABLE `app_version` (
+DROP TABLE IF EXISTS `cms_app_version`;
+CREATE TABLE `cms_app_version` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `download_url` varchar(255) DEFAULT NULL COMMENT '下载地址',
   `platform` int(11) DEFAULT NULL COMMENT '平台，类型字符串 IOS && ANDROID',
@@ -227,7 +227,7 @@ CREATE TABLE `app_version` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `cms_notice`;
-CREATE TABLE `notice` (
+CREATE TABLE `cms_notice` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `title` varchar(100) DEFAULT '' COMMENT '通知标题',
   `content` text COMMENT '通知内容',
@@ -241,8 +241,8 @@ CREATE TABLE `notice` (
 
 
 
-DROP TABLE IF EXISTS `country`;
-CREATE TABLE `country` (
+DROP TABLE IF EXISTS `cms_country`;
+CREATE TABLE `cms_country` (
   `zh_name` varchar(255) NOT NULL,
   `area_code` varchar(255) DEFAULT NULL,
   `en_name` varchar(255) DEFAULT NULL,
@@ -260,8 +260,8 @@ CREATE TABLE `country` (
 -- ---------------------------------------------------------
 -- 【币种】coin币种相关的表 start
 -- ---------------------------------------------------------
-DROP TABLE IF EXISTS `coin`;
-CREATE TABLE `coin` (
+DROP TABLE IF EXISTS `cms_coin`;
+CREATE TABLE `cms_coin` (
   `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '币种ID',
   `coin_name` varchar(32) NOT NULL COMMENT '货币名称',
   `coin_mark` varchar(32) NOT NULL COMMENT '英文标识',
@@ -291,8 +291,8 @@ CREATE TABLE `coin` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='币种表';
 
-DROP TABLE IF EXISTS `recharge_record`;
-CREATE TABLE `recharge_record` (
+DROP TABLE IF EXISTS `member_recharge_record`;
+CREATE TABLE `member_recharge_record` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
   `member_id` varchar(20) NOT NULL COMMENT '用户ID',
   `coin_id` int(10) NOT NULL COMMENT '币种ID',
@@ -321,8 +321,8 @@ CREATE TABLE `recharge_record` (
 
 
 
-DROP TABLE IF EXISTS `zxl_member_withdraw`;
-CREATE TABLE `zxl_member_withdraw` (
+DROP TABLE IF EXISTS `member_withdraw`;
+CREATE TABLE `member_withdraw` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
   `member_id` varchar(20) NOT NULL COMMENT '用户ID',
   `coin_id` int(10) NOT NULL COMMENT '币种ID',
@@ -351,8 +351,8 @@ CREATE TABLE `zxl_member_withdraw` (
 
 
 
-DROP TABLE IF EXISTS `zxl_config`;
-CREATE TABLE `zxl_config` (
+DROP TABLE IF EXISTS `cms_config`;
+CREATE TABLE `cms_config` (
   `id` int(10) NOT NULL COMMENT '主键ID',
   `key` varchar(32) NOT NULL COMMENT '配置键',
   `value` text NOT NULL COMMENT '配置值',
@@ -366,8 +366,8 @@ CREATE TABLE `zxl_config` (
 
 
 
-DROP TABLE IF EXISTS `zxl_contracts`;
-CREATE TABLE `zxl_contracts` (
+DROP TABLE IF EXISTS `trade_contracts`;
+CREATE TABLE `trade_contracts` (
   `id` int(4) NOT NULL COMMENT '主键ID,交易对ID',
   `contract_name` varchar(20) NOT NULL COMMENT '交易对名称',
   `contract_type` tinyint(2) DEFAULT '1' COMMENT '交易对类型：1：主版   2：P版  3:创业版',
@@ -384,8 +384,8 @@ CREATE TABLE `zxl_contracts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='交易对表';
 
 
-DROP TABLE IF EXISTS `zxl_transactions`;
-CREATE TABLE `zxl_transactions` (
+DROP TABLE IF EXISTS `trade_transactions`;
+CREATE TABLE `trade_transactions` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '挂单主键ID',
   `member_id` varchar(20) NOT NULL COMMENT '用户ID',
   `coin_id` int(10) NOT NULL COMMENT '交易对第一个币种ID',
@@ -402,8 +402,8 @@ CREATE TABLE `zxl_transactions` (
 
 
 
-DROP TABLE IF EXISTS `zxl_orders`;
-CREATE TABLE `zxl_orders` (
+DROP TABLE IF EXISTS `trade_orders`;
+CREATE TABLE `trade_orders` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '订单主键ID',
   `member_id` varchar(20) NOT NULL COMMENT '买家用户ID',
   `transaction_id` varchar(20) NOT NULL COMMENT '挂单ID',
