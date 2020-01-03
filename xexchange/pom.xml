@@ -12,6 +12,18 @@
         <module>xexchange-core</module>
         <module>xexchange-eureka</module>
         <module>xexchange-generator</module>
+        <module>xexchange-gateway</module>
+        <module>xexchange-manager</module>
+        <module>xexchange-chat</module>
+        <module>xexchange-trade</module>
+        <module>xexchange-market</module>
+        <module>xexchange-usercenter</module>
+        <module>xexchange-wallet</module>
+        <module>xexchange-openapi</module>
+        <module>xexchange-otc</module>
+        <module>xexchange-fescar</module>
+        <module>xexchange-sms</module>
+        <module>xwallet</module>
     </modules>
 
     <parent>
