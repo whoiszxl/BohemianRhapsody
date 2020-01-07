@@ -1,6 +1,7 @@
 package com.whoiszxl.core.utils;
 
 import com.whoiszxl.core.entity.base.Result;
+import com.whoiszxl.core.exception.ExceptionCatcher;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -18,14 +19,14 @@ public class ValidateUtils {
      */
     public static void checkPasswordEqual(String password, String rePassword) {
         if(!StringUtils.equals(password, rePassword)) {
-            ExceptionCast.castValidateEx(Result.buildError("rePassword not equal"));
+            ExceptionCatcher.catchValidateEx(Result.buildError("两次输入的密码不一致"));
         }
     }
 
     public static void checkPasswordLevel(String password) {
         CheckPasswordUtils.LEVEL passwordLevel = CheckPasswordUtils.getPasswordLevel(password);
         if(passwordLevel.equals(CheckPasswordUtils.LEVEL.EASY)) {
-            ExceptionCast.castValidateEx(Result.buildError("password too simple"));
+            ExceptionCatcher.catchValidateEx(Result.buildError("密码过于简单"));
         }
     }
 
@@ -35,7 +36,7 @@ public class ValidateUtils {
      */
     public static void checkPhoneRegex(String phone) {
         if(!RegexUtils.checkPhone(phone)) {
-            ExceptionCast.castValidateEx(Result.buildError("phone invaild"));
+            ExceptionCatcher.catchValidateEx(Result.buildError("手机格式错误"));
         }
     }
 
