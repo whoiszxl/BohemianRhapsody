@@ -11,6 +11,6 @@ import org.springframework.data.repository.NoRepositoryBean;
  * @create: 2020-01-03
  **/
 @NoRepositoryBean
-public interface BaseDao<T> extends JpaRepository<T, Long>, JpaSpecificationExecutor<T>, QuerydslPredicateExecutor<T> {
+public interface BaseDao<T> extends JpaRepository<T,Long>,JpaSpecificationExecutor<T>, QuerydslPredicateExecutor<T>{
 
 }
