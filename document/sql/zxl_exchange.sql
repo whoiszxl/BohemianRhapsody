@@ -20,7 +20,7 @@ CREATE TABLE `cms_banner` (
 
 DROP TABLE IF EXISTS `member`;
 CREATE TABLE `member` (
-  `id` varchar(20) NOT NULL COMMENT 'ID',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `username` varchar(16) NOT NULL COMMENT '用户名',
   `password` varchar(100) NOT NULL COMMENT '密码',
   `realname` varchar(16) DEFAULT '' COMMENT '真实姓名',

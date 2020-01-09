@@ -1,0 +1,41 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: zxl-service-user
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ENC(STyCACcav7KP72piT2E7Ivr6gagP36yovHyPfP+ZNYwWW4CK+rbuHbTItU11njtFq2wo2wvSkOp1x9/AsBzh6Iw3A/pIRnf9bB0XFE9cpvWo4bK0b/S5WekbALWk1vsOZsM04cmJf9IBUJHKbU35vW72pS4EzfS6MCko+bmmWfzuUeq/ONR32KBdUzHVXE4WoGcyPCAq9Ed2MPIW+2KK56lzxhpiPPIo1dmza8ma2Gk=)
+    username: xexchange
+    password: ENC(ZiofNXT+LUNG3ep6fXW0wIMHaxOjcAmN)
+  redis:
+    host: 106.13.218.136
+    port: 6379
+    password: ENC(ZiofNXT+LUNG3ep6fXW0wIMHaxOjcAmN)
+  rabbitmq:
+    host: 106.13.218.136
+    username: guest
+    password: 123456
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+feign:
+  hystrix:
+    enabled: true
+
+jwt:
+  config:
+    key: whoiszxl
+    ttl: 36000000
+
+msg:
+  mock: true
+
+#jasypt:
+#  encryptor:
+#    password:
