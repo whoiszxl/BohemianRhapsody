@@ -11,8 +11,8 @@ import com.whoiszxl.core.exception.custom.ValidateException;
  **/
 public class ExceptionCatcher {
 
-    public static void catchJwtAuthEx(Result result){
-        throw new JwtAuthException(result);
+    public static void catchJwtAuthEx(){
+        throw new JwtAuthException();
     }
 
     public static void catchValidateEx(Result result){

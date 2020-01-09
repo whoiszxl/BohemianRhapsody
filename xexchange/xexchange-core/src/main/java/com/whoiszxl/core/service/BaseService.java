@@ -23,7 +23,7 @@ public class BaseService<E, D extends BaseDao> {
     protected D dao;
 
     public E findById(Serializable id) {
-        return (E) dao.findOne(id);
+        return (E) dao.getOne(id);
     }
 
     public List<E> findAll() {

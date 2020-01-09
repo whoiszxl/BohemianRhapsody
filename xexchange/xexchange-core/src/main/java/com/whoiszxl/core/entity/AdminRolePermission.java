@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
@@ -26,6 +27,7 @@ public class AdminRolePermission {
     /**
      * 角色ID
      */
+    @Id
     private Long roleId;
 
     /**

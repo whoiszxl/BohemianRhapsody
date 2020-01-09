@@ -1,5 +1,7 @@
 package com.whoiszxl.core.jwt;
 
+import com.whoiszxl.core.enums.role.MemberRoleEnum;
+import com.whoiszxl.core.exception.ExceptionCatcher;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -8,6 +10,7 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 /**
@@ -58,20 +61,21 @@ public class JwtUtils {
     }
 
 
-    public static Claims getClaims(UserRoleEnum userRoleEnum, HttpServletRequest request) {
+    public static Claims getClaims(MemberRoleEnum userRoleEnum, HttpServletRequest request) {
         String authorization = request.getHeader("Authorization");
         Claims claims = (Claims) request.getAttribute(userRoleEnum.getRoleAttrKey());
         if(claims == null) {
-            ExceptionCast.castNormalEx(Result.buildError(StatusCode.ACCESSERROR, "您没有权限访问"));
+            ExceptionCatcher.catchJwtAuthEx();
         }
         return claims;
     }
 
     public static Claims getUserClaims(HttpServletRequest request) {
-        return getClaims(UserRoleEnum.ROLE_USER, request);
+        return getClaims(MemberRoleEnum.ROLE_USER, request);
     }
 
     public static  Claims getAdminClaims(HttpServletRequest request) {
-        return getClaims(UserRoleEnum.ROLE_ADMIN, request);
+        return getClaims(MemberRoleEnum.ROLE_ADMIN, request);
     }
+
 }

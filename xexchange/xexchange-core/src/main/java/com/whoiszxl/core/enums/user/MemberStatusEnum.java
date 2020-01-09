@@ -10,9 +10,9 @@ import lombok.Getter;
  **/
 @Getter
 @AllArgsConstructor
-public enum UserStatusEnum {
-    USER_VAILD("有效", 1),
-    USER_INVAILD("无效", 0)
+public enum MemberStatusEnum {
+    MEMBER_VAILD("有效", 1),
+    MEMBER_INVAILD("无效", 0)
     ;
     private String msg;
     private Integer status;

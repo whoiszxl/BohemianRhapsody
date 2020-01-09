@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -21,6 +22,7 @@ import javax.persistence.Table;
 @Table(name = "cms_country")
 public class CmsCountry {
 
+    @Id
     private String zhName;
 
     private String areaCode;

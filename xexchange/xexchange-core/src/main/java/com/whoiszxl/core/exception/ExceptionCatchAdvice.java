@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * @description: 全局异常捕获
  * 错误码设计参考 https://www.kancloud.cn/onebase/ob/484204
@@ -54,7 +56,6 @@ public class ExceptionCatchAdvice {
         builder.put(HttpMessageNotReadableException.class, Result.buildError(200001, "消息体不可读"));
         builder.put(IllegalArgumentException.class, Result.buildError(200002, "参数填写错误"));
         builder.put(HttpRequestMethodNotSupportedException.class, Result.buildError(200003, "不支持当前请求方式"));
-
     }
 
     //捕获Exception此类异常
