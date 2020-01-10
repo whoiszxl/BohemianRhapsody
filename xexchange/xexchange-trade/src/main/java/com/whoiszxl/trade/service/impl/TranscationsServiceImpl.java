@@ -40,7 +40,7 @@ public class TranscationsServiceImpl implements TransactionsService {
 
     /**
      * 添加挂单
-     * 交易对买卖方向：例如交易对:BTC/USDT,currencyId为BTC的id，replaceCurrencyId是USDT的id
+     * 交易对买卖方向：例如交易对:BTC/USDT,coinId为BTC的id，replaceCurrencyId是USDT的id
      * @param transactionRequest
      * @return
      */

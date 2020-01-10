@@ -8,12 +8,12 @@ import lombok.Data;
  * @create: 2019-09-15
  **/
 @Data
-public class ZxlUserAddressVo{
+public class MemberAddressVo {
 
     /**
      * 币种ID
      */
-    private Integer currencyId;
+    private Long coinId;
 
     /**
      * 充值地址

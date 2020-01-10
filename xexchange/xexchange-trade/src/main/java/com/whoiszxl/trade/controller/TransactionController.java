@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
+
 /**
  * @description: 挂单操作控制器
  * @author: whoiszxl
@@ -28,9 +29,9 @@ public class TransactionController {
 
     @PostMapping("/addTransaction")
     public Result addTransaction(@RequestBody TransactionRequest transactionRequest) {
-        Claims userClaims = JwtUtils.getUserClaims(request);
-        String userId = userClaims.getId();
-        transactionRequest.setUserId(userId);
+        Claims memberClaims = JwtUtils.getUserClaims(request);
+        Long memberId = Long.parseLong(memberClaims.getId());
+        transactionRequest.setMemberId(memberId);
 
         boolean flag = transactionsService.addOrder(transactionRequest);
         if(flag) {

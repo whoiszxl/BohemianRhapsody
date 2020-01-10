@@ -22,9 +22,9 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @ComponentScan(basePackages={"com.whoiszxl.core"})//扫描core包下的类
 @ComponentScan(basePackages={"com.whoiszxl.trade"})//扫描本项目下的所有类
 @EntityScan(basePackages = {"com.whoiszxl.core.entity"})
-public class TradeApp {
+public class TradeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TradeApp.class, args);
+        SpringApplication.run(TradeApplication.class, args);
     }
 }

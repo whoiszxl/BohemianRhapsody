@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  * @create: 2019-09-07
  **/
 @Data
-public class ZxlCurrencyVo {
+public class CoinVo {
 
     private static final long serialVersionUID = 1L;
 

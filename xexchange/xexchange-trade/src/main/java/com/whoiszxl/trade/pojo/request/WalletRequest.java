@@ -10,5 +10,5 @@ import lombok.Data;
 @Data
 public class WalletRequest {
 
-    private String currencyId;
+    private String coinId;
 }

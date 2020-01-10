@@ -33,5 +33,5 @@ public interface TradeCoinDao extends BaseDao<TradeCoin> {
             "or member_id is null " +
             "ORDER BY zc.sort desc",
             nativeQuery = true)
-    List<Map> getAssetList(String userId);
+    List<Map> getAssetList(String memberId);
 }
