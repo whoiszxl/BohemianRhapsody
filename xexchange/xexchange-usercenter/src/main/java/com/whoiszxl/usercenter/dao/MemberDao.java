@@ -10,14 +10,6 @@ import com.whoiszxl.core.entity.Member;
  **/
 public interface MemberDao extends BaseDao<Member> {
 
-    /**
-     * 通过用户名和密码查询用户记录
-     * @param username 用户名
-     * @param password 密码
-     * @return 用户实体
-     */
-    Member findMemberByUsernameAndPassword(String username, String password);
-
     Member findMemberByPhoneAndStatus(String phone, Integer status);
 
     Member findMemberByIdAndStatus(Long id, Integer status);

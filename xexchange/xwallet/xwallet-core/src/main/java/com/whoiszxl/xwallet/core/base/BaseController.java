@@ -1,0 +1,28 @@
+package com.whoiszxl.xwallet.core.base;
+
+import com.whoiszxl.core.entity.base.Result;
+
+import java.math.BigDecimal;
+
+/**
+ * @description: 钱包控制器接口规范
+ * @author: whoiszxl
+ * @create: 2020-01-10
+ **/
+public interface BaseController {
+
+    /**
+     * 获取当前区块高度
+     * @return
+     */
+    Result blockHeight();
+
+    Result getNewAddress(String memberId);
+
+    Result withdraw(String toAddress, BigDecimal amount, BigDecimal fee, Boolean isSync, String withdrawId);
+
+    Result transfer();
+
+    Result getBalance();
+
+}

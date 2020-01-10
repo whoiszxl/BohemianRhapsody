@@ -31,7 +31,7 @@ public class TradeOrders {
     /**
      * 买家用户ID
      */
-    private String memberId;
+    private Long memberId;
 
     /**
      * 挂单ID
@@ -41,12 +41,12 @@ public class TradeOrders {
     /**
      * 交易对第一个币种ID
      */
-    private Integer coinId;
+    private Long coinId;
 
     /**
      * 交易对第二个币种ID
      */
-    private Integer replaceCoinId;
+    private Long replaceCoinId;
 
     /**
      * 成交价格

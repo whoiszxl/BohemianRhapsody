@@ -31,17 +31,17 @@ public class TradeTransactions {
     /**
      * 用户ID
      */
-    private String memberId;
+    private Long memberId;
 
     /**
      * 交易对第一个币种ID
      */
-    private Integer coinId;
+    private Long coinId;
 
     /**
      * 交易对第二个币种ID
      */
-    private Integer replaceCoinId;
+    private Long replaceCoinId;
 
     /**
      * 委托价格

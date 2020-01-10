@@ -30,12 +30,12 @@ public class MemberWallet {
     /**
      * 用户ID
      */
-    private String memberId;
+    private Long memberId;
 
     /**
      * 币种ID
      */
-    private Integer coinId;
+    private Long coinId;
 
     /**
      * 总金额数量
@@ -55,7 +55,7 @@ public class MemberWallet {
     /**
      * 钱包，0：关闭 1：开启
      */
-    private Boolean status;
+    private Integer status;
 
     /**
      * 创建时间

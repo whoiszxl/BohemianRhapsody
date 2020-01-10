@@ -22,8 +22,8 @@ import java.util.Date;
 @Data
 @Accessors(chain = true)
 @Entity
-@Table(name = "cms_coin")
-public class CmsCoin {
+@Table(name = "trade_coin")
+public class TradeCoin {
 
     @Id
     @Excel(name = "币种ID", orderNum = "1", width = 10)

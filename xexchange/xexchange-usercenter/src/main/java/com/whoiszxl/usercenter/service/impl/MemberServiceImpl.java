@@ -38,9 +38,6 @@ public class MemberServiceImpl implements MemberService {
     private BCryptPasswordEncoder encoder;
 
     @Autowired
-    private IdWorker idWorker;
-
-    @Autowired
     private JwtUtils jwtUtils;
 
     @Autowired
