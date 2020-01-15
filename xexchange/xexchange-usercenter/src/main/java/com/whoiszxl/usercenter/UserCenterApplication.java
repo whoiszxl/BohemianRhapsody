@@ -10,6 +10,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
@@ -23,7 +24,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @SpringBootApplication
 @ComponentScan(basePackages={"com.whoiszxl.core"})//扫描core包下的类
 @ComponentScan(basePackages={"com.whoiszxl.usercenter"})//扫描本项目下的所有类
+@ComponentScan(basePackages={"com.whoiszxl.xwallet.core.client"})//扫描远程wallet feign
 @EntityScan(basePackages = {"com.whoiszxl.core.entity"})
+@EnableJpaRepositories(basePackages = "com.whoiszxl.core")
 public class UserCenterApplication {
 
 

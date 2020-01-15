@@ -4,17 +4,19 @@ import lombok.Builder;
 import lombok.Data;
 
 /**
- * @description: btc请求体
+ * @description: 钱包调用请求体
  * @author: whoiszxl
  * @create: 2020-01-10
  **/
 @Data
 @Builder
-public class BtcRequest {
+public class WalletRequest {
 
-    private String memberId;
+    private Long memberId;
 
-    private Integer coinId;
+    private Long coinId;
+
+    private String coinName;
 
     private String txHash;
 }

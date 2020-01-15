@@ -50,6 +50,18 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.whoiszxl</groupId>
+            <artifactId>xwallet-core</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.whoiszxl</groupId>
+            <artifactId>xwallet-core</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
 
 
     </dependencies>

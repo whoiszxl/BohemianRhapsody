@@ -1,16 +1,15 @@
 package com.whoiszxl.usercenter.service.impl;
 
 import com.google.common.collect.Maps;
+import com.whoiszxl.core.dao.MemberDao;
 import com.whoiszxl.core.entity.Member;
 import com.whoiszxl.core.enums.normal.SwitchStatusEnum;
 import com.whoiszxl.core.enums.redis.UserRedisPrefixEnum;
 import com.whoiszxl.core.enums.role.MemberRoleEnum;
 import com.whoiszxl.core.enums.user.MemberStatusEnum;
 import com.whoiszxl.core.jwt.JwtUtils;
-import com.whoiszxl.core.utils.IdWorker;
 import com.whoiszxl.core.utils.RedisUtils;
 import com.whoiszxl.core.utils.VoPoConverter;
-import com.whoiszxl.usercenter.dao.MemberDao;
 import com.whoiszxl.usercenter.entity.request.RegisterRequest;
 import com.whoiszxl.usercenter.entity.vo.MemberVo;
 import com.whoiszxl.usercenter.service.MemberService;

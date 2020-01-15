@@ -2,6 +2,7 @@ package com.whoiszxl.core.entity;
 
 
 import cn.afterturn.easypoi.excel.annotation.Excel;
+import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -19,6 +20,7 @@ import java.util.Date;
 @Data
 @Accessors(chain = true)
 @Entity
+@Builder
 @Table(name = "member_address")
 public class MemberAddress {
 
@@ -30,12 +32,12 @@ public class MemberAddress {
     /**
      * 用户ID
      */
-    private String memberId;
+    private Long memberId;
 
     /**
      * 币种ID
      */
-    private Integer coinId;
+    private Long coinId;
 
     /**
      * 充值地址
@@ -60,7 +62,7 @@ public class MemberAddress {
     /**
      * 钱包状态，0：关闭 1：开启
      */
-    private Boolean status;
+    private Integer status;
 
     /**
      * 创建时间

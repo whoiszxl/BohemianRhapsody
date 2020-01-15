@@ -1,6 +1,5 @@
-package com.whoiszxl.usercenter.dao;
+package com.whoiszxl.core.dao;
 
-import com.whoiszxl.core.dao.BaseDao;
 import com.whoiszxl.core.entity.Member;
 
 /**
