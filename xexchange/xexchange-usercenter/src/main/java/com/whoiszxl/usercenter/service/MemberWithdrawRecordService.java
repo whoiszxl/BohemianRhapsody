@@ -1,4 +1,4 @@
-package com.whoiszxl.trade.service;
+package com.whoiszxl.usercenter.service;
 
 import com.whoiszxl.core.entity.MemberRechargeRecord;
 import com.whoiszxl.core.entity.MemberWithdraw;
