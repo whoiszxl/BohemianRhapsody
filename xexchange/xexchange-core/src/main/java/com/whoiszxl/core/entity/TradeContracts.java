@@ -71,7 +71,7 @@ public class TradeContracts {
     /**
      * 交易对状态，0：关闭 1：开启
      */
-    private Boolean status;
+    private Integer status;
 
     /**
      * 创建时间

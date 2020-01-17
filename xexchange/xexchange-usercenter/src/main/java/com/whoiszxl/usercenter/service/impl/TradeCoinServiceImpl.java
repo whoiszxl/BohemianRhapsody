@@ -28,6 +28,7 @@ public class TradeCoinServiceImpl implements TradeCoinService {
     @Override
     public List<TradeCoin> queryPageByStatus(ZxlPageRequest pageRequest) {
         Pageable pageable = PageRequest.of(pageRequest.getPageNumber(), pageRequest.getPageSize());
+
         Page<TradeCoin> tradeCoins = tradeCoinDao.findByStatusOrderByCreatedAtDesc(pageRequest.getStatus(), pageable);
         return tradeCoins.getContent();
     }

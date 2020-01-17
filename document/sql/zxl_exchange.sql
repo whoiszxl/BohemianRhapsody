@@ -49,7 +49,7 @@ CREATE TABLE `member` (
 DROP TABLE IF EXISTS `member_address`;
 CREATE TABLE `member_address` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
-  `member_id` varchar(20) NOT NULL COMMENT '用户ID',
+  `member_id` bigint(20) NOT NULL COMMENT '用户ID',
   `coin_id` int(10) NOT NULL COMMENT '币种ID',
   `recharge_address` varchar(255) NOT NULL COMMENT '充值地址',
   `private_key` varchar(255) DEFAULT '' COMMENT '私钥',
@@ -88,7 +88,7 @@ CREATE TABLE `member_kyc` (
 DROP TABLE IF EXISTS `member_wallet`;
 CREATE TABLE `member_wallet` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
-  `member_id` varchar(20) NOT NULL COMMENT '用户ID',
+  `member_id` bigint(20) NOT NULL COMMENT '用户ID',
   `coin_id` int(10) NOT NULL COMMENT '币种ID',
   `all_balance` decimal(40,18) NOT NULL COMMENT '总金额数量',
   `lock_balance` decimal(40,18) NOT NULL COMMENT '冻结金额数量',
@@ -294,7 +294,7 @@ CREATE TABLE `cms_coin` (
 DROP TABLE IF EXISTS `member_recharge_record`;
 CREATE TABLE `member_recharge_record` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
-  `member_id` varchar(20) NOT NULL COMMENT '用户ID',
+  `member_id` bigint(20) NOT NULL COMMENT '用户ID',
   `coin_id` int(10) NOT NULL COMMENT '币种ID',
   `coin_name` varchar(32) NOT NULL COMMENT '货币名称',
   `tx_hash` varchar(255) NOT NULL COMMENT '充值的交易hash',
@@ -324,7 +324,7 @@ CREATE TABLE `member_recharge_record` (
 DROP TABLE IF EXISTS `member_withdraw`;
 CREATE TABLE `member_withdraw` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
-  `member_id` varchar(20) NOT NULL COMMENT '用户ID',
+  `member_id` bigint(20) NOT NULL COMMENT '用户ID',
   `coin_id` int(10) NOT NULL COMMENT '币种ID',
   `coin_name` varchar(32) NOT NULL COMMENT '货币名称',
   `tx_hash` varchar(255) NOT NULL COMMENT '提现交易hash',
@@ -387,7 +387,7 @@ CREATE TABLE `trade_contracts` (
 DROP TABLE IF EXISTS `trade_transactions`;
 CREATE TABLE `trade_transactions` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '挂单主键ID',
-  `member_id` varchar(20) NOT NULL COMMENT '用户ID',
+  `member_id` bigint(20) NOT NULL COMMENT '用户ID',
   `coin_id` int(10) NOT NULL COMMENT '交易对第一个币种ID',
   `replace_coin_id` int(10) NOT NULL COMMENT '交易对第二个币种ID',
   `price` decimal(40,18) NOT NULL DEFAULT '0.0000' COMMENT '委托价格',
@@ -405,7 +405,7 @@ CREATE TABLE `trade_transactions` (
 DROP TABLE IF EXISTS `trade_orders`;
 CREATE TABLE `trade_orders` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '订单主键ID',
-  `member_id` varchar(20) NOT NULL COMMENT '买家用户ID',
+  `member_id` bigint(20) NOT NULL COMMENT '买家用户ID',
   `transaction_id` varchar(20) NOT NULL COMMENT '挂单ID',
   `coin_id` int(10) NOT NULL COMMENT '交易对第一个币种ID',
   `replace_coin_id` int(10) NOT NULL COMMENT '交易对第二个币种ID',

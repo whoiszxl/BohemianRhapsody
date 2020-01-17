@@ -158,7 +158,7 @@ public class TradeCoin {
      * 币种状态，0：关闭 1：开启
      */
     @Excel(name = "币种状态", orderNum = "1", width = 20)
-    private Boolean status;
+    private Integer status;
 
     /**
      * 创建时间

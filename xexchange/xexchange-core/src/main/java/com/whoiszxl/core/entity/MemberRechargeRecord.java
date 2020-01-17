@@ -31,12 +31,12 @@ public class MemberRechargeRecord {
     /**
      * 用户ID
      */
-    private String memberId;
+    private Long memberId;
 
     /**
      * 币种ID
      */
-    private Integer coinId;
+    private Long coinId;
 
     /**
      * 货币名称

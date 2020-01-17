@@ -45,8 +45,8 @@ public class AssetController {
     public Result<List<CoinVo>> coinList(@RequestBody ZxlPageRequest pageRequest){
         //获取币种列表
         List<TradeCoin> tradeCoins = tradeCoinService.queryPageByStatus(pageRequest);
-        List<CoinVo> zxlCurrencyVos = VoPoConverter.copyList(tradeCoins, CoinVo.class);
-        return Result.buildSuccess(zxlCurrencyVos);
+        List<CoinVo> zxlCoinVos = VoPoConverter.copyList(tradeCoins, CoinVo.class);
+        return Result.buildSuccess(zxlCoinVos);
     }
 
     @PostMapping("/rechargeList")
@@ -74,8 +74,8 @@ public class AssetController {
     }
 
 
-    @PostMapping("/getAssetByCurrencyId")
-    public Result getAssetByCurrencyId(@RequestBody WalletRequest walletRequest) {
+    @PostMapping("/getAssetByCoinId")
+    public Result getAssetByCoinId(@RequestBody WalletRequest walletRequest) {
         Long memberId = Long.parseLong(JwtUtils.getUserClaims(request).getId());
         List assetList = tradeCoinService.getAssetList(memberId);
         for (Object o : assetList) {

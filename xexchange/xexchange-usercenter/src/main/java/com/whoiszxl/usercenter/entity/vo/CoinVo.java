@@ -82,6 +82,6 @@ public class CoinVo {
     /**
      * 币种状态，0：关闭 1：开启
      */
-    private Boolean status;
+    private Integer status;
 
 }

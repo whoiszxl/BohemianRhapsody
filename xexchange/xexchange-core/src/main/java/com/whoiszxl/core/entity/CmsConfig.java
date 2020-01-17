@@ -45,7 +45,7 @@ public class CmsConfig {
     /**
      * 配置状态，0：关闭 1：开启
      */
-    private Boolean status;
+    private Integer status;
 
     /**
      * 创建时间

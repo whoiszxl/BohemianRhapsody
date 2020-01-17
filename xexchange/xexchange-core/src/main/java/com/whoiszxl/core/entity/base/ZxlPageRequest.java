@@ -7,7 +7,7 @@ package com.whoiszxl.core.entity.base;
  **/
 public class ZxlPageRequest {
 
-    private Integer pageNumber = 1;
+    private Integer pageNumber = 0;
 
     private Integer pageSize = 10;
 
