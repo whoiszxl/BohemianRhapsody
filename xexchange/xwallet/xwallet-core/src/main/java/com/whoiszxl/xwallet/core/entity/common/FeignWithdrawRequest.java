@@ -20,5 +20,4 @@ public class FeignWithdrawRequest {
 
     /** 备注 */
     private String remark;
-
 }

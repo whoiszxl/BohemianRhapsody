@@ -1,6 +1,7 @@
 package com.whoiszxl.xwallet.core.base;
 
 import com.whoiszxl.core.entity.base.Result;
+import com.whoiszxl.xwallet.core.entity.common.FeignWithdrawRequest;
 
 import java.math.BigDecimal;
 
@@ -19,9 +20,9 @@ public interface BaseController {
 
     Result getNewAddress(String memberId);
 
-    Result withdraw(String toAddress, BigDecimal amount, BigDecimal fee, Boolean isSync, String withdrawId);
+    Result withdraw(FeignWithdrawRequest withdrawRequest);
 
-    Result transfer();
+    Result transfer(FeignWithdrawRequest withdrawRequest);
 
     Result getBalance();
 

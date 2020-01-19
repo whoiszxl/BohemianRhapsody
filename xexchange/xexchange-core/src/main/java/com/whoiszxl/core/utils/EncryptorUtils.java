@@ -23,9 +23,9 @@ public class EncryptorUtils {
     }
 
     public static void main(String[] args) {
-        String encodeUrl = encode("xx", "jdbc:mysql://your_database_url:3306/database");
-        String encodeUsername = encode("xx", "root");
-        String encodePassword = encode("xx", "123456");
+        String encodeUrl = encode("whoiszxlzxl", "admin1");
+        String encodeUsername = encode("whoiszxlzxl", "123");
+        String encodePassword = encode("whoiszxlzxl", "http://106.13.218.136:19001");
 
         System.out.println(encodeUrl);
         System.out.println(encodeUsername);

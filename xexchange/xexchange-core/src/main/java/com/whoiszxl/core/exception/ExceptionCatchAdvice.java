@@ -3,6 +3,7 @@ package com.whoiszxl.core.exception;
 import com.google.common.collect.ImmutableMap;
 import com.whoiszxl.core.entity.base.Result;
 import com.whoiszxl.core.exception.custom.JwtAuthException;
+import com.whoiszxl.core.exception.custom.ValidateException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
@@ -75,6 +76,18 @@ public class ExceptionCatchAdvice {
             //返回报错
             return Result.buildError();
         }
+    }
+
+    //捕获Exception此类异常
+    @ExceptionHandler(ValidateException.class)
+    @ResponseBody
+    public Result catchValidateException(ValidateException ex){
+        //记录日志
+        log.error("全局异常捕捉:{}",ex.getMessage());
+        if(EXCEPTIONS == null){
+            EXCEPTIONS = builder.build();//EXCEPTIONS构建成功
+        }
+        return ex.getResult();
     }
 
 }

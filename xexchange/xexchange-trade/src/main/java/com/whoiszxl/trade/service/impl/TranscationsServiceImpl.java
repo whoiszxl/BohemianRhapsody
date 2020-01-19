@@ -46,7 +46,7 @@ public class TranscationsServiceImpl implements TransactionsService {
      */
     @Override
     public boolean addOrder(TransactionRequest transactionRequest) {
-        Long memberId = transactionRequest.getMemberId();
+         Long memberId = transactionRequest.getMemberId();
         //通过买卖方向获取需要交易的币种ID和交易的金额（数量）
         Object[] checkParam = getCheckParam(transactionRequest);
         Long checkCoinId = (Long) checkParam[0];

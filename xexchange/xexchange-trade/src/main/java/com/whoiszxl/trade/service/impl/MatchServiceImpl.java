@@ -154,5 +154,5 @@ public class MatchServiceImpl implements MatchService {
         }
         memberWalletDao.subLockBalance(rowData.getMemberId(), subCurrencyId, subCurrencyCount);
 
-    }
+        }
 }

@@ -2,8 +2,10 @@ package com.whoiszxl.core.entity;
 
 
 import cn.afterturn.easypoi.excel.annotation.Excel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
@@ -22,6 +24,8 @@ import java.util.Date;
 @Entity
 @Builder
 @Table(name = "member_address")
+@NoArgsConstructor
+@AllArgsConstructor
 public class MemberAddress {
 
     @Excel(name = "主键ID", orderNum = "1", width = 25D)
