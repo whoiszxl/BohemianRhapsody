@@ -16,6 +16,7 @@
         <module>xwallet-erc20</module>
         <module>xwallet-btc</module>
         <module>xwallet-core</module>
+        <module>xwallet-ethereum-core</module>
     </modules>
 
 

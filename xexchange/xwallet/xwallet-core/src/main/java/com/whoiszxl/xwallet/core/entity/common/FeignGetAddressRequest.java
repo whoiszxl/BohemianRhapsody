@@ -12,4 +12,6 @@ public class FeignGetAddressRequest {
 
     private Long memberId;
 
+    private String password;
+
 }

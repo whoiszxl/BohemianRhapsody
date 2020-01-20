@@ -20,4 +20,7 @@ public class FeignWithdrawRequest {
 
     /** 备注 */
     private String remark;
+
+    /** 提现ID */
+    private Long withdrawId;
 }

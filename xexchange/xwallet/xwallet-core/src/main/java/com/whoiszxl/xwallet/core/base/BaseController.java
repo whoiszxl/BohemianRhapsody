@@ -1,6 +1,7 @@
 package com.whoiszxl.xwallet.core.base;
 
 import com.whoiszxl.core.entity.base.Result;
+import com.whoiszxl.xwallet.core.entity.common.FeignGetAddressRequest;
 import com.whoiszxl.xwallet.core.entity.common.FeignWithdrawRequest;
 
 import java.math.BigDecimal;
@@ -18,7 +19,7 @@ public interface BaseController {
      */
     Result blockHeight();
 
-    Result getNewAddress(String memberId);
+    Result getNewAddress(FeignGetAddressRequest feignGetAddressRequest);
 
     Result withdraw(FeignWithdrawRequest withdrawRequest);
 
